@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+p{
+    font-family: 'Roboto', sans-serif;
+}
+.header{
+    background-color: #2d132c;
+    color: white;
+}
+.contLogo{
+    margin: 0px 80px;
+}
+.contLogo img{
+    width: 80px;
+}
+.banner1{
+    display: flex;
+    margin-top: 88px;
+    background-image: url(../img/bground.jpg);
+    height: 500px;
+    width: 1250px;
+    font-family: 'Monoton', cursive;
+    color: #c72c41;
+    align-items: center;
+    justify-content: center;
+}
+footer{
+    background-color: #2d132c;
+    color: white;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
