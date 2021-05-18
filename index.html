@@ -16,6 +16,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/login.css">
     <title>RevoluxionGym</title>
   </head>
   <body>
@@ -30,16 +31,7 @@
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#"
-                    >Inicio</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#"
-                    >Registrate</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Login</a>
+                    >Inicio</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Nutrición</a>
@@ -53,12 +45,168 @@
                 <li class="nav-item">
                   <a class="nav-link" href="pages/rutinas/rutinas.html">Rutinas</a>
                 </li>
+                <li class="nav-item">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#iniciarSesion">
+                    Inicia sesión
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registrarse">
+                        Registrate
+                    </button>
+                </li>
               </ul>
             </div>
           </div>
         </nav>
       </header>
     </div>
+
+    <!-- Inicio sesión Form -->
+    <div class="modal fade" id="iniciarSesion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <!-- <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5> -->
+            <h2>RevoluxionGym</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <main class="form-signin">
+                    <form>
+                      
+                      <h3 class="h3 mb-3 fw-normal">Iniciar sesión</h2>
+                  
+                      <div class="form-floating">
+                        <input type="email" class="form-control" id="mailIniciarSesion" placeholder="name@example.com">
+                        <label for="mailIniciarSesion">Email</label>
+                      </div>
+                      <div class="form-floating">
+                        <input type="password" class="form-control" id="passwordIniciarSesion" placeholder="Contraseña">
+                        <label for="passwordIniciarSesion">Contraseña</label>
+                      </div>
+                  
+                      <div class="checkbox mb-3">
+                        <label>
+                          <input type="checkbox" value="remember-me"> Recordar credenciales
+                        </label>
+                      </div>
+                      <button class="w-100 btn btn-lg btn-primary" type="submit" >Iniciar sesión</button>
+                      <p class="mt-5 mb-3 text-muted">
+                          <a href="" class="link-secondary"  data-bs-target="#restablecerPassword" data-bs-toggle="modal" data-bs-dismiss="modal">Olvidé mi contraseña</a>
+                      </p>
+                    </form>
+                  </main>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-target="#registrarse" data-bs-toggle="modal" data-bs-dismiss="modal">Crear cuenta</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Olvido Contraseña Form -->
+    <div class="modal fade" id="restablecerPassword" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <!-- <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5> -->
+            <h2>RevoluxionGym</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <main class="form-signin">
+                    <form>
+                        <h3 class="h3 mb-3 fw-normal">Restablecer contraseña</h2>
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="mailRestablecerPassword" placeholder="name@example.com">
+                            <label for="mailRestablecerPassword">Email</label>
+                        </div>
+                        <p class="mt-5 mb-3 text-muted">
+                            Te enviaremos un mail con las instrucciones
+                        </p>
+                        <button class="w-100 btn btn-lg btn-primary" type="submit" >Restablecer</button>
+                        
+                    </form>
+                  </main>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-target="#iniciarSesion" data-bs-toggle="modal" data-bs-dismiss="modal">Iniciar sesión</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <!-- Registrate Form -->
+    <div class="modal fade" id="registrarse" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <!-- <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5> -->
+            <h2>RevoluxionGym</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <main class="form-signin">
+                    <form>
+                        <h3 class="h3 mb-3 fw-normal">Regístrate</h2>
+                    
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="nameInput" placeholder="Nombre">
+                            <label for="nameInput">Nombre</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="lastNameInput" placeholder="Apellido">
+                            <label for="lastNameInput">Apellido</label>
+                        </div>
+                        <div class="input-group">
+                            <select class="form-select" id="inputGroupSelect02">
+                                <option selected>Tipo</option>
+                                <option value="1">C.C.</option>
+                                <option value="2">T.I.</option>
+                                <option value="3">C.E.</option>
+                                <option value="3">PSP</option>
+                            </select>
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="idInput" placeholder="Apellido">
+                                <label for="idInput">Documento</label>
+                            </div>
+                        </div>
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="phoneInput" placeholder="XXX-XXX-XXX">
+                            <label for="phoneInput">Teléfono</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="mailInput" placeholder="name@example.com">
+                            <label for="mailInput">Email</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" class="form-control" id="passwordInput" placeholder="Contraseña">
+                            <label for="passwordInput">Contraseña</label>
+                        </div>
+                    
+                        <div class="checkbox mb-3">
+                            <label>
+                            <input type="checkbox" value="remember-me"> Acepto T&C
+                            </label>
+                            <label>
+                                <input type="checkbox" value="remember-me"> Acepto tratamiento de datos
+                            </label>
+                        </div>
+                        <button class="w-100 btn btn-lg btn-primary" type="submit">Registrarme</button>
+                    </form>
+                  </main>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-target="#iniciarSesion" data-bs-toggle="modal" data-bs-dismiss="modal">Iniciar sesión</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
     <div class="banner1">
       <h1>RevoluxionGym</h1>
     </div>

@@ -42,6 +42,7 @@ h3, p {
 .btn-primary {
     background-color: #801336;
     border-color: #801336;
+    margin: 0 10px;
 }
 .btn-primary:hover {
     background-color: #ee4540;
