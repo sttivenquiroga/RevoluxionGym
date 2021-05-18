@@ -18,6 +18,8 @@ p{
 .banner1{
     display: flex;
     margin-top: 88px;
+    margin-right: auto;
+    margin-left: auto;
     background-image: url(../img/bground.jpg);
     height: 500px;
     width: 1250px;
