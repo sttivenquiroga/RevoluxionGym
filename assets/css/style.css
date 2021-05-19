@@ -21,6 +21,8 @@ p{
 .banner1{
     display: flex;
     margin-top: 88px;
+    margin-right: auto;
+    margin-left: auto;
     background-image: url(../img/bground.jpg);
     height: 500px;
     width: 1250px;
@@ -68,7 +70,8 @@ p{
 footer{
     background-color: #2d132c;
     color: white;
-    position: fixed;
+    padding-top: 10px;
+    margin-bottom: 10px;
     right: 0;
     bottom: 0;
     left: 0;
