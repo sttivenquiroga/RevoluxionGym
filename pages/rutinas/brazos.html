@@ -7,37 +7,52 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/styleRutinas.css">
     <title>Rutinas: brazos</title>
 </head>
 <body>
     <!-- Inicio nav -->
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="../../assets/img/logo.png" alt="Logo" width="90" height="90">
-            </a>
+    <header class="header fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <div class="contLogo">
+            <img src="../../assets/img/logo.png" alt="" />
+          </div>
+          <div class="container-fluid menu">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Rutinas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Nutrición</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Planes</a>
-                    </li>
-                </ul>
+              <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="../../index.html"
+                    >Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../nutricion.html">Nutrición</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../../index.html">Planes</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../../index.html">Noticias</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./rutinas.html">Rutinas</a>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#iniciarSesion">
+                    Inicia sesión
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registrarse">
+                        Registrate
+                    </button>
+                </li>
+              </ul>
             </div>
-        </div>
-    </nav>
+          </div>
+        </nav>
+    </header>
     <!-- Fin nav -->
-    <!-- Inicio brazos-->
+    <!-- Inicio brazos -->
     <div id="brazos" class="brazos">
         <h2>Sección de brazos</h2>
         <div class="row justify-content-center">
@@ -45,40 +60,39 @@
                 <img src="../../assets/img/Rutinas/Brazos/hombros.jpg" class="card-img-top" alt="Hombros">
                 <div class="card-body">
                   <h5 class="card-title">Hombros</h5>
-                  <a href="#" class="btn btn-warning text-light">Ir a hombros</a>
+                  <a href="./hombros.html" class="btn btn-warning text-light">Ir a hombros</a>
                 </div>
             </div>
             <div class="card m-3" style="width: 18rem;">
                 <img src="../../assets/img/Rutinas/Brazos/biceps.jpg" class="card-img-top" alt="Biceps">
                 <div class="card-body">
                   <h5 class="card-title">Biceps</h5>
-                  <a href="#" class="btn btn-warning text-light">Ir a biceps</a>
+                  <a href="./biceps.html" class="btn btn-warning text-light">Ir a biceps</a>
                 </div>
             </div>
             <div class="card m-3" style="width: 18rem;">
                 <img src="../../assets/img/Rutinas/Brazos/triceps.JPG" class="card-img-top" alt="Triceps">
                 <div class="card-body">
                   <h5 class="card-title">Triceps</h5>
-                  <a href="#" class="btn btn-warning text-light">Ir a triceps</a>
+                  <a href="./triceps.html" class="btn btn-warning text-light">Ir a triceps</a>
                 </div>
             </div>
             <div class="card m-3" style="width: 18rem;">
                 <img src="../../assets/img/Rutinas/Brazos/antebrazos.jpg" class="card-img-top" alt="Antebrazos">
                 <div class="card-body">
                   <h5 class="card-title">Antebrazos</h5>
-                  <a href="#" class="btn btn-warning text-light">Ir a antebrazos</a>
+                  <a href="./antebrazo.html" class="btn btn-warning text-light">Ir a antebrazos</a>
                 </div>
             </div>
         </div>
         <div class="row justify-content-center">
-            <a href="../rutinas/rutinas.html" class="btn btn-dark text-light">Ir a rutinas</a>
+            <a href="../rutinas/rutinas.html" class="btn btn-dark text-light quitarwidth">Ir a rutinas</a>
         </div>
     </div>
     <!-- Fin brazos -->
     <!-- Inicio footer -->
-    <footer>
-        &copy; CSS - CodeSoft Solutions Desarrolladores <br> Miguel Angel Cerquera Rodriguez - Cristian Andres Gomez Monsalve - Natalia Ortiz Maldonado - Johan Stiven Quiroga - Edson Daniel Suarez Hernandez
-        <p>18/05/2021</p>
+    <footer class="text-center">
+      &copy; CSS- CodeSoft Solutions <br> Miguel Angel Cerquera Rodriguez - Cristian Andres Gomez - Natalia Ortiz Maldonado - Johan Stiven Quiroga - Edson Daniel Suarez
     </footer>
     <!-- Fin footer -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
