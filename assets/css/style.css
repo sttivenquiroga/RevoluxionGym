@@ -9,6 +9,9 @@ p{
     background-color: #2d132c;
     color: white;
 }
+.navbar-collapse {
+    justify-content: flex-end;
+}
 .contLogo{
     margin: 0px 80px;
 }
@@ -53,6 +56,14 @@ p{
 .card-img, .card-img-top {
     border-top-left-radius: calc(.25rem - 1px);
     border-top-right-radius: calc(.25rem - 1px);
+}
+.gym-services, .gym-planes {
+    background-color: white;
+    margin: 0 auto;
+    padding: 40px;
+}
+.gym-services h2, .gym-planes h2 {
+    font-size: 40px;
 }
 footer{
     background-color: #2d132c;

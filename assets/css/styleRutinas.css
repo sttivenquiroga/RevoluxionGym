@@ -1,0 +1,111 @@
+h2 {
+    font-family: 'Monoton', cursive;
+}
+
+nav {
+    background-color: #2d132c;
+}
+
+nav .container-fluid .collapse .nav-link {
+    color: white;
+}
+
+nav .container-fluid .navbar-brand {
+    color: white !important;
+    font-family: 'Monoton', cursive;
+}
+
+nav .container-fluid .collapse {
+    justify-content: flex-end;
+}
+
+.rutinas {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 120px;
+}
+
+.rutinas h2 {
+    font-size: 50px;
+    color: #2d132c;
+}
+
+.rutinas p {
+    text-align: justify;
+    color: #2d132c;
+}
+
+.rutinas .row .card {
+    padding: 10px;
+    border-radius: 40px;
+    align-items: center;
+}
+
+.rutinas .row .card img {
+    width: 250px;
+    height: 210px;
+    border-radius: 20px;
+}
+
+.rutinas .row .card p {
+    text-align: justify;
+    color: black;
+}
+
+.rutinas .row .card .card-body h5 {
+    color: #c72c41;
+}
+
+.piernas {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 130px;
+}
+
+.piernas .row .card {
+    padding: 10px;
+    border-radius: 40px;
+    align-items: center;
+}
+
+.piernas .row .card img {
+    width: 250px;
+    height: 210px;
+    border-radius: 20px;
+}
+
+.brazos {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 130px;
+}
+
+.brazos .row .card {
+    padding: 10px;
+    border-radius: 40px;
+    align-items: center;
+}
+
+.brazos .row .card img {
+    width: 250px;
+    height: 210px;
+    border-radius: 20px;
+}
+
+.tronco {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 130px;
+}
+
+.tronco .row .card {
+    padding: 10px;
+    border-radius: 40px;
+    align-items: center;
+}
+
+.tronco .row .card img {
+    width: 250px;
+    height: 210px;
+    border-radius: 20px;
+}
