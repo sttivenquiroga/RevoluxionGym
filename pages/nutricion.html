@@ -18,35 +18,49 @@
 
 <body>
 
-    <!-- navbar -->
-    <header class="header fixed-top">
-        <nav class="navbar-expand-lg navbar-dark">
-            <div class="contLogo">
-                <img src="../assets/img/logo.png" alt="logo">                
-            </div>
-            <div class="container-fluid menu">
-                <div class="collapse navbar-collapse float-end" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="nutricion.html">Nutrición</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Planes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Noticias</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="pages/rutinas/rutinas.html">Rutinas</a>
-                        </li>                       
-                    </ul>
+    <!-- navbar -->    
+    <div>
+        <header class="header fixed-top">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="contLogo">
+                    <img src="../assets/img/logo.png" alt="imag">
                 </div>
-            </div>
-        </nav>
-    </header>    
+                <div class="container-fluid menu">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Nutrición</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Planes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Noticias</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="pages/rutinas/rutinas.html">Rutinas</a>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#iniciarSesion">
+                                    Inicia sesión
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#registrarse">
+                                    Registrate
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
     <!-- fin navbar -->
 
 
@@ -82,7 +96,7 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-sm btn-outline-secondary"
-                                            data-bs-toggle="modal" data-bs-target="#exampleModal">Ver</button>
+                                            data-bs-toggle="modal" data-bs-target="#modalHipocalorias">Ver</button>
                                     </div>
                                     <small class="text-muted">9 mins</small>
                                 </div>
@@ -101,7 +115,7 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-sm btn-outline-secondary"
-                                            data-bs-toggle="modal" data-bs-target="#exampleModal">Ver</button>
+                                            data-bs-toggle="modal" data-bs-target="#modalHipercalorica">Ver</button>
                                     </div>
                                     <small class="text-muted">9 mins</small>
                                 </div>
@@ -120,7 +134,7 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-sm btn-outline-secondary"
-                                            data-bs-toggle="modal" data-bs-target="#exampleModal">Ver</button>
+                                            data-bs-toggle="modal" data-bs-target="#modalProteina">Ver</button>
                                     </div>
                                     <small class="text-muted">9 mins</small>
                                 </div>
@@ -139,7 +153,7 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-sm btn-outline-secondary"
-                                            data-bs-toggle="modal" data-bs-target="#exampleModal">Ver</button>
+                                            data-bs-toggle="modal" data-bs-target="#modalDetox">Ver</button>
                                     </div>
                                     <small class="text-muted">9 mins</small>
                                 </div>
@@ -193,6 +207,140 @@
     </main>
 
     <!-- Modal -->
+    <div class="modal fade" id="modalHipocalorias" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Dieta hipocalórica</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4>​Pez espada con ensalada variada</h4>                                       
+                    <p>
+                        El pez espada es una buena fuente de vitaminas y minerales. Nos aporta vitamina A, B3, B6, B9 y B12 y también hierro, fósforo, magnesio, sodio y potasio. 100 gramos de este pescado aportan 4 gramos de grasa y 110 calorías.
+                    </p>
+                    <img src="../assets/img/recetaPezEspada.jpg" alt="img" class="imgModal">
+                    <br><br>
+                    <p><b>Ingredientes</b></p>                        
+                        <ul>
+                            <li>100 gr. de filete de pez espada.</li>
+                            <li>100 gr. de lechuga o canónigos.</li>
+                            <li>5 tomatitos cherry o 1 tomate de tamaño medio.</li>
+                            <li>1/2 de un pepino sin piel, cortado en rodajas.</li>
+                            <li>Aceite de oliva.</li>
+                            <li>Sal.</li>
+                            <li>Limón.</li>
+                        </ul>       
+                        
+                    <p>
+                        <b>Preparación</b>
+                        <br><br>
+                        Podemos adquirir un corte limpio de 100 gramos de pez espada fresco en cualquier pescadería. Lo sazonamos con un poquito de sal y lo cocinamos a la plancha o al vapor. También podemos aderezarlo con especias a nuestro gusto y unas gotitas de limón.
+                        Lavamos y troceamos las hojas de lechuga y los tomates. Escurrimos estos alimentos y los aderezamos con una pizca de aceite de oliva, sal y vinagre.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalHipercalorica" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Dieta hipercalórica</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4>​Caracteristicas</h4>                                       
+                
+                    <img src="../assets/img/recetaHiperc.jpg" alt="img" class="imgModal">
+                    <br><br>
+                    
+                    <ul>
+                        <li>Las calorías deben aumentarse a expensas de la calidad y la cantidad de alimentos ingeridos: aumento de los hidratos de carbono y de las proteínas, en menor medida de las grasas porque son más saciantes.</li>
+                        <li>No deben saltarse ni olvidarse las comidas principales, agregar una o dos colaciones entre comidas.</li>
+                        <li>Las proteínas deben ser suficientes, entre 1 y 1,5 gr/kg de peso.</li>
+                        <li>Las proteínas deben ser suficientes, entre 1 y 1,5 gr/kg de peso.</li>
+                        <li>Dado el alto valor de saciedad que otorgan los alimentos ricos en fibra deben consumirse con moderación. Preferibles los alimentos que aportan muchas calorías con poco volumen: frutos secos, aceites vegetales, mantequilla, azúcares o miel.</li>
+                        <li>No se recomienda ingerir al inicio de las comidas ensaladas o sopas, ya que disminuyen el apetito hacia los platos principales o posteriores.</li>
+                        <li>Los alimentos deben ser de fácil digestión, esta es una de las causas por las que se recurren a los hidratos de carbono. Las grasas y las proteínas retrasan el vaciamiento gástrico y prolongan la digestión.</li>
+                        <li>Las grasas crudas se digieren mejor que si las sometemos a algún tipo de cocción, el aceite como aliño además de beneficioso aporta sabor y untuosidad al plato, añade una cucharada más al plato del comensal con dieta hipercalórica. En cambio una fritura genera más saciedad, aunque contenga aparentemente más calorías el paciente se saciará antes y comerá menos.</li>
+                    </ul>                          
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalProteina" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Dieta Proteica</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4>​Menu</h4>                                       
+                
+                    <img src="../assets/img/recetaProteica.jpg" alt="img" class="imgModal">
+                    <br><br>
+                    
+                    <ul>
+                        <li>Desayuno: leche sola, con café o cacao soluble. Pan blanco o integral con aceite de oliva virgen extra o mantequilla y jamón serrano, pavo o jamón cocido.</li>
+                        <li>Media mañana: un yogur con frutos secos.</li>
+                        <li>Comida: une carne con verduras. Escoge vegetales con bajo nivel de carbohidratos, como por ejemplo el tomate.</li>
+                        <li>Merienda: jamón y queso fresco o una pieza de fruta.</li>
+                        <li>Cena: la mejor opción será consumir vegetales y pescado. Las carnes rojas suelen evitarse a esta hora del día.</li>
+                        
+                    </ul>                          
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalDetox" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Dieta Detox</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4>​Menu</h4>                                       
+                
+                    <img src="../assets/img/recetaDetox.jpg" alt="img" class="imgModal">
+                    <br><br>
+                    <h6>A eliminar</h6>
+                    <ul>
+                        <li>Los azúcares en todas sus variantes y los chocolates.</li>
+                        <li>Los lácteos enteros: leche, queso, nata, mantequilla.   </li>
+                        <li>Los picantes, salsas, fritos, precocinados, enlatados, etc.</li>
+                        <li>Los tóxicos: café, tabaco y alcohol...   </li>                      
+                    </ul>        
+                    <h6>Los alimentos más desintoxicantes</h6>
+                    <ul>
+                        <li>El agua y las infusiones. El té verde es la más recomendada.</li>
+                        <li>Las frutas y verduras preferentemente crudas. Se atribuye propiedades depurativas a los vegetales verdes y rojos, al brócoli, colifor, cebolla, apio, ajo y alcachofa. También a las algas y a la zanahoria. La fruta más depurativa es el limón junto con el pomelo.</li>
+                        <li>El tofu, de consistencia parecida al queso fresco y de sabor muy suave, se elabora con soja y es aún mejor como depurativo que un lácteo. </li>
+                        <li>Los zumos. Aprovéchate de la zumoterapia y prepárate alguna bebida detox para cenar después de una comida demasiado abundante o una resaca.</li> 
+                    </ul>                      
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
@@ -201,6 +349,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <img src="../assets/img/comida-saludable.jpg" alt="img" class="imgModal">
                     <p>​1. Consuma alimentos variados y nutritivos diariamente​​​
                         La alimentación es más saludable y nutritiva cuando se incluyen diferentes tipos de alimentos en
                         cada comida. La alimentación diaria debe incluir: frutas, verduras y hortalizas de diferentes
@@ -231,16 +380,16 @@
             </div>
         </div>
     </div>
+
+
+
     <!-- fin Contenido -->
 
 
     <!-- footer -->
-    <footer>
-        &copy; CSS - CodeSoft Solutions Desarrolladores <br> 19/05/2021        
-    </footer>
+    <footer class="text-center">&copy; CSS- CodeSoft Solutions <br> Miguel Angel Cerquera Rodriguez - Cristian Andres
+        Gomez - Natalia Ortiz Maldonado - Johan Stiven Quiroga - Edson Daniel Suarez</footer>
     <!-- fin footer -->
-
-
 
 
 

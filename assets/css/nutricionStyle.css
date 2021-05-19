@@ -4,27 +4,22 @@
     font-family: 'Roboto', sans-serif;
 }
 
-nav{
-    display: flex;
-    align-items: center;
-}
 .header{
     background-color: #2d132c;
     color: white;
 }
+.navbar-collapse {
+    justify-content: flex-end;
+}
 .contLogo{
-    margin: 0px 20px;
+    margin: 0px 80px;
 }
 .contLogo img{
     width: 80px;
 }
 
-.botones{
-    display: flex;
-}
-
 main{
-    margin-top: 4.2%;
+    margin-top: 5%;
 }
 
 
@@ -63,24 +58,19 @@ h1{
     background-color: rgb(199, 44, 65, .3);
 }
 
-footer{
-    background-color: #2d132c;
-    color: white;
-    text-align: center;
-    padding: 5px 100px;
-    font-size: 20px;
+.imgModal{
+    width: 450px;
+    height: 250px;
 }
 
-.algo{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: .25rem;
+footer{
+    background-color: #2d132c;
+    color: white;    
+    padding-top: 10px;
+    padding-bottom: 10px;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 
