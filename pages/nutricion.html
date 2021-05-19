@@ -19,32 +19,34 @@
 <body>
 
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="../index.html">CodeSoft Solutions</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse" id="navbarNav" style="justify-content: flex-end;">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#biografia">Biografia</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#premios">Premios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#albumes">Albumes</a>
-                    </li>
-                </ul>
+    <header class="header fixed-top">
+        <nav class="navbar-expand-lg navbar-dark">
+            <div class="contLogo">
+                <img src="../assets/img/logo.png" alt="logo">                
             </div>
-
-        </div>
-    </nav>
+            <div class="container-fluid menu">
+                <div class="collapse navbar-collapse float-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="nutricion.html">Nutrición</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Planes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Noticias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/rutinas/rutinas.html">Rutinas</a>
+                        </li>                       
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>    
     <!-- fin navbar -->
 
 
@@ -53,8 +55,8 @@
 
         <div class="banner">
             <section class="py-5 text-center container">
-                <div class="row contenedorTitulo">                    
-                        <div class="col-lg-6 col-md-8 mx-auto">
+                <div class="row contenedorTitulo">
+                    <div class="col-lg-6 col-md-8 mx-auto">
                         <h1>Nutrición</h1>
                         <p class="lead">La alimentacion es una parte importante para la salud fisica y
                             mental, acontinuacion podras elegir la dieta que mas se adacte a ti</p>
@@ -74,7 +76,9 @@
                             <img src="../assets/img/dietahipoC.jpg" alt="plato1" class="imgCard">
                             <div class="card-body conTextCard">
                                 <h5>Dieta hipocalórica</h5>
-                                <p class="card-text">Es un tipo de dieta que restringe la ingesta calórica en el día a día. El número de calorías se reduce de forma progresiva, y aporta al cuerpo la energía necesaria para realizar las tareas cotidianas. </p>
+                                <p class="card-text">Es un tipo de dieta que restringe la ingesta calórica en el día a
+                                    día. El número de calorías se reduce de forma progresiva, y aporta al cuerpo la
+                                    energía necesaria para realizar las tareas cotidianas. </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-sm btn-outline-secondary"
@@ -91,7 +95,9 @@
                             <img src="../assets/img/dietahiperC.jpg" alt="plato1" class="imgCard">
                             <div class="card-body conTextCard">
                                 <h5>Dieta hipercalórica</h5>
-                                <p class="card-text">Es un tipo de dieta que aporta una carga energética mayor de la que el cuerpo se necesita. Está indicada para aquellas personas que quieran aumentar tanto su peso como su masa muscular</p>
+                                <p class="card-text">Es un tipo de dieta que aporta una carga energética mayor de la que
+                                    el cuerpo se necesita. Está indicada para aquellas personas que quieran aumentar
+                                    tanto su peso como su masa muscular</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-sm btn-outline-secondary"
@@ -108,7 +114,9 @@
                             <img src="../assets/img/dietaProteica.jpg" alt="plato1" class="imgCard">
                             <div class="card-body conTextCard">
                                 <h5>Dieta proteica</h5>
-                                <p class="card-text">La dieta proteica está basada en la ingesta de alimentos con mayor contenido en proteínas. Este tipo de dieta la suelen hacer deportistas o personas que quieren perder peso sin tener conocimiento </p>
+                                <p class="card-text">La dieta proteica está basada en la ingesta de alimentos con mayor
+                                    contenido en proteínas. Este tipo de dieta la suelen hacer deportistas o personas
+                                    que quieren perder peso sin tener conocimiento </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-sm btn-outline-secondary"
@@ -125,7 +133,9 @@
                             <img src="../assets/img/dietaDetox.jpg" alt="plato1" class="imgCard">
                             <div class="card-body conTextCard">
                                 <h5>Dieta detox</h5>
-                                <p class="card-text"> Se ideó como proceso para depurar el organismo tras un período de comidas copiosas, por ejemplo. Se basa en el consumo exclusivo de líquidos durante, al menos, un día completo a la semana</p>
+                                <p class="card-text"> Se ideó como proceso para depurar el organismo tras un período de
+                                    comidas copiosas, por ejemplo. Se basa en el consumo exclusivo de líquidos durante,
+                                    al menos, un día completo a la semana</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-sm btn-outline-secondary"
@@ -142,7 +152,9 @@
                             <img src="../assets/img/dietaAlcalina.jpg" alt="plato1" class="imgCard">
                             <div class="card-body conTextCard">
                                 <h5>Dieta alcalina</h5>
-                                <p class="card-text">La dieta alcalina promete la depuración del organismo, y también defiende que protege contra tumores. En este tipo de dieta se apuesta por cereales integrales, legumbres, frutas y verduras</p>
+                                <p class="card-text">La dieta alcalina promete la depuración del organismo, y también
+                                    defiende que protege contra tumores. En este tipo de dieta se apuesta por cereales
+                                    integrales, legumbres, frutas y verduras</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-sm btn-outline-secondary"
@@ -159,7 +171,9 @@
                             <img src="../assets/img/dietaPaleo.jpg" alt="plato1" class="imgCard">
                             <div class="card-body conTextCard">
                                 <h5>Dieta paleo</h5>
-                                <p class="card-text">Consiste en volver a los orígenes en donde la alimentación se era únicamente en lo que se cazaba. basa la alimentación en carnes, pescados, frutas y verduras, que proporcionan un alto grado de energía</p>
+                                <p class="card-text">Consiste en volver a los orígenes en donde la alimentación se era
+                                    únicamente en lo que se cazaba. basa la alimentación en carnes, pescados, frutas y
+                                    verduras, que proporcionan un alto grado de energía</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-sm btn-outline-secondary"
@@ -171,7 +185,7 @@
                         </div>
                     </div>
 
-                    
+
                 </div>
             </div>
         </div>
@@ -188,14 +202,28 @@
                 </div>
                 <div class="modal-body">
                     <p>​1. Consuma alimentos variados y nutritivos diariamente​​​
-                        La alimentación es más saludable y nutritiva cuando se incluyen diferentes tipos de alimentos en cada comida. La alimentación diaria debe incluir: frutas, verduras y hortalizas de diferentes colores, leguminosas (frijol, lenteja, garbanzo), cereales integrales, nueces, lácteos bajos en grasa, carne magra, pescado y huevo.
+                        La alimentación es más saludable y nutritiva cuando se incluyen diferentes tipos de alimentos en
+                        cada comida. La alimentación diaria debe incluir: frutas, verduras y hortalizas de diferentes
+                        colores, leguminosas (frijol, lenteja, garbanzo), cereales integrales, nueces, lácteos bajos en
+                        grasa, carne magra, pescado y huevo.
                         <br><br>
-                        
+
                         2. Disminuya el consumo de grasas saturadas y evite las comidas rápidas
-                        El consumo habitual de grasas saturadas es perjudicial para la salud. Estas se encuentran en la  manteca, mantequilla y carnes rojas. Están contenidas en productos de pastelería, galletas y postres. El consumo frecuente de comidas rápidas también afecta su salud; los alimentos como pizza, hamburguesas, papas fritas, empanadas y pollo frito son altamente calóricos, abundantes en grasa y pobres en nutrientes y fibra.
+                        El consumo habitual de grasas saturadas es perjudicial para la salud. Estas se encuentran en la
+                        manteca, mantequilla y carnes rojas. Están contenidas en productos de pastelería, galletas y
+                        postres. El consumo frecuente de comidas rápidas también afecta su salud; los alimentos como
+                        pizza, hamburguesas, papas fritas, empanadas y pollo frito son altamente calóricos, abundantes
+                        en grasa y pobres en nutrientes y fibra.
                         <br><br>
                         3. Aumente el consumo de frutas y de verduras. Son "5 al día"​
-                        Consumir 3 frutas y 2 verduras de diferentes colores diariamente, mejora su salud y su nutrición. Las frutas (mango, papaya, guayaba, melón, naranja, durazno), aportan vitaminas A y C, necesarias para el sistema inmunológico, y para la visión. También aportan fibra natural, necesaria en la digestión. Las verduras son ricas en vitaminas y algunos minerales indispensables para activar la mente, proteger el corazón, mantener el rendimiento físico y el sistema nervioso. Se recomienda consumir verduras de hoja verde (espinaca, acelga, brócoli) y  de color amarillo (ahuyama, zanahoria, calabacín); también anaranjadas, violetas, blancas, y rojas.</p>
+                        Consumir 3 frutas y 2 verduras de diferentes colores diariamente, mejora su salud y su
+                        nutrición. Las frutas (mango, papaya, guayaba, melón, naranja, durazno), aportan vitaminas A y
+                        C, necesarias para el sistema inmunológico, y para la visión. También aportan fibra natural,
+                        necesaria en la digestión. Las verduras son ricas en vitaminas y algunos minerales
+                        indispensables para activar la mente, proteger el corazón, mantener el rendimiento físico y el
+                        sistema nervioso. Se recomienda consumir verduras de hoja verde (espinaca, acelga, brócoli) y de
+                        color amarillo (ahuyama, zanahoria, calabacín); también anaranjadas, violetas, blancas, y rojas.
+                    </p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
@@ -203,15 +231,12 @@
             </div>
         </div>
     </div>
-
-
     <!-- fin Contenido -->
 
 
     <!-- footer -->
     <footer>
-        &copy; CSS - CodeSoft Solutions Desarrolladores <br> Miguel Angel Cerquera Rodriguez - Cristian Andres Gomez Monsalve - Natalia Ortiz Maldonado - Johan Stiven Quiroga - Edson Daniel Suarez Hernandez
-        <p>11/05/2021</p>
+        &copy; CSS - CodeSoft Solutions Desarrolladores <br> 19/05/2021        
     </footer>
     <!-- fin footer -->
 

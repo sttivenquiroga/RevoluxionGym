@@ -4,6 +4,30 @@
     font-family: 'Roboto', sans-serif;
 }
 
+nav{
+    display: flex;
+    align-items: center;
+}
+.header{
+    background-color: #2d132c;
+    color: white;
+}
+.contLogo{
+    margin: 0px 20px;
+}
+.contLogo img{
+    width: 80px;
+}
+
+.botones{
+    display: flex;
+}
+
+main{
+    margin-top: 4.2%;
+}
+
+
 .banner{
     background-image: url(../img/comida-saludable.jpg);    
     background-size: cover;    
@@ -14,15 +38,13 @@
 }
 
 h1{
-    font-family: 'Monoton', cursive;
-    /* color: #FDF387;         */
+    font-family: 'Monoton', cursive;    
     color: rgb(238, 96, 64);
 }
 
 .contenido{
-    background-color: #801336;    
-    
-    
+    background-color: #801336;
+    padding-top: 30px;
 }
 
 .contenedorTitulo{
@@ -41,13 +63,11 @@ h1{
     background-color: rgb(199, 44, 65, .3);
 }
 
-
-
 footer{
     background-color: #2d132c;
     color: white;
     text-align: center;
-    padding: 20px 100px;
+    padding: 5px 100px;
     font-size: 20px;
 }
 
