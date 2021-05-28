@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/styleRutinas.css">
+    <title>Rutinas: brazos</title>
+</head>
+<body>
+    <!-- Inicio nav -->
+    <header class="header fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <div class="contLogo">
+            <img src="../../assets/img/logo.png" alt="" />
+          </div>
+          <div class="container-fluid menu">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="../../index.html"
+                    >Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../nutricion.html">Nutrición</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../../index.html">Planes</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../../index.html">Noticias</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./rutinas.html">Rutinas</a>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#iniciarSesion">
+                    Inicia sesión
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registrarse">
+                        Registrate
+                    </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+    </header>
+    <!-- Fin nav -->
+    <!-- Inicio triceps -->
+    <div id="triceps" class="triceps">
+        <h2>Sección de brazos: Triceps</h2>
+        <div class="row m-3">
+            <div class="col-lg-6">
+                <img src="../../assets/img/Rutinas/Brazos/Triceps/fondostricepsMen.webp" alt="">
+            </div>
+            <div class="col-lg-6">
+                <h3>Fondo de triceps</h3>
+                <p>
+                    Los dips o fondos de tríceps son uno de los ejercicios más efectivos para aumentar masa muscular del trícpes. 
+                    Usaremos nuestro peso corporal para que cuánto más trabaje el músculo más fibras musculares se recluten, 
+                    y ese es el objetivo que buscamos.
+                </p>
+                <h3>Rutina</h3>
+                <ul>
+                    <li>Dias de la semana: Lunes, Jueves, Domingo</li>
+                    <li>Repeticiones nivel principiante: 3 series de 10</li>
+                    <li>Repeticiones nivel medio: 3 series de 15</li>
+                    <li>Repeticiones nivel avanzado: 3 series de 25</li>
+                </ul>
+                <p>
+                    Para más ejercicios, rutinas standars o personalizadas debes registrarte y loguiarte en la parte de arriba podras encontrar esas opciones.
+                </p>
+            </div>
+            <div class="col-lg-6">
+                <img src="../../assets/img/Rutinas/Brazos/Triceps/fondostricepsWomen.jpg" alt="">
+            </div>
+            <div class="col-lg-6">
+                
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <a href="../rutinas/brazos.html" class="btn btn-dark text-light quitarwidth">Ir a brazos</a>
+        </div>
+    </div>
+    <!-- Fin triceps -->
+    <!-- Inicio footer -->
+    <footer class="text-center">
+        &copy; CSS- CodeSoft Solutions <br> Miguel Angel Cerquera Rodriguez - Cristian Andres Gomez - Natalia Ortiz Maldonado - Johan Stiven Quiroga - Edson Daniel Suarez
+    </footer>
+    <!-- Fin footer -->
+    <!-- Inicio sesión Form -->
+    <div class="modal fade" id="iniciarSesion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+          <!-- <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5> -->
+          <h2>RevoluxionGym</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <main class="form-signin">
+                  <form>
+                    
+                    <h3 class="h3 mb-3 fw-normal">Iniciar sesión</h2>
+                
+                    <div class="form-floating">
+                      <input type="email" class="form-control" id="mailIniciarSesion" placeholder="name@example.com">
+                      <label for="mailIniciarSesion">Email</label>
+                    </div>
+                    <div class="form-floating">
+                      <input type="password" class="form-control" id="passwordIniciarSesion" placeholder="Contraseña">
+                      <label for="passwordIniciarSesion">Contraseña</label>
+                    </div>
+                
+                    <div class="checkbox mb-3">
+                      <label>
+                        <input type="checkbox" value="remember-me"> Recordar credenciales
+                      </label>
+                    </div>
+                    <button class="w-100 btn btn-lg btn-primary" type="submit" >Iniciar sesión</button>
+                    <p class="mt-5 mb-3 text-muted">
+                        <a href="" class="link-secondary"  data-bs-target="#restablecerPassword" data-bs-toggle="modal" data-bs-dismiss="modal">Olvidé mi contraseña</a>
+                    </p>
+                  </form>
+                </main>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-target="#registrarse" data-bs-toggle="modal" data-bs-dismiss="modal">Crear cuenta</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+      </div>
+      </div>
+  </div>
+
+  <!-- Olvido Contraseña Form -->
+  <div class="modal fade" id="restablecerPassword" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+          <!-- <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5> -->
+          <h2>RevoluxionGym</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <main class="form-signin">
+                  <form>
+                      <h3 class="h3 mb-3 fw-normal">Restablecer contraseña</h2>
+                      <div class="form-floating">
+                          <input type="email" class="form-control" id="mailRestablecerPassword" placeholder="name@example.com">
+                          <label for="mailRestablecerPassword">Email</label>
+                      </div>
+                      <p class="mt-5 mb-3 text-muted">
+                          Te enviaremos un mail con las instrucciones
+                      </p>
+                      <button class="w-100 btn btn-lg btn-primary" type="submit" >Restablecer</button>
+                      
+                  </form>
+                </main>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-target="#iniciarSesion" data-bs-toggle="modal" data-bs-dismiss="modal">Iniciar sesión</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+      </div>
+      </div>
+  </div>
+  
+  <!-- Registrate Form -->
+  <div class="modal fade" id="registrarse" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+          <!-- <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5> -->
+          <h2>RevoluxionGym</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <main class="form-signin">
+                  <form>
+                      <h3 class="h3 mb-3 fw-normal">Regístrate</h2>
+                  
+                      <div class="form-floating">
+                          <input type="text" class="form-control" id="nameInput" placeholder="Nombre">
+                          <label for="nameInput">Nombre</label>
+                      </div>
+                      <div class="form-floating">
+                          <input type="text" class="form-control" id="lastNameInput" placeholder="Apellido">
+                          <label for="lastNameInput">Apellido</label>
+                      </div>
+                      <div class="input-group">
+                          <select class="form-select" id="inputGroupSelect02">
+                              <option selected>Tipo</option>
+                              <option value="1">C.C.</option>
+                              <option value="2">T.I.</option>
+                              <option value="3">C.E.</option>
+                              <option value="3">PSP</option>
+                          </select>
+                          <div class="form-floating">
+                              <input type="text" class="form-control" id="idInput" placeholder="Apellido">
+                              <label for="idInput">Documento</label>
+                          </div>
+                      </div>
+                      <div class="form-floating">
+                          <input type="text" class="form-control" id="phoneInput" placeholder="XXX-XXX-XXX">
+                          <label for="phoneInput">Teléfono</label>
+                      </div>
+                      <div class="form-floating">
+                          <input type="email" class="form-control" id="mailInput" placeholder="name@example.com">
+                          <label for="mailInput">Email</label>
+                      </div>
+                      <div class="form-floating">
+                          <input type="password" class="form-control" id="passwordInput" placeholder="Contraseña">
+                          <label for="passwordInput">Contraseña</label>
+                      </div>
+                  
+                      <div class="checkbox mb-3">
+                          <label>
+                          <input type="checkbox" value="remember-me"> Acepto T&C
+                          </label>
+                          <label>
+                              <input type="checkbox" value="remember-me"> Acepto tratamiento de datos
+                          </label>
+                      </div>
+                      <button class="w-100 btn btn-lg btn-primary" type="submit">Registrarme</button>
+                  </form>
+                </main>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-target="#iniciarSesion" data-bs-toggle="modal" data-bs-dismiss="modal">Iniciar sesión</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+      </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>

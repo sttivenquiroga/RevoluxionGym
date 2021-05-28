@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-family: 'Monoton', cursive;
+}
+
+.header {
+    background-color: #2d132c;
+    color: white;
+}
+
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+.contLogo {
+    margin: 0px 80px;
+}
+
+.contLogo img{
+    width: 80px;
+}
+
+.btn-primary {
+    background-color: #801336;
+    border-color: #801336;
+    margin: 0 10px;
+}
+
+.btn-primary:hover {
+    background-color: #ee4540;
+    border-color: #ee4540;
+}
+
+.btn-primary:active, .btn-primary:focus {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.rutinas {
+    text-align: center;
+    padding: 20px;
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.rutinas h2 {
+    font-size: 50px;
+    color: #2d132c;
+}
+
+.rutinas p {
+    text-align: justify;
+    color: #2d132c;
+}
+
+.rutinas .row .card {
+    padding: 10px;
+    border-radius: 40px;
+    align-items: center;
+}
+
+.rutinas .row .card img {
+    width: 250px;
+    height: 210px;
+    border-radius: 20px;
+}
+
+.rutinas .row .card p {
+    text-align: justify;
+    color: black;
+}
+
+.rutinas .row .card .card-body h5 {
+    color: #c72c41;
+}
+
+.piernas {
+    text-align: center;
+    padding: 20px;
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.piernas .row .card {
+    padding: 10px;
+    border-radius: 40px;
+    align-items: center;
+}
+
+.piernas .row .card img {
+    width: 250px;
+    height: 210px;
+    border-radius: 20px;
+}
+
+.brazos {
+    text-align: center;
+    padding: 20px;
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.brazos .row .card {
+    padding: 10px;
+    border-radius: 40px;
+    align-items: center;
+}
+
+.brazos .row .card img {
+    width: 250px;
+    height: 210px;
+    border-radius: 20px;
+}
+
+.tronco {
+    text-align: center;
+    padding: 20px;
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.tronco .row .card {
+    padding: 10px;
+    border-radius: 40px;
+    align-items: center;
+}
+
+.tronco .row .card img {
+    width: 250px;
+    height: 210px;
+    border-radius: 20px;
+}
+
+.cuadriceps {
+    text-align: center;
+    padding: 20px;
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.cuadriceps .row img {
+    max-width: 310px;
+}
+
+.cuadriceps .row p {
+    text-align: justify;
+}
+
+.gluteos {
+    text-align: center;
+    padding: 20px;
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.gluteos .row img {
+    max-width: 310px;
+}
+
+.gluteos .row p {
+    text-align: justify;
+}
+
+.gluteos {
+    text-align: center;
+    padding: 20px;
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.gluteos .row img {
+    max-width: 310px;
+}
+
+.gluteos .row p {
+    text-align: justify;
+}
+
+.pantorrilla {
+    text-align: center;
+    padding: 20px;
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.pantorrilla .row img {
+    max-width: 310px;
+}
+
+.pantorrilla .row p {
+    text-align: justify;
+}
+
+.hombros {
+    text-align: center;
+    padding: 20px;
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.hombros .row img {
+    max-width: 310px;
+}
+
+.hombros .row p {
+    text-align: justify;
+}
+
+.biceps {
+    text-align: center;
+    padding: 20px;
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.biceps .row img {
+    max-width: 310px;
+}
+
+.biceps .row p {
+    text-align: justify;
+}
+
+.triceps {
+    text-align: center;
+    padding: 20px;
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.triceps .row img {
+    max-width: 310px;
+}
+
+.triceps .row p {
+    text-align: justify;
+}
+
+.antebrazo {
+    text-align: center;
+    padding: 20px;
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.antebrazo .row img {
+    max-width: 310px;
+}
+
+.antebrazo .row p {
+    text-align: justify;
+}
+
+.pectoral {
+    text-align: center;
+    padding: 20px;
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.pectoral .row img {
+    max-width: 310px;
+}
+
+.pectoral .row p {
+    text-align: justify;
+}
+
+.espalda {
+    text-align: center;
+    padding: 20px;
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.espalda .row img {
+    max-width: 310px;
+}
+
+.espalda .row p {
+    text-align: justify;
+}
+
+.abdominales {
+    text-align: center;
+    padding: 20px;
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.abdominales .row img {
+    max-width: 310px;
+}
+
+.abdominales .row p {
+    text-align: justify;
+}
+
+.quitarwidth {
+    width: unset;
+}
+
+footer {
+    background-color: #2d132c;
+    color: white;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    position: fixed;
+}
