@@ -24,8 +24,9 @@ p{
     margin-right: auto;
     margin-left: auto;
     background-image: url(../img/bground.jpg);
-    height: 500px;
-    width: 1250px;
+    height: 600px;
+    width: 100%;
+    background-size: cover;
     font-family: 'Monoton', cursive;
     color: #c72c41;
     align-items: center;
