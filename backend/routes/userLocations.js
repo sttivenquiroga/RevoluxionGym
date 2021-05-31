@@ -41,7 +41,7 @@ router.post("/viewUserLocations", Auth, async(req, res)=>{
 
 
 // editar usuarios x sede - URL: http://localhost:3001/api/userLocations/uploadUserLocations
-router.post("/uploadUserLocations", Auth, async(req, res)=>{
+router.put("/uploadUserLocations", Auth, async(req, res)=>{
 
     const user = await User.findById(req.user._id)
     if(!user) return res.status(401).send("Usuario no autenticado");
@@ -61,7 +61,7 @@ router.post("/uploadUserLocations", Auth, async(req, res)=>{
 
 
 // eliminar usuarios x sede - URL: http://localhost:3001/api/userLocations/:_id
-router.post("/:_id", Auth, async(req, res)=>{
+router.delete("/:_id", Auth, async(req, res)=>{
 
     const user = await User.findById(req.user._id)
     if(!user) return res.status(401).send("Usuario no autenticado");

@@ -28,7 +28,7 @@ router.post("/addWeekRoutines", Auth, async(req, res)=>{
 
 
 // ver rutinas de un usuario - URL: http://localhost:3001/api/weekRoutines/viewWeekRoutines
-router.post("/viewWeekRoutines", Auth, async(req, res)=>{
+router.get("/viewWeekRoutines", Auth, async(req, res)=>{
 
     const user = await User.findById(req.user._id)
     if(!user) return res.status(401).send("Usuario no autenticado");    
@@ -41,7 +41,7 @@ router.post("/viewWeekRoutines", Auth, async(req, res)=>{
 
 
 // editar rutinas - URL: http://localhost:3001/api/weekRoutines/uploadWeekRoutines
-router.post("/uploadWeekRoutines", Auth, async(req, res)=>{
+router.put("/uploadWeekRoutines", Auth, async(req, res)=>{
 
     const user = await User.findById(req.user._id)
     if(!user) return res.status(401).send("Usuario no autenticado");
