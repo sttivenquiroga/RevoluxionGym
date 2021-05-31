@@ -12,6 +12,9 @@ router.post("/addWeekRoutines", Auth, async(req, res)=>{
     const user = await User.findById(req.user._id)
     if(!user) return res.status(401).send("Usuario no autenticado");
 
+    if(Object.keys(req.body).length === 0) return res.status(401).send("No vienen campos");
+    if(!req.body.userId || !req.body.exerciseId || !req.body.note) return res.status(401).send("Faltan campos");
+
     const weekRoutines = new WeekRoutines({
         userId: req.body.userId,
         exerciseId: req.body.exerciseId,
@@ -42,6 +45,9 @@ router.post("/uploadWeekRoutines", Auth, async(req, res)=>{
 
     const user = await User.findById(req.user._id)
     if(!user) return res.status(401).send("Usuario no autenticado");
+
+    if(Object.keys(req.body).length === 0) return res.status(401).send("No vienen campos");
+    if(!req.body.userId || !req.body.exerciseId || !req.body.note) return res.status(401).send("Faltan campos");
 
     const weekRoutines = await WeekRoutines.findByIdAndUpdate(req.body._id,{
         userId: req.body.userId,
