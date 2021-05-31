@@ -29,7 +29,7 @@ router.post("/registerNutritionPlan", Auth, async (req, res) => {
 });
 
 router.get("/listNutritionPlan", Auth, async (req, res) => {
-  verificateUser(req, res);
+  await verificateUser(req, res);
   const nutritionPlan = await NutritionPlan.find({ user_id: req.user._id });
   if (!nutritionPlan)
     return res
