@@ -33,7 +33,7 @@ router.put("/updateTypeExercise", Auth, async (req, res) => {
     status: req.body.status
   });
   if (!typeExercise) return res.status(401).send("No se pudo editar el tipo ejercicio");
-  return res.status(200).send({ TypeExercise });
+  return res.status(200).send({ typeExercise });
 });
 
 // Eliminar tipo de ejercicio
