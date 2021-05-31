@@ -13,7 +13,7 @@ const auth = (req, res, next) => {
     // Validamos que sea un token nuestro
     try {
         // Revisamos palabra secreta del payload
-        const payload = jwt.verify(jwtToken, "CssRG28052021");
+        const payload = jwt.verify(jwtToken, "CodeSoftSTk");
         req.user = payload;
         next();
     } catch (error) {
