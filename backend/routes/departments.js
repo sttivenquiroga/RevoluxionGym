@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Departments = require("../models/departments");
+const User = require("../models/user");
 const Auth = require("../middleware/auth");
 const validateDepartment = require("../middleware/departments");
 

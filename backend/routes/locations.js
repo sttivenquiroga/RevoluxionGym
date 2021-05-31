@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Locations = require("../models/locations");
 const Cities = require("../models/cities");
+const User = require("../models/user");
 const Auth = require("../middleware/auth");
 const validateLocation = require("../middleware/locations");
 
