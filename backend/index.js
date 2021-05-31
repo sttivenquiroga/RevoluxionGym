@@ -4,14 +4,18 @@ const mongoose = require("mongoose");
 
 // Importamos rutas
 //const Auth = require("./routes/auth");
-
+const Exercise = require("./routes/exercise");
+const TypeExercise = require("./routes/typeExercise");
+const TypeMuscle = require("./routes/typeMuscle");
 // Variable app la cual ejecutara nuestra aplicación
 const app = express();
 
 // En la aplicación api usaremos jsons para la comunicación
 app.use(express.json());
 //app.use("/api/auth/", Auth);
-
+app.use("/api/exercise/", Exercise);
+app.use("/api/typeMuscle/", TypeMuscle);
+app.use("/api/typeExercise/", TypeExercise);
 // Tipos de puerto que tiene nuestra aplicacion ( Left: Hosting and Right: Local )
 const port = process.env.PORT || 3001;
 
