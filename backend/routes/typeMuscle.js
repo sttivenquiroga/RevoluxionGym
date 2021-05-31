@@ -10,7 +10,6 @@ router.post("/saveTypeMuscle", Auth, async (req, res) => {
   if (!user) return res.status(401).send("Usuario no autenticado");
   const typeMuscle = new TypeMuscle({
     typeMuscle: req.body.typeMuscle,
-    status: req.body.status,
   });
   const result = await typeMuscle.save();
   return res.status(200).send({ result });

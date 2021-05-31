@@ -14,7 +14,6 @@ router.post("/saveExercise", Auth, async (req, res) => {
     exercise: req.body.exercise,
     description: req.body.description,
     img: req.body.img,
-    status: req.body.status
   });
   const result = await exercise.save();
   return res.status(200).send({ result });

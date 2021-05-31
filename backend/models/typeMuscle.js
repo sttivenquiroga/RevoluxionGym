@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 // Schema of exercise
 const typeMuscleSchema = new mongoose.Schema({
   typeMuscle: String,
-  status: Boolean
+  status: {type:Boolean, default: true}
 });
 
 const TypeMuscle = mongoose.model("typeMuscle", typeMuscleSchema);

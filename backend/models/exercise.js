@@ -8,7 +8,7 @@ const exerciseSchema = new mongoose.Schema({
   exercise: String,
   description: String,
   img: String,
-  status: Boolean,
+  status: {type:Boolean, default: true},
 });
 
 const Exercise = mongoose.model("exercise", exerciseSchema);

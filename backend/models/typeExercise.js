@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 // Schema of exercise
 const typeExerciseSchema = new mongoose.Schema({
   typeExercise: String,
-  status: Boolean
+  status: {type:Boolean, default: true}
 });
 
 const TypeExercise = mongoose.model("typeExercise", typeExerciseSchema);

@@ -10,7 +10,6 @@ router.post("/saveTypeExercise", Auth, async (req, res) => {
   if (!user) return res.status(401).send("Usuario no autenticado");
   const typeExercise = new TypeExercise({
     typeExercise: req.body.typeExercise,
-    status: req.body.status
   });
   const result = await typeExercise.save();
   return res.status(200).send({ result });
