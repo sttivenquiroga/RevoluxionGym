@@ -4,7 +4,7 @@ const router = express.Router();
 // import de modelos 
 const WeekRoutines = require("../models/weekRoutines");
 const User = require("../models/user");
-// const Exercise = require("../models/exercise")
+const Auth = require("../middleware/auth");
 
 // agregar rutina - URL: http://localhost:3001/api/weekRoutines/addWeekRoutines
 router.post("/addWeekRoutines", Auth, async(req, res)=>{
@@ -32,11 +32,12 @@ router.get("/viewWeekRoutines", Auth, async(req, res)=>{
 
     const user = await User.findById(req.user._id)
     if(!user) return res.status(401).send("Usuario no autenticado");    
-
-    const weekRoutines = await WeekRoutines.find({userId: user._id})
-    if(!weekRoutines) return res.status(401).send("No se encontraron resultados")
+        
+    const weekRoutines = await WeekRoutines.find({userId: user._id});
+    if(!weekRoutines) return res.status(401).send("No se encontraron resultados");
 
     return res.status(200).send({weekRoutines});
+    
 })
 
 
@@ -52,7 +53,8 @@ router.put("/uploadWeekRoutines", Auth, async(req, res)=>{
     const weekRoutines = await WeekRoutines.findByIdAndUpdate(req.body._id,{
         userId: req.body.userId,
         exerciseId: req.body.exerciseId,
-        note: req.body.note 
+        note: req.body.note,
+        status: req.body.status 
     })
 
     if(!weekRoutines) return res.status(401).send("No se pudo editar la rutina")

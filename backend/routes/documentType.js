@@ -2,11 +2,11 @@ const express = require("express");
 const router = express.Router();
 const DocumentType = require("../models/documentType");
 
-// aun no esta 
 const User = require("../models/user");
+const Auth = require("../middleware/auth");
 
 
-// añadir tipo de documento - URL: http://localhost:3001/api/documentType/addDocumenType
+// añadir tipo de documento - URL: http://localhost:3001/api/documentType/addDocumentType
 router.post("/addDocumentType", Auth, async(req, res)=>{
 
     const user = await User.findById(req.user._id)
@@ -26,7 +26,7 @@ router.post("/addDocumentType", Auth, async(req, res)=>{
 })
 
 
-// ver Tipo de documentso - URL: http://localhost:3001/api/documentType/viewDocumenType
+// ver Tipo de documentso - URL: http://localhost:3001/api/documentType/viewDocumentType
 router.get("/viewDocumentType", Auth, async(req, res)=>{
 
     const user = await User.findById(req.user._id)
@@ -45,10 +45,11 @@ router.put("/updateDocumentType", Auth, async(req, res)=>{
     if(!user) return res.status(401).send("Usuario no autenticado");
 
     if(Object.keys(req.body).length === 0) return res.status(401).send("No vienen campos");
-    if(!req.body.documentType) return res.status(401).send("Faltan campos");
+    if(!req.body.documentType || !req.body.status) return res.status(401).send("Faltan campos");
 
     const documentType = await DocumentType.findByIdAndUpdate(req.body._id, {
-        documentType: req.body.documentType
+        documentType: req.body.documentType,
+        status: req.body.status
     });
     if(!documentType) return res.status(401).send("No se pudo editar el documento")
     return res.status(200).send({documentType})

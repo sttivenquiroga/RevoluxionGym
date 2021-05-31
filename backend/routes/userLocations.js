@@ -4,7 +4,7 @@ const router = express.Router();
 // modelos 
 const UserLocations = require("../models/userLocations");
 const User = require("../models/user");
-const { findByIdAndRemove } = require("../models/userLocations");
+const Auth = require("../middleware/auth");
 
 
 // agregar usuarios x sede - URL: http://localhost:3001/api/userLocations/addUserLocations
@@ -51,7 +51,8 @@ router.put("/uploadUserLocations", Auth, async(req, res)=>{
 
     const userLocations = await UserLocations.findByIdAndUpdate(req.body._id,{
         userId: req.body.userId,
-        locationId: req.body.locationId
+        locationId: req.body.locationId,
+        status: req.body.status
     })
 
     if(!userLocations) return res.status(401).send("No se pudo editar")
@@ -66,7 +67,7 @@ router.delete("/:_id", Auth, async(req, res)=>{
     const user = await User.findById(req.user._id)
     if(!user) return res.status(401).send("Usuario no autenticado");
 
-    const userLocations = await findByIdAndRemove(req.params._id);
+    const userLocations = await UserLocations.findOneAndRemove(req.params._id);
     if(!userLocations) return res.status(401).send("No se pudo eliminar");
     return res.status(200).send("Eliminado correctamente");
 
