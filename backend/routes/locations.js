@@ -2,8 +2,9 @@ const express = require("express");
 const router = express.Router();
 const Locations = require("../models/locations");
 const Cities = require("../models/cities");
+const validateLocation = require("../middleware/locations");
 
-router.post("/createLocation", async(req,res) => {
+router.post("/createLocation", validateLocation, async(req,res) => {
     const location = await Locations.findOne({location: req.body.location});
     if (location) res.status(401).send("La sede ya existe");
     const locations = new Locations({
@@ -30,7 +31,7 @@ router.get("/getCityLocations", async(req,res) => {
     return res.status(200).send({locations})
 })
 
-router.put("/editLocation", async(req, res) => {
+router.put("/editLocation", validateLocation, async(req, res) => {
     const location = await Locations.findByIdAndUpdate(req.body._id, {
         city_id: req.body.city_id,
         location: req.body.location,

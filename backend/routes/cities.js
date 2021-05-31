@@ -2,8 +2,10 @@ const express = require("express");
 const router = express.Router();
 const Cities = require("../models/cities");
 const Departments = require("../models/departments");
+const Auth = require("../middleware/auth");
+const validateCity = require("../middleware/cities");
 
-router.post("/createCity", async(req, res) => {
+router.post("/createCity", validateCity, async(req, res) => {
     const city = await Cities.findOne({city: req.body.city});
     if (city) return res.status(401).send("La ciudad ya existe");
     const cities = new Cities({
@@ -27,7 +29,7 @@ router.get("/getDeptCities", async(req, res) => {
     return res.status(200).send({cities})
 })
 
-router.put("/editCity", async(req, res) => {
+router.put("/editCity", validateCity, async(req, res) => {
     const city = await Cities.findByIdAndUpdate(req.body._id, {
         department_id: req.body.department_id,
         city: req.body.city,

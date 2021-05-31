@@ -2,8 +2,9 @@ const express = require("express");
 const router = express.Router();
 const Departments = require("../models/departments");
 const Auth = require("../middleware/auth");
+const validateDepartment = require("../middleware/departments");
 
-router.post("/createDepartment", async(req, res) => {
+router.post("/createDepartment", validateDepartment, async(req, res) => {
     const department = await Departments.findOne({department: req.body.department})
     if(department) return res.status(401).send("El departamento ya existe");
     const departments = new Departments ({
@@ -19,7 +20,7 @@ router.get("/getDepartments", async(req, res) => {
     return res.status(200).send({departments});
 })
 
-router.put("/editDepartment", async(req, res) => {
+router.put("/editDepartment", validateDepartment, async(req, res) => {
     const dpt = await Departments.findByIdAndUpdate(req.body._id, {
         department: req.body.department,
         status: req.body.status
