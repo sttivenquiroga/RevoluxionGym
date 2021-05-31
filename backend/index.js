@@ -5,8 +5,6 @@ const User = require("./routes/user");
 const NutritionPlan = require("./routes/nutritionPlans");
 
 // Importamos rutas
-const Auth = require("./routes/auth");
-
 const Departments = require("./routes/departments");
 const Cities = require("./routes/cities");
 const Locations = require("./routes/locations")
