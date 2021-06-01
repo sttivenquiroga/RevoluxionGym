@@ -6,14 +6,8 @@ const Auth = require("../middleware/auth");
 
 router.post("/registerNutritionPlan", Auth, async (req, res) => {
   verificateUser(req, res);
-  if (!req.body) {
-    return res.status(401).send("No hay datos para guardar");
-  } else {
-    if (!req.body.nutritionPlan)
-      return res.status(401).send("No se ingresó un nombre de plan");
-    if (!req.body.description)
-      return res.status(401).send("No se ingresó una descripción");
-  }
+  if (!req.body.nutritionPlan || !req.body.description)
+    return res.status(401).send("Incomplet Data");
   const nutritionPlan = new NutritionPlan({
     user_id: req.user._id,
     nutritionPlan: req.body.nutritionPlan,
@@ -40,16 +34,8 @@ router.get("/listNutritionPlan", Auth, async (req, res) => {
 
 router.put("/updateNutritionPlan", Auth, async (req, res) => {
   verificateUser(req, res);
-  if (!req.body) {
-    return res.status(401).send("No hay datos para guardar");
-  } else {
-    if (!req.body.nutritionPlan)
-      return res.status(401).send("No se ingresó un nombre de plan");
-    if (!req.body.description)
-      return res.status(401).send("No se ingresó una descripción");
-    if (!req.body.status)
-      return res.status(401).send("No se ingrsó un status del plan");
-  }
+  if (!req.body.nutritionPlan || !req.body.description || !req.body.status)
+    return res.status(401).send("Incomplet Data");
   const nutritionPlan = await NutritionPlan.findByIdAndUpdate(req.body._id, {
     user_id: req.user._id,
     nutritionPlan: req.body.nutritionPlan,
