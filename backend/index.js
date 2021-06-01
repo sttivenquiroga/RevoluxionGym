@@ -1,7 +1,8 @@
 const express = require("express");
-const mongoose = require("mongoose");
+const cors = require("cors");
+const { dbConnection } = require("./db/db");
+require("dotenv").config();
 
-// Importamos rutas
 const Auth = require("./routes/auth");
 const User = require("./routes/user");
 const NutritionPlan = require("./routes/nutritionPlans");
@@ -18,11 +19,10 @@ const DocumentType = require("./routes/documentType");
 const WeekRoutines = require("./routes/weekRoutines");
 const UserLocations = require("./routes/userLocations");
 
-// Variable app la cual ejecutara nuestra aplicación
 const app = express();
 
 app.use(express.json());
-
+app.use(cors());
 app.use("/api/documentType/", DocumentType);
 app.use("/api/weekRoutines/", WeekRoutines);
 app.use("/api/userLocations/", UserLocations);
@@ -40,19 +40,8 @@ app.use("/api/plan/", Plan);
 app.use("/api/rol/", Rol);
 app.use("/api/statusPayment/", StatusPayment);
 
-
-// Tipos de puerto que tiene nuestra aplicacion ( Left: Hosting and Right: Local )
-const port = process.env.PORT || 3001;
-
-app.listen(port, () =>
-    console.log("Servidor API habilitado en el port: " + port)
+app.listen(process.env.PORT, () =>
+  console.log("Backend server running on port: " + process.env.PORT)
 );
 
-mongoose.connect("mongodb://localhost:27017/revoluxiongymdb", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true,
-})
-.then(() => console.log("Conexion con MongoDB successful"))
-.catch((err) => console.log("Conexion con MongoDB no exitosa error: " + err));
+dbConnection();
