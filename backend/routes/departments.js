@@ -1,47 +1,47 @@
 const express = require("express");
 const router = express.Router();
 const Departments = require("../models/departments");
-const User = require("../models/user");
 const Auth = require("../middleware/auth");
-const validateDepartment = require("../middleware/departments");
+const UserAuth = require("../middleware/user");
 
-router.post("/createDepartment", Auth, validateDepartment, async(req, res) => {
-    const user = await User.findById(req.user._id);
-    if (!user) return res.status(401).send("Error en usuario");
+router.post("/create", Auth, UserAuth, async(req, res) => {
+    if (!req.body.department)
+        return res.status(401).send("Incomplete data");
     const department = await Departments.findOne({department: req.body.department})
-    if(department) return res.status(401).send("El departamento ya existe");
+    if(department || (department && department.status == false)) 
+        return res.status(401).send("Existent department or Status disabled");
     const departments = new Departments ({
-        department: req.body.department,
-        status: "true"
+        department: req.body.department
     })
     const result = await departments.save();
     return res.status(200).send({result});
 })
 
-router.get("/getDepartments", Auth, async(req, res) => {
-    const user = await User.findById(req.user._id);
-    if (!user) return res.status(401).send("Error en usuario");
+router.get("/get", Auth, UserAuth, async(req, res) => {
     const departments = await Departments.find();
     return res.status(200).send({departments});
 })
 
-router.put("/editDepartment", Auth, validateDepartment, async(req, res) => {
-    const user = await User.findById(req.user._id);
-    if (!user) return res.status(401).send("Error en usuario");
+router.put("/edit", Auth, UserAuth, async(req, res) => {
+    if (!req.body.department)
+        return res.status(401).send("Incomplete data");
     const dpt = await Departments.findByIdAndUpdate(req.body._id, {
         department: req.body.department,
-        status: req.body.status
+        status: true
     })
-    if (!dpt) return res.status(400).send("No existe el departamento");
+    if (!dpt) return res.status(400).send("Error editing department");
     return res.status(200).send({dpt})
 })
 
-router.delete("/:_id", Auth, async(req, res) => {
-    const user = await User.findById(req.user._id);
-    if (!user) return res.status(401).send("Error en usuario");
-    const department = await Departments.findByIdAndDelete(req.params._id);
-    if (!department) return res.status(401).send("No existe el departamento");
-    return res.status(200).send("Departamento eliminado");
+router.put("/delete", Auth, UserAuth, async(req, res) => {
+    if (!req.body.department)
+        return res.status(401).send("Incomplete data");
+    const department = await Departments.findByIdAndUpdate(req.body._id, {
+        department: req.body.department,
+        status: false
+    });
+    if (!department) return res.status(401).send("Error deleting department");
+    return res.status(200).send("Deleted department");
 })
 
 module.exports = router;
