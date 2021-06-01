@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema({
     password: String,
     phone: String,
     date: {type: Date, default: Date.now},
-    status: Boolean,
+    status: {type: Boolean, default: true},
 });
 
 userSchema.methods.generateJWT = function(){

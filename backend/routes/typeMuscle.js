@@ -1,47 +1,55 @@
 const express = require("express");
 const router = express.Router();
 const TypeMuscle = require("../models/typeMuscle");
-const User = require("../models/user");
 const Auth = require("../middleware/auth");
+const UserAuth = require("../middleware/user");
 
-// Save  typeMuscle
-router.post("/saveTypeMuscle", Auth, async (req, res) => {
-  const user = await User.findById(req.user._id);
-  if (!user) return res.status(401).send("Usuario no autenticado");
+// Save  type muscle
+router.post("/create", Auth, UserAuth, async (req, res) => {
+  if (!req.body.typeMuscle)
+    return res.status(401).send("Incomplete data");
+
   const typeMuscle = new TypeMuscle({
     typeMuscle: req.body.typeMuscle,
   });
+
   const result = await typeMuscle.save();
+  if(!result) return res.status(401).send("Error creating type muscle")
   return res.status(200).send({ result });
 });
 
-// Consultar todos los musculos
-router.get("/listTypeMuscle", Auth, async (req, res) => {
-  const user = await User.findById(req.user._id);
-  if (!user) return res.status(401).send("Usuario no autenticado");
+// list type muscle
+router.get("/getAll", Auth, UserAuth, async (req, res) => {
   const typeMuscle = await TypeMuscle.find();
+  if (!typeMuscle) return res.status(401).send("Error fetching type muscles");
   return res.status(200).send({ typeMuscle });
 });
 
-// Editar tipo de musculo
-router.put("/updateTypeMuscle", Auth, async (req, res) => {
-  const user = await User.findById(req.user._id);
-  if (!user) return res.status(401).send("Usuario no autenticado");
+// Edit type muscle
+router.put("/edit", Auth, UserAuth, async (req, res) => {
+  if (!req.body._id || !req.body.typeMuscle)
+    return res.status(401).send("Incomplete data");
+
   const typeMuscle = await TypeMuscle.findByIdAndUpdate(req.body._id, {
     typeMuscle: req.body.typeMuscle,
-    status: req.body.status,
+    status: true,
   });
-  if (!typeMuscle) return res.status(401).send("No se pudo editar el tipo de musculo");
+  if (!typeMuscle) return res.status(401).send("Error updating type muscle");
   return res.status(200).send({ typeMuscle });
 });
 
-// Eliminar tipo de musculo
-router.delete("/:_id", Auth, async (req, res) => {
-  const user = await User.findById(req.user._id);
-  if (!user) return res.status(401).send("Usuario no autenticado");
-  const typeMuscle = await TypeMuscle.findByIdAndDelete(req.params._id);
-  if (!typeMuscle) return res.status(401).send("no se encuentra el tipo de musculo a eliminar");
-  return res.status(200).send({ mensaje: "Tipo de musculo eliminado" });
+// delete type muscle
+router.put("/delete", Auth, UserAuth, async (req, res) => {
+  if (!req.body._id || !req.body.typeMuscle)
+    return res.status(401).send("Incomplete data");
+
+  const typeMuscle = await TypeMuscle.findByIdAndUpdate(req.body._id, {
+    typeMuscle: req.body.typeMuscle,
+    status: false,
+  });
+
+  if (!typeMuscle) return res.status(401).send("Error deleting type muscle");
+  return res.status(200).send("Deleted type muscle");
 });
 
 module.exports = router;

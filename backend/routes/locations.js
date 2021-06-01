@@ -23,11 +23,13 @@ router.post("/create", Auth, UserAuth, async(req,res) => {
         manager_id: req.body.manager_id
     })
     const result = await locations.save();
+    if (!result) return res.status(401).send("Error creating location");
     return res.status(200).send({result});
 });
 
 router.get("/getAll", Auth, UserAuth, async(req, res) => {
     const locations = await Locations.find();
+    if (!locations) return res.status(401).send("Error fecthing locations");
     return res.status(200).send({locations});
 });
 
@@ -35,6 +37,7 @@ router.get("/getByCity", Auth, UserAuth, async(req,res) => {
     const city = await Cities.findById(req.body.city_id);
     if (!city) return res.status(401).send("Error fetching locations");
     const locations = await Locations.find({city_id: req.body.city_id});
+    if (!locations) return res.status(401).send("Error fetching locations");
     return res.status(200).send({locations})
 })
 
