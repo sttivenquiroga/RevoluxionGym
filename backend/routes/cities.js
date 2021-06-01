@@ -16,11 +16,13 @@ router.post("/create", Auth, UserAuth, async(req, res) => {
         city: req.body.city,
     });
     const result = await cities.save();
+    if (!result) return res.status(401).send("Error creating city");
     return res.status(200).send({result});
 });
 
 router.get("/getAll", Auth, UserAuth, async(req, res) => {
     const cities = await Cities.find();
+    if (!cities) return res.status(401).send("Error fetching cities");
     return res.status(200).send({cities})
 });
 
@@ -28,6 +30,7 @@ router.get("/getByDept", Auth, UserAuth, async(req, res) => {
     const department = await Departments.findById(req.body.department_id);
     if (!department) return res.status(401).send("Error fetching cities");
     const cities = await Cities.find({department_id: req.body.department_id});
+    if (!cities) return res.status(401).send("Error fetching cities");
     return res.status(200).send({cities})
 })
 

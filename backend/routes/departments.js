@@ -14,11 +14,13 @@ router.post("/create", Auth, UserAuth, async(req, res) => {
         department: req.body.department
     })
     const result = await departments.save();
+    if (!result) return res.status(401).send("Error creating department");
     return res.status(200).send({result});
 })
 
 router.get("/get", Auth, UserAuth, async(req, res) => {
     const departments = await Departments.find();
+    if (!departments) return res.status(401).send("Error fetching departments");
     return res.status(200).send({departments});
 })
 
