@@ -32,7 +32,7 @@ router.get("/getByDept", Auth, UserAuth, async(req, res) => {
 })
 
 router.put("/edit", Auth, UserAuth, async(req, res) => {
-    if (!req.body.department_id || !req.body.city || !req.body.status)
+    if (!req.body.department_id || !req.body.city)
         return res.status(401).send("Incomplete data");
     const city = await Cities.findByIdAndUpdate(req.body._id, {
         department_id: req.body.department_id,

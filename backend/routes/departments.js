@@ -23,7 +23,7 @@ router.get("/get", Auth, UserAuth, async(req, res) => {
 })
 
 router.put("/edit", Auth, UserAuth, async(req, res) => {
-    if (!req.body.department || !req.body.status)
+    if (!req.body.department)
         return res.status(401).send("Incomplete data");
     const dpt = await Departments.findByIdAndUpdate(req.body._id, {
         department: req.body.department,

@@ -43,8 +43,7 @@ router.put("/edit", Auth, UserAuth, async(req, res) => {
         !req.body.location ||
         !req.body.address ||
         !req.body.phone ||
-        !req.body.manager_id ||
-        !req.body.status)
+        !req.body.manager_id)
         return res.status(401).send("Incomplete data");
     const location = await Locations.findByIdAndUpdate(req.body._id, {
         city_id: req.body.city_id,
@@ -52,7 +51,7 @@ router.put("/edit", Auth, UserAuth, async(req, res) => {
         address: req.body.address,
         phone: req.body.phone,
         manager_id: req.body.manager_id,
-        status: req.body.status
+        status: true
     })
     if (!location) return res.status(401).send("Error updating location");
     return res.status(200).send({location})
