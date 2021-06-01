@@ -5,23 +5,19 @@ const User = require("../models/user");
 const Auth = require("../middleware/auth");
 
 router.post("/registerUser", async (req, res) => {
-  if (!req.body) {
-    return res.status(401).send("Los datos a registrar están incompletos");
-  } else {
-    //if (!req.body.documentType_id)
-    //  return res.status(401).send("Tipo de documento no ingresado");
-    if (!req.body.numberDocument)
-      return res.status(401).send("Número de documento no ingresado");
-    if (!req.body.firstName) return res.status(401).send("Nombre no ingresado");
-    if (!req.body.lastName) return res.status(401).send("Apellido no ingresado");
-    if (!req.body.email)
-      return res.status(401).send("Correo electronico no ingresado");
-    if (!req.body.password) return res.status(401).send("Contraseña no ingresada");
-    if (!req.body.phone) return res.status(401).send("Telefono on ingresado");
-  }
+  if (
+    !req.body.numberDocument ||
+    !req.body.firstName ||
+    !req.body.lastName ||
+    !req.body.email ||
+    !req.body.password ||
+    !req.body.phone
+  )
+    return res.status(401).send("Incomplet Data");
+
   let user = await User.findOne({ user: req.body.user });
   if (user) return res.status(401).send("Usuario ya registrado");
-  user = await User.findOne({ email: req.body.email});
+  user = await User.findOne({ email: req.body.email });
   if (user) return res.status(401).send("Correo ya registrado");
   const hass = await bcrypt.hash(req.body.password, 10);
   const data = new User({
