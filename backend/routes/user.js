@@ -7,6 +7,8 @@ const UserAuth = require("../middleware/user");
 
 router.post("/registerUser", async (req, res) => {
   if (
+    !req.body.rol ||
+    !req.body.documentType_id ||
     !req.body.numberDocument ||
     !req.body.firstName ||
     !req.body.lastName ||
@@ -21,8 +23,8 @@ router.post("/registerUser", async (req, res) => {
   if (user) return res.status(401).send("Email is registered");
   const hash = await bcrypt.hash(req.body.password, 10);
   const data = new User({
-    rol: "user",
-    documentType_id: "CC",
+    rol: req.body.rol,
+    documentType_id: req.body.documentType_id,
     numberDocument: req.body.numberDocument,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
