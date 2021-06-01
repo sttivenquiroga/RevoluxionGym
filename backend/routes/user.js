@@ -49,32 +49,6 @@ router.get("/findUser", Auth, UserAuth, async (req, res) => {
   return res.status(200).send({ user });
 });
 
-<<<<<<< HEAD
-router.put("/updateUser", Auth, async (req, res) => {
-  await validateUser(req, res);
-  if (!req.body) {
-    return res.status(401).send("Los datos a registrar están incompletos");
-  } else {
-    //if (!req.body.documentType_id)
-    //  return res.status(401).send("Tipo de documento no ingresado");
-    if (!req.body.numberDocument)
-      return res.status(401).send("Número de documento no ingresado");
-    if (!req.body.firstName) return res.status(401).send("Nombre no ingresado");
-    if (!req.body.lastName)
-      return res.status(401).send("Apellido no ingresado");
-    if (!req.body.email)
-      return res.status(401).send("Correo electronico no ingresado");
-    if (!req.body.password)
-      return res.status(401).send("Contraseña no ingresada");
-    if (!req.body.phone) return res.status(401).send("Telefono on ingresado");
-  }
-  let verUser = await User.findOne({ user: req.body.user });
-  if (verUser && verUser.user != req.body.user)
-    return res.status(401).send("Nombre de usuario no disponible");
-  verUser = await User.findOne({ email: req.body.email });
-  if (verUser && verUser.email != req.body.email)
-    return res.status(401).send("Correo electronico ya registrado");
-=======
 router.put("/updateUser", Auth, UserAuth, async (req, res) => {
   if (
     !req.body.rol ||
@@ -93,7 +67,6 @@ router.put("/updateUser", Auth, UserAuth, async (req, res) => {
   verUser = await User.findOne({ email: req.body.email });
   if (verUser && verUser.email != req.body.email)
     return res.status(401).send("Email is registered");
->>>>>>> main
   let hash = await bcrypt.compare(req.body.password, verUser.password);
   if (hash) {
     hash = verUser.password;
@@ -101,13 +74,8 @@ router.put("/updateUser", Auth, UserAuth, async (req, res) => {
     hash = await bcrypt.hash(req.body.password, 10);
   }
   const user = await User.findByIdAndUpdate(req.body._id, {
-<<<<<<< HEAD
-    rol: "user",
-    documentType_id: "CC",
-=======
     rol: req.body.rol,
     documentType_id: req.body.documentType_id,
->>>>>>> main
     numberDocument: req.body.numberDocument,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
@@ -120,16 +88,6 @@ router.put("/updateUser", Auth, UserAuth, async (req, res) => {
   if (!user)
     return res
       .status(400)
-<<<<<<< HEAD
-      .send("No fue posible actualizar la información de usuario");
-  return res.status(200).send({ user });
-});
-
-const validateUser = async (req, res) => {
-  const user = await User.findById(req.user._id);
-  if (!user) return res.status(401).send("Usuario no existe");
-};
-=======
       .send("Error updating user information");
   return res.status(200).send({ user });
 });
@@ -176,5 +134,4 @@ router.put("/deleteUser", Auth, UserAuth, async (req, res) => {
       .send("Error deleting user");
   return res.status(200).send("User deleted successfully");
 });
->>>>>>> main
 module.exports = router;
