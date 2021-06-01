@@ -6,7 +6,7 @@ const locationsSchema = new mongoose.Schema({
     address: String,
     phone: String,
     manager_id: String,
-    status: Boolean
+    status: {type:Boolean, default: true}
 });
 
 const Locations = mongoose. model("locations", locationsSchema);
