@@ -1,47 +1,55 @@
 const express = require("express");
 const router = express.Router();
 const TypeExercise = require("../models/typeExercise");
-const User = require("../models/user");
 const Auth = require("../middleware/auth");
+const UserAuth = require("../middleware/user");
 
-// Save  tipo exercise
-router.post("/saveTypeExercise", Auth, async (req, res) => {
-  const user = await User.findById(req.user._id);
-  if (!user) return res.status(401).send("Usuario no autenticado");
+// Save  type exercise
+router.post("/create", Auth, UserAuth, async (req, res) => {
+  if (!req.body.typeExercise)
+    return res.status(401).send("Incomplete data");
+
   const typeExercise = new TypeExercise({
     typeExercise: req.body.typeExercise,
   });
+
   const result = await typeExercise.save();
+  if (!result) return res.status(401).send("Error creating type exercise");
   return res.status(200).send({ result });
 });
 
-// Consultar tipo de ejercicio
-router.get("/listTypeExercise", Auth, async (req, res) => {
-  const user = await User.findById(req.user._id);
-  if (!user) return res.status(401).send("Usuario no autenticado");
+// list type exercise
+router.get("/getAll", Auth, UserAuth, async (req, res) => {
+
   const typeExercise = await TypeExercise.find();
+  if (!typeExercise) return res.status(401).send("Error fetching type exercises");
   return res.status(200).send({ typeExercise });
 });
 
-// Editar tipo de ejercicio
-router.put("/updateTypeExercise", Auth, async (req, res) => {
-  const user = await User.findById(req.user._id);
-  if (!user) return res.status(401).send("Usuario no autenticado");
+// edit type exercise
+router.put("/edit", Auth, UserAuth, async (req, res) => {
+  if (!req.body._id || !req.body.typeExercise)
+    return res.status(401).send("Incomplete data");
+
   const typeExercise = await TypeExercise.findByIdAndUpdate(req.body._id, {
     typeExercise: req.body.typeExercise,
-    status: req.body.status
+    status: true
   });
-  if (!typeExercise) return res.status(401).send("No se pudo editar el tipo ejercicio");
+  if (!typeExercise) return res.status(401).send("Error updating type exercise");
   return res.status(200).send({ typeExercise });
 });
 
-// Eliminar tipo de ejercicio
-router.delete("/:_id", Auth, async (req, res) => {
-  const user = await User.findById(req.user._id);
-  if (!user) return res.status(401).send("Usuario no autenticado");
-  const typeExercise = await TypeExercise.findByIdAndDelete(req.params._id);
-  if (!typeExercise) return res.status(401).send("No se encuentra el tipode ejercicio a eliminar");
-  return res.status(200).send({ mensaje: "Tipo de ejercicio eliminado" });
+// Delete type exercise
+router.put("/delete", Auth, UserAuth, async (req, res) => {
+  if (!req.body._id || !req.body.typeExercise)
+    return res.status(401).send("Incomplete data");
+
+  const typeExercise = await TypeExercise.findByIdAndUpdate(req.body._id, {
+    typeExercise: req.body.typeExercise,
+    status: false
+  });
+  if (!typeExercise) return res.status(401).send("Error deleting type exercise");
+  return res.status(200).send("Deleted type exercise");
 });
 
 module.exports = router;
