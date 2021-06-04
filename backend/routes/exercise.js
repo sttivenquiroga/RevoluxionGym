@@ -62,12 +62,7 @@ router.get("/getAll/:name?", async (req, res) => {
     .populate("typeExerciseId", "typeExercise")
     .populate("typeMuscleId", "typeMuscle")
     .exec();
-
-
   if (!exercise) return res.status(401).send("Error fetching exercises");
-
-  //const exercise = await Exercise.find();
-  //if (!exercise) return res.status(401).send("Error fetching exercises");
   return res.status(200).send({ exercise });
 });
 
