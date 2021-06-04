@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 
 const locationsSchema = new mongoose.Schema({
-    city_id: {type: mongoose.Schema.ObjectId, ref: "cities"},
+    cityId: {type: mongoose.Schema.ObjectId, ref: "cities"},
     location: String,
     address: String,
     phone: String,
-    manager_id: String,
+    managerId: String,
     status: {type:Boolean, default: true},
     date: {type: Date, default: Date.now}
 });
