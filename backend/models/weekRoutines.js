@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 // Rutinas Semana 
 const weekRoutinesSchema = mongoose.Schema({
     userId: { type: mongoose.Schema.ObjectId, ref: "users" },
-    exerciseId: { type: mongoose.Schema.ObjectId, ref: "exercises" },
+    exerciseId: { type: mongoose.Schema.ObjectId, ref: "exercise" },
     note: String,
     calendar: Date,
     status: {type:Boolean, default: true},

@@ -49,7 +49,7 @@ router.post("/add", Auth, UserAuth, Trainer, async(req, res)=>{
 // ver todo - URL: http://localhost:3001/api/weekRoutines/getAll
 router.get("/getAll", Auth, UserAuth, Trainer, async(req, res)=>{        
         
-    const weekRoutines = await WeekRoutines.find();
+    const weekRoutines = await WeekRoutines.find().populate("userId", "firstName").populate("exerciseId", "exercise").exec();
     if(!weekRoutines) return res.status(401).send("Error fetching");
 
     return res.status(200).send({weekRoutines});    
@@ -59,7 +59,7 @@ router.get("/getAll", Auth, UserAuth, Trainer, async(req, res)=>{
 // ver rutinas de un usuario - URL: http://localhost:3001/api/weekRoutines/getRoutinesUser
 router.get("/getRoutinesUser", Auth, UserAuth, async(req, res)=>{   
         
-    const weekRoutines = await WeekRoutines.find({userId: req.user._id});
+    const weekRoutines = await WeekRoutines.find({userId: req.user._id}).populate("userId", "firstName").populate("exerciseId", "exercise").exec();
     if(!weekRoutines) return res.status(401).send("Error fetching");
 
     return res.status(200).send({weekRoutines});

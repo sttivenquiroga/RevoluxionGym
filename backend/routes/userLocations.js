@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const mongoose = require("mongoose");
 
 // modelos 
 const Auth = require("../middleware/auth");
@@ -44,7 +45,7 @@ router.post("/add", Auth, UserAuth, async(req, res)=>{
 // ver todos los usuarios de todas las sedes - URL: http://localhost:3001/api/userLocations/getAll
 router.get("/getAll", Auth, UserAuth, Admin, async(req, res)=>{    
 
-    const userLocations = await UserLocations.find()
+    const userLocations = await UserLocations.find().populate("userId", "firstName").populate("locationId", "location").exec();
     if(!userLocations) return res.status(401).send("Error fetching");
 
     return res.status(200).send({userLocations});
@@ -54,15 +55,19 @@ router.get("/getAll", Auth, UserAuth, Admin, async(req, res)=>{
 // ver usuarios de una sede - URL: http://localhost:3001/api/userLocations/getUsersLocation
 router.post("/getUsersLocation", Auth, UserAuth, Admin, async(req, res)=>{
     
-    if(!req.body.locationId) return res.status(401).send("Incomplete data");    
+    if(!req.body.locationId) return res.status(401).send("Incomplete data"); 
+    
+    const validLocationId = mongoose.Types.ObjectId.isValid(req.body.locationId);
+    if(!validLocationId) return res.status(401).send("Invalid Location ID");
 
     const existLocation = await Locations.findById(req.body.locationId);
     if(!existLocation) return res.status(401).send("location doesn't exist")
 
     if(existLocation.status == false)
         return res.status(401).send("Location is disabled")
-
-    const userLocations = await UserLocations.find({locationId: req.body.locationId})
+    
+    const userLocations = await UserLocations.find({locationId: req.body.locationId}).populate("userId", "firstName").populate("locationId", "location").exec();
+    
     if(!userLocations) return res.status(401).send("Error fetching");
 
     return res.status(200).send({userLocations});
