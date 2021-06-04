@@ -18,8 +18,8 @@ router.post("/create", Auth, UserAuth, async(req, res) => {
     return res.status(200).send({result});
 })
 
-router.get("/get", Auth, UserAuth, async(req, res) => {
-    const departments = await Departments.find();
+router.get("/get/:name?", Auth, UserAuth, async(req, res) => {
+    const departments = await Departments.find({department: new RegExp(req.params["name"], "i")});
     if (!departments) return res.status(401).send("Error fetching departments");
     return res.status(200).send({departments});
 })

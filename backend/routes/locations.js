@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const mongoose = require("mongoose");
 const Locations = require("../models/locations");
 const Cities = require("../models/cities");
 const Auth = require("../middleware/auth");
@@ -12,6 +13,10 @@ router.post("/create", Auth, UserAuth, async(req,res) => {
         !req.body.phone ||
         !req.body.manager_id)
         return res.status(401).send("Incomplete data");
+    const validCityId = mongoose.Types.ObjectId.isValid(req.body.city_id);
+    if (!validCityId) return res.status(401).send("Rejected request: Invalid City Id");
+    const validManagerId = mongoose.Types.ObjectId.isValid(req.body.manager_id);
+    if (!validManagerId) return res.status(401).send("Rejected request: Invalid Manager Id");
     const location = await Locations.findOne({location: req.body.location});
     if (location || (location && location.status == false)) 
         return res.status(401).send("Existent location or status disable");
@@ -36,6 +41,8 @@ router.get("/getAll", Auth, UserAuth, async(req, res) => {
 router.get("/getByCity", Auth, UserAuth, async(req,res) => {
     const city = await Cities.findById(req.body.city_id);
     if (!city) return res.status(401).send("Error fetching locations");
+    const validId = mongoose.Types.ObjectId.isValid(req.body.city_id);
+    if (!validId) return res.status(401).send("Rejected request: Invalid Id");
     const locations = await Locations.find({city_id: req.body.city_id});
     if (!locations) return res.status(401).send("Error fetching locations");
     return res.status(200).send({locations})
@@ -48,6 +55,10 @@ router.put("/edit", Auth, UserAuth, async(req, res) => {
         !req.body.phone ||
         !req.body.manager_id)
         return res.status(401).send("Incomplete data");
+    const validCityId = mongoose.Types.ObjectId.isValid(req.body.city_id);
+    if (!validCityId) return res.status(401).send("Rejected request: Invalid City Id");
+    const validManagerId = mongoose.Types.ObjectId.isValid(req.body.manager_id);
+    if (!validManagerId) return res.status(401).send("Rejected request: Invalid Manager Id");
     const location = await Locations.findByIdAndUpdate(req.body._id, {
         city_id: req.body.city_id,
         location: req.body.location,
@@ -67,6 +78,10 @@ router.put("/delete", Auth, UserAuth, async(req, res) => {
         !req.body.phone ||
         !req.body.manager_id)
         return res.status(401).send("Incomplete data");
+    const validCityId = mongoose.Types.ObjectId.isValid(req.body.city_id);
+    if (!validCityId) return res.status(401).send("Rejected request: Invalid City Id");
+    const validManagerId = mongoose.Types.ObjectId.isValid(req.body.manager_id);
+    if (!validManagerId) return res.status(401).send("Rejected request: Invalid Manager Id");
     const location = await Locations.findByIdAndUpdate(req.body._id, {
         city_id: req.body.city_id,
         location: req.body.location,
