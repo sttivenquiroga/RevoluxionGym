@@ -1,11 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const TypeExercise = require("../models/typeExercise");
+
 const Auth = require("../middleware/auth");
 const UserAuth = require("../middleware/user");
+const AdminAuth = require("../middleware/admin");
 
 // Save  type exercise
-router.post("/create", Auth, UserAuth, async (req, res) => {
+router.post("/create", Auth, UserAuth, AdminAuth, async (req, res) => {
   if (!req.body.typeExercise)
     return res.status(401).send("Incomplete data");
 
@@ -19,7 +21,7 @@ router.post("/create", Auth, UserAuth, async (req, res) => {
 });
 
 // list type exercise
-router.get("/getAll", Auth, UserAuth, async (req, res) => {
+router.get("/getAll", Auth, UserAuth, AdminAuth, async (req, res) => {
 
   const typeExercise = await TypeExercise.find();
   if (!typeExercise) return res.status(401).send("Error fetching type exercises");
@@ -27,7 +29,7 @@ router.get("/getAll", Auth, UserAuth, async (req, res) => {
 });
 
 // edit type exercise
-router.put("/edit", Auth, UserAuth, async (req, res) => {
+router.put("/edit", Auth, UserAuth, AdminAuth, async (req, res) => {
   if (!req.body._id || !req.body.typeExercise)
     return res.status(401).send("Incomplete data");
 
@@ -40,7 +42,7 @@ router.put("/edit", Auth, UserAuth, async (req, res) => {
 });
 
 // Delete type exercise
-router.put("/delete", Auth, UserAuth, async (req, res) => {
+router.put("/delete", Auth, UserAuth, AdminAuth, async (req, res) => {
   if (!req.body._id || !req.body.typeExercise)
     return res.status(401).send("Incomplete data");
 
