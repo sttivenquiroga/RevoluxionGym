@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f2ed3f7a-b054-4f2a-a8ba-a101f426a02e",
+		"_postman_id": "4d82dad7-a4c7-49eb-a2d9-f3e2514cf8d2",
 		"name": "RevoluxionGym",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -2299,6 +2299,513 @@
 								"api",
 								"statusPayment",
 								"getAll"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Registrar usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rol_id\": \"60b6881cbe4daf38acf50383\",\r\n    \"documentType_id\": \"60ba5f96d4c93d2920e28a22\",\r\n    \"numberDocument\": \"1019789456\",\r\n    \"firstName\": \"Juan\",\r\n    \"lastName\": \"Rodriguez\",\r\n    \"email\": \"juanR@gmail.com\",\r\n    \"user\": \"Juan.Rodriguez\",\r\n    \"password\": \"12345\",\r\n    \"phone\": \"3217894159\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/registerUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"registerUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar Admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhNjBhMGZmNzI0YzVkMjBmNDc1NjQiLCJyb2xfaWQiOiI2MGI2ODdmOWJlNGRhZjM4YWNmNTAzODAiLCJpYXQiOjE2MjI4Mjc0OTJ9.leQAs5tzts_tL1YFTpCjz9h-uxLE5loKh_Z7UGHafJ4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rol_id\": \"60b6881cbe4daf38acf50383\",\r\n    \"documentType_id\": \"60ba5f96d4c93d2920e28a22\",\r\n    \"numberDocument\": \"1615487952\",\r\n    \"firstName\": \"Maria\",\r\n    \"lastName\": \"Paz\",\r\n    \"email\": \"mariap@gmail.com\",\r\n    \"user\": \"Maria.Paz\",\r\n    \"password\": \"12345\",\r\n    \"phone\": \"3219871648\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/registerAdmin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"registerAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"Maria.Paz\",\r\n    \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"Juan.Rodriguez\",\r\n    \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar usuarios",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhNjBhMGZmNzI0YzVkMjBmNDc1NjQiLCJyb2xfaWQiOiI2MGI2ODdmOWJlNGRhZjM4YWNmNTAzODAiLCJpYXQiOjE2MjI4Mjc0OTJ9.leQAs5tzts_tL1YFTpCjz9h-uxLE5loKh_Z7UGHafJ4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/user/findUser/mar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"findUser",
+								"mar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar datos de usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhNjBhMGZmNzI0YzVkMjBmNDc1NjQiLCJyb2xfaWQiOiI2MGI2ODdmOWJlNGRhZjM4YWNmNTAzODAiLCJpYXQiOjE2MjI4Mjc0OTJ9.leQAs5tzts_tL1YFTpCjz9h-uxLE5loKh_Z7UGHafJ4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"documentType_id\": \"60ba5f96d4c93d2920e28a22\",\r\n    \"numberDocument\": \"1019789456\",\r\n    \"firstName\": \"Juan\",\r\n    \"lastName\": \"Rodriguez\",\r\n    \"email\": \"juanR@gmail.com\",\r\n    \"user\": \"Juan.Rodriguez\",\r\n    \"password\": \"12345\",\r\n    \"phone\": \"3217894159\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/updateProfile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"updateProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar datos desde Admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhNjBhMGZmNzI0YzVkMjBmNDc1NjQiLCJyb2xfaWQiOiI2MGI2ODdmOWJlNGRhZjM4YWNmNTAzODAiLCJpYXQiOjE2MjI4MzA5MTh9.-wEO8_9VSY8VZVWgccmbIVWcxPPK0fnav0apPjJnF6M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"60ba626c60fe9a26b4071f7f\",\r\n    \"rol_id\": \"60b6881cbe4daf38acf50383\",\r\n    \"documentType_id\": \"60ba5f96d4c93d2920e28a22\",\r\n    \"numberDocument\": \"1019789456\",\r\n    \"firstName\": \"Maria Andrea\",\r\n    \"lastName\": \"Paz\",\r\n    \"email\": \"mariap@gmail.com\",\r\n    \"user\": \"Maria.Paz\",\r\n    \"password\": \"12345\",\r\n    \"phone\": \"3217894159\",\r\n    \"status\" : \"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/updateAdmin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"updateAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar usuario desde Admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhNjBhMGZmNzI0YzVkMjBmNDc1NjQiLCJyb2xfaWQiOiI2MGI2ODdmOWJlNGRhZjM4YWNmNTAzODAiLCJpYXQiOjE2MjI4MzA5MTh9.-wEO8_9VSY8VZVWgccmbIVWcxPPK0fnav0apPjJnF6M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"60ba626c60fe9a26b4071f7f\",\r\n    \"rol_id\": \"60b6881cbe4daf38acf50383\",\r\n    \"documentType_id\": \"60ba5f96d4c93d2920e28a22\",\r\n    \"numberDocument\": \"1019789456\",\r\n    \"firstName\": \"Maria Andrea\",\r\n    \"lastName\": \"Paz\",\r\n    \"email\": \"mariap@gmail.com\",\r\n    \"user\": \"Maria.Paz\",\r\n    \"password\": \"12345\",\r\n    \"phone\": \"3217894159\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/deleteUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"deleteUser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Nutrition plans",
+			"item": [
+				{
+					"name": "Registrar plan de nutricion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1M2U3NmFhZTJlMzM3NzRmMGU3ZTEiLCJpYXQiOjE2MjI0OTA5NTN9.yL35VBCfDES4Gvya5Ff9pRkD6InYCRwLXteWNTUWYwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nutritionPlan\": \"Plan Standar\",\r\n    \"description\": \"Plan normalito sin nada de nada\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/nutritionPlan/registerNutritionPlan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"nutritionPlan",
+								"registerNutritionPlan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar planes de nutrición desde admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhNjBhMGZmNzI0YzVkMjBmNDc1NjQiLCJyb2xfaWQiOiI2MGI2ODdmOWJlNGRhZjM4YWNmNTAzODAiLCJpYXQiOjE2MjI4MzEzMTF9.-0CCt3XCoom4N-EZebjUEB74Jgj7itgepq2yyX8pXBE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/nutritionPlan/listNutritionPlan/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"nutritionPlan",
+								"listNutritionPlan",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar planes de nutrición desde user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhNjI2YzYwZmU5YTI2YjQwNzFmN2YiLCJyb2xfaWQiOiI2MGI2ODgxY2JlNGRhZjM4YWNmNTAzODMiLCJpYXQiOjE2MjI4MzIwMDJ9.xNqTueoOVaAnmblXv1hBHXYXKciAL3rmJKC7Q7yN2A0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/nutritionPlan/listNutritionPlanUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"nutritionPlan",
+								"listNutritionPlanUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar planes de nutrición",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhNjBhMGZmNzI0YzVkMjBmNDc1NjQiLCJyb2xfaWQiOiI2MGI2ODdmOWJlNGRhZjM4YWNmNTAzODAiLCJpYXQiOjE2MjI4MzEzMTF9.-0CCt3XCoom4N-EZebjUEB74Jgj7itgepq2yyX8pXBE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"60ba74b805e06b2f30b66c69\",\r\n    \"user_id\": \"60ba626c60fe9a26b4071f7f\",\r\n    \"nutritionPlan\": \"Plan Standar\",\r\n    \"description\": \"Plan normalito sin nada de nada\",\r\n    \"status\": \"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/nutritionPlan/updateNutritionPlan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"nutritionPlan",
+								"updateNutritionPlan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Desactivar plan de nutrición",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhNjBhMGZmNzI0YzVkMjBmNDc1NjQiLCJyb2xfaWQiOiI2MGI2ODdmOWJlNGRhZjM4YWNmNTAzODAiLCJpYXQiOjE2MjI4MzEzMTF9.-0CCt3XCoom4N-EZebjUEB74Jgj7itgepq2yyX8pXBE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"60ba74b805e06b2f30b66c69\",\r\n    \"user_id\": \"60ba626c60fe9a26b4071f7f\",\r\n    \"nutritionPlan\": \"Plan Standar\",\r\n    \"description\": \"Plan normalito sin nada de nada\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/nutritionPlan/desactivateNutritionPlan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"nutritionPlan",
+								"desactivateNutritionPlan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar plan de nutrición",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/nutritionPlan/deleteNutritionPlan/60ba74b805e06b2f30b66c69",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"nutritionPlan",
+								"deleteNutritionPlan",
+								"60ba74b805e06b2f30b66c69"
 							]
 						}
 					},
