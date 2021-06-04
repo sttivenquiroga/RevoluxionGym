@@ -21,7 +21,7 @@ userSchema.methods.generateJWT = function () {
     {
       _id: this._id,
       name: this.name,
-      rolId: this.rol_id,
+      rol_id: this.rol_id,
       iat: moment().unix(),
     },
     process.env.SECRET_kEY_JWT

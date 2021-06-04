@@ -34,7 +34,7 @@ router.post("/registerUser", async (req, res) => {
   if (!docType)
     return res.status(401).send("Process invalid: Invalid id document type");
   const data = new User({
-    rolId: rol._id,
+    rol_id: rol._id,
     documentType_id: req.body.documentType_id,
     numberDocument: req.body.numberDocument,
     firstName: req.body.firstName,
@@ -80,7 +80,7 @@ router.post("/registerAdmin", Auth, UserAuth, Admin, async (req, res) => {
   if (!docType)
     return res.status(401).send("Process failed: Invalid id document type");
   const data = new User({
-    rolId: req.body.rol_id,
+    rol_id: req.body.rol_id,
     documentType_id: req.body.documentType_id,
     numberDocument: req.body.numberDocument,
     firstName: req.body.firstName,
@@ -101,9 +101,11 @@ router.post("/registerAdmin", Auth, UserAuth, Admin, async (req, res) => {
   }
 });
 
-router.get("/findUser/:name?", Auth, UserAuth, Admin, async (req, res) => {
-  const user = await User.find({ name: new RegExp(req.params["name"], "i") })
-    .populate("rolId")
+router.get("/findUser/:firstName?", Auth, UserAuth, Admin, async (req, res) => {
+  const user = await User.find({
+    firstName: new RegExp(req.params["firstName"], "i"),
+  })
+    .populate("rol_id")
     .populate("documentType_id")
     .exec();
   if (!user) return res.status(401).send("Error fetching user information");
@@ -116,17 +118,18 @@ router.put("/updateProfile", Auth, UserAuth, async (req, res) => {
     !req.body.firstName ||
     !req.body.lastName ||
     !req.body.email ||
+    !req.body.user ||
     !req.body.password ||
-    !req.body.phone ||
-    !req.body.status
+    !req.body.phone
   )
     return res.status(401).send("Process failed: Incomplete data");
+  let user = await User.findById(req.user._id);
   let userVer = await User.findById(req.user._id);
   let verUser = await User.findOne({ user: req.body.user });
-  if (verUser && verUser.user != req.body.user)
+  if (verUser && verUser.user != user.user)
     return res.status(401).send("Process failed: Username is not avaible");
   verUser = await User.findOne({ email: req.body.email });
-  if (verUser && verUser.email != req.body.email)
+  if (verUser && verUser.email != user.email)
     return res.status(401).send("Process failed: Email is already registered");
   let hash = await bcrypt.compare(req.body.password, userVer.password);
   if (hash) {
@@ -134,6 +137,7 @@ router.put("/updateProfile", Auth, UserAuth, async (req, res) => {
   } else {
     hash = await bcrypt.hash(req.body.password, 10);
   }
+  let docType = mongoose.Types.ObjectId.isValid(req.body.documentType_id);
   if (!docType)
     return res.status(401).send("Process failed: Invalid id document type");
   user = await User.findByIdAndUpdate(req.user._id, {
@@ -146,13 +150,13 @@ router.put("/updateProfile", Auth, UserAuth, async (req, res) => {
     user: req.body.user,
     password: hash,
     phone: req.body.phone,
-    status: req.body.status,
+    status: true,
   });
   if (!user) return res.status(400).send("Error updating user information");
   return res.status(200).send({ user });
 });
 
-router.put("/updateUser", Auth, UserAuth, Admin, async (req, res) => {
+router.put("/updateAdmin", Auth, UserAuth, Admin, async (req, res) => {
   if (
     !req.body._id ||
     !req.body.rol_id ||
@@ -161,6 +165,7 @@ router.put("/updateUser", Auth, UserAuth, Admin, async (req, res) => {
     !req.body.firstName ||
     !req.body.lastName ||
     !req.body.email ||
+    !req.body.user ||
     !req.body.password ||
     !req.body.phone ||
     !req.body.status
@@ -168,10 +173,10 @@ router.put("/updateUser", Auth, UserAuth, Admin, async (req, res) => {
     return res.status(401).send("Process failed: Incomplete data");
   let user = await User.findById(req.body._id);
   let verUser = await User.findOne({ user: req.body.user });
-  if (verUser && verUser.user != req.body.user)
+  if (verUser && verUser.user !== user.user)
     return res.status(401).send("Process failed: Username is not avaible");
   verUser = await User.findOne({ email: req.body.email });
-  if (verUser && verUser.email != req.body.email)
+  if (verUser && verUser.email !== user.email)
     return res.status(401).send("Process failed: Email is already registered");
   let hash = await bcrypt.compare(req.body.password, user.password);
   if (hash) {
@@ -213,11 +218,12 @@ router.put("/deleteUser", Auth, UserAuth, Admin, async (req, res) => {
     !req.body.phone
   )
     return res.status(401).send("Process failed: Incomplete data");
+  let user = await User.findById(req.body._id);
   let verUser = await User.findOne({ user: req.body.user });
-  if (verUser && verUser.user != req.body.user)
+  if (verUser && verUser.user != user.user)
     return res.status(401).send("Process failed: Username is not avaible");
   verUser = await User.findOne({ email: req.body.email });
-  if (verUser && verUser.email != req.body.email)
+  if (verUser && verUser.email != user.email)
     return res.status(401).send("Process failed: Email is already registered");
   let hash = await bcrypt.compare(req.body.password, verUser.password);
   if (hash) {
@@ -225,7 +231,7 @@ router.put("/deleteUser", Auth, UserAuth, Admin, async (req, res) => {
   } else {
     hash = await bcrypt.hash(req.body.password, 10);
   }
-  const user = await User.findByIdAndUpdate(req.body._id, {
+  user = await User.findByIdAndUpdate(req.body._id, {
     rol: req.body.rol,
     documentType_id: req.body.documentType_id,
     numberDocument: req.body.numberDocument,

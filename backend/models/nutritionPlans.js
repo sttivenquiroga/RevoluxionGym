@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
 const nutritionPlanSchema = new mongoose.Schema({
-  user_id: { type: mongoose.Schema.ObjectId, ref: "user" },
   nutritionPlan: String,
+  user_id: { type: mongoose.Schema.ObjectId, ref: "user" },
   description: String,
   status: {type: Boolean, default: true},
   date: { type: Date, default: Date.now },
