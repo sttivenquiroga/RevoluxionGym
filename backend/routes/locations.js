@@ -5,8 +5,9 @@ const Locations = require("../models/locations");
 const Cities = require("../models/cities");
 const Auth = require("../middleware/auth");
 const UserAuth = require("../middleware/user");
+const AdminAuth = require("../middleware/admin");
 
-router.post("/create", Auth, UserAuth, async(req,res) => {
+router.post("/create", Auth, UserAuth, AdminAuth, async(req,res) => {
     if (!req.body.city_id || 
         !req.body.location ||
         !req.body.address ||
@@ -48,7 +49,7 @@ router.get("/getByCity", Auth, UserAuth, async(req,res) => {
     return res.status(200).send({locations})
 })
 
-router.put("/edit", Auth, UserAuth, async(req, res) => {
+router.put("/edit", Auth, UserAuth, AdminAuth, async(req, res) => {
     if (!req.body.city_id || 
         !req.body.location ||
         !req.body.address ||
@@ -71,7 +72,7 @@ router.put("/edit", Auth, UserAuth, async(req, res) => {
     return res.status(200).send({location})
 });
 
-router.put("/delete", Auth, UserAuth, async(req, res) => {
+router.put("/delete", Auth, UserAuth, AdminAuth, async(req, res) => {
     if (!req.body.city_id || 
         !req.body.location ||
         !req.body.address ||
