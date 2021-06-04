@@ -2,11 +2,12 @@ const mongoose = require("mongoose");
 
 // Rutinas Semana 
 const weekRoutinesSchema = mongoose.Schema({
-    userId: String,
-    exerciseId: String,
+    userId: { type: mongoose.Schema.ObjectId, ref: "users" },
+    exerciseId: { type: mongoose.Schema.ObjectId, ref: "exercises" },
     note: String,
-    calendar: {type:Date, default: Date.now},
-    status: {type:Boolean, default: true}
+    calendar: Date,
+    status: {type:Boolean, default: true},
+    date: {type:Date, default: Date.now},
 })
 
 const WeekRoutines = mongoose.model("weekRoutines", weekRoutinesSchema);

@@ -4,10 +4,11 @@ const DocumentType = require("../models/documentType");
 
 const Auth = require("../middleware/auth");
 const UserAuth = require("../middleware/user");
+const Admin = require("../middleware/admin");
 
 
 // añadir tipo de documento - URL: http://localhost:3001/api/documentType/add
-router.post("/add", Auth, UserAuth, async(req, res)=>{    
+router.post("/add", Auth, UserAuth, Admin, async(req, res)=>{    
     
     if(!req.body.documentType) return res.status(401).send("Incomplete data");
 
@@ -22,7 +23,7 @@ router.post("/add", Auth, UserAuth, async(req, res)=>{
 
 
 // ver Tipo de documentso - URL: http://localhost:3001/api/documentType/getAll
-router.get("/getAll", Auth, UserAuth, async(req, res)=>{    
+router.get("/getAll", Auth, UserAuth, Admin, async(req, res)=>{    
     
     const documentType = await DocumentType.find();
     if(!DocumentType) return res.status(401).send("Error fetching")
@@ -31,7 +32,7 @@ router.get("/getAll", Auth, UserAuth, async(req, res)=>{
 
 
 //editar tipo documento - URL: http://localhost:3001/api/documentType/update
-router.put("/update", Auth, UserAuth, async(req, res)=>{
+router.put("/update", Auth, UserAuth, Admin, async(req, res)=>{
 
     if(!req.body.documentType) return res.status(401).send("Incomplete data");
 
@@ -45,7 +46,7 @@ router.put("/update", Auth, UserAuth, async(req, res)=>{
 
 
 // desactivar - URL: http://localhost:3001/api/documentType/delete
-router.put("/delete", Auth, UserAuth, async(req, res)=>{
+router.put("/delete", Auth, UserAuth, Admin, async(req, res)=>{
 
     if(!req.body.documentType) return res.status(401).send("Incomplete data");
 
