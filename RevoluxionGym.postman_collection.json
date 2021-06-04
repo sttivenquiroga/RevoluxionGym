@@ -1,0 +1,609 @@
+{
+	"info": {
+		"_postman_id": "329d3caf-ce75-41b6-9830-13bbcee99185",
+		"name": "RevoluxionGym",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Exercise",
+			"item": [
+				{
+					"name": "createExercise",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI2N2MwMWY2NjAyOTFjNThiZDc4NDkiLCJpYXQiOjE2MjI1NzIwMzl9.jh80ssB-kgpiDGI-1bqMxlI5SPD5uUws598SZQwCVJY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "typeExerciseId",
+									"value": "60b67f41f660291c58bd784d",
+									"type": "text"
+								},
+								{
+									"key": "typeMuscleId",
+									"value": "60b67b1af660291c58bd7848",
+									"type": "text"
+								},
+								{
+									"key": "exercise",
+									"value": "Press de banca",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "hacer 20 repeticiones y descansar 1 minuto",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/D:/Codigos_web/RevoluxionGym/backend/uploads/exercise/PressDebBanca.jpg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/exercise/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"exercise",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createExercise (.txt, failed)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI2N2MwMWY2NjAyOTFjNThiZDc4NDkiLCJpYXQiOjE2MjI1NzIwMzl9.jh80ssB-kgpiDGI-1bqMxlI5SPD5uUws598SZQwCVJY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "typeExerciseId",
+									"value": "60b67f41f660291c58bd784d",
+									"type": "text"
+								},
+								{
+									"key": "typeMuscleId",
+									"value": "60b67b1af660291c58bd7848",
+									"type": "text"
+								},
+								{
+									"key": "exercise",
+									"value": "Press de banca",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "hacer 20 repeticiones y descansar 1 minuto",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/D:/Codigos_web/RevoluxionGym/backend/uploads/exercise/PressDebBanca.jpg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/exercise/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"exercise",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllExercise",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI2N2MwMWY2NjAyOTFjNThiZDc4NDkiLCJpYXQiOjE2MjI1NzIwMzl9.jh80ssB-kgpiDGI-1bqMxlI5SPD5uUws598SZQwCVJY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/exercise/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"exercise",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editExercise",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MTNmMTkyYzg1MDIwMWNlOGRlYmYiLCJpYXQiOjE2MjI0Nzk5Njl9.vgPLyi4cB9110Ua8In8SnHezAF_qCeIPW2UjkPMnaFA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"_id\": \"60b525cf92c850201ce8dec2\",\r\n  \"typeExerciseId\": \"60b508cab0d8952d6c60990c\",\r\n  \"typeMuscleId\": \"60b5152792c850201ce8dec1\",\r\n  \"exercise\": \"flexiones de pecho\",\r\n  \"description\": \"hacer 15 flexiones!!!!!!\",\r\n  \"img\": \"url de la imagen\",\r\n  \"status\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/exercise/updateExercise",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"exercise",
+								"updateExercise"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TypeExercise",
+			"item": [
+				{
+					"name": "createTypeExercise",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI2N2MwMWY2NjAyOTFjNThiZDc4NDkiLCJpYXQiOjE2MjI1NzIwMzl9.jh80ssB-kgpiDGI-1bqMxlI5SPD5uUws598SZQwCVJY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"typeExercise\": \"mancuernas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/typeExercise/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"typeExercise",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createTypeExercise 2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI2N2MwMWY2NjAyOTFjNThiZDc4NDkiLCJpYXQiOjE2MjI1NzIwMzl9.jh80ssB-kgpiDGI-1bqMxlI5SPD5uUws598SZQwCVJY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"typeExercise\": \"mancuernas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/typeExercise/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"typeExercise",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listTypeExercise",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI2N2MwMWY2NjAyOTFjNThiZDc4NDkiLCJpYXQiOjE2MjI1NzIwMzl9.jh80ssB-kgpiDGI-1bqMxlI5SPD5uUws598SZQwCVJY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/typeExercise/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"typeExercise",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTypeExercise",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI2N2MwMWY2NjAyOTFjNThiZDc4NDkiLCJpYXQiOjE2MjI1NzIwMzl9.jh80ssB-kgpiDGI-1bqMxlI5SPD5uUws598SZQwCVJY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"60b67f41f660291c58bd784d\",\r\n    \"typeExercise\": \"mancuernas!!!!!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/typeExercise/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"typeExercise",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTypeExercise",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI2N2MwMWY2NjAyOTFjNThiZDc4NDkiLCJpYXQiOjE2MjI1NzIwMzl9.jh80ssB-kgpiDGI-1bqMxlI5SPD5uUws598SZQwCVJY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"60b67f41f660291c58bd784d\",\r\n    \"typeExercise\": \"mancuernas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/typeExercise/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"typeExercise",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TypeMuscle",
+			"item": [
+				{
+					"name": "CreateTypeMuscle",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI2N2MwMWY2NjAyOTFjNThiZDc4NDkiLCJpYXQiOjE2MjI1NzIwMzl9.jh80ssB-kgpiDGI-1bqMxlI5SPD5uUws598SZQwCVJY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"typeMuscle\": \"pectorales\"\r\n  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/typeMuscle/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"typeMuscle",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateTypeMuscle 2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI2N2MwMWY2NjAyOTFjNThiZDc4NDkiLCJpYXQiOjE2MjI1NzIwMzl9.jh80ssB-kgpiDGI-1bqMxlI5SPD5uUws598SZQwCVJY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"typeMuscle\": \"pectorales\"\r\n  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/typeMuscle/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"typeMuscle",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllTypeMuscle",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI2N2MwMWY2NjAyOTFjNThiZDc4NDkiLCJpYXQiOjE2MjI1NzIwMzl9.jh80ssB-kgpiDGI-1bqMxlI5SPD5uUws598SZQwCVJY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/typeMuscle/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"typeMuscle",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateMuscle",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI2N2MwMWY2NjAyOTFjNThiZDc4NDkiLCJpYXQiOjE2MjI1NzIwMzl9.jh80ssB-kgpiDGI-1bqMxlI5SPD5uUws598SZQwCVJY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"_id\": \"60b67b1af660291c58bd7848\",\r\n  \"typeMuscle\": \"pectorales!!!!!!!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/typeMuscle/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"typeMuscle",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletetypeMuscle",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI2N2MwMWY2NjAyOTFjNThiZDc4NDkiLCJpYXQiOjE2MjI1NzIwMzl9.jh80ssB-kgpiDGI-1bqMxlI5SPD5uUws598SZQwCVJY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"_id\": \"60b67b1af660291c58bd7848\",\r\n  \"typeMuscle\": \"pectorales\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/typeMuscle/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"typeMuscle",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
