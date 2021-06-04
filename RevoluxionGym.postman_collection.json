@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "c564d923-e676-4062-bb66-b50d20d54902",
+		"_postman_id": "8c617b34-097a-4ca8-b439-85c9ea7968ee",
 		"name": "RevoluxionGym",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -1136,6 +1136,700 @@
 							"path": [
 								"api",
 								"documentType",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Departments",
+			"item": [
+				{
+					"name": "createDepartment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MGFmZTg3ZmJmMTA3ZjRhMWJhMWMiLCJpYXQiOjE2MjI0Nzc1ODZ9.WDot97qMTcvjhK_PuDMguxyHGDJrRm4bBWFRZM_I6Ac",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"department\": \"Huila\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/departments/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"departments",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDepartments",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MGFmZTg3ZmJmMTA3ZjRhMWJhMWMiLCJpYXQiOjE2MjI0Nzc1ODZ9.WDot97qMTcvjhK_PuDMguxyHGDJrRm4bBWFRZM_I6Ac",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/departments/get",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"departments",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDepartments/a",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MGFmZTg3ZmJmMTA3ZjRhMWJhMWMiLCJpYXQiOjE2MjI0Nzc1ODZ9.WDot97qMTcvjhK_PuDMguxyHGDJrRm4bBWFRZM_I6Ac",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/departments/get/a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"departments",
+								"get",
+								"a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDepartments/huila",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MGFmZTg3ZmJmMTA3ZjRhMWJhMWMiLCJpYXQiOjE2MjI0Nzc1ODZ9.WDot97qMTcvjhK_PuDMguxyHGDJrRm4bBWFRZM_I6Ac",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/departments/get/huila",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"departments",
+								"get",
+								"huila"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteDepartment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MGFmZTg3ZmJmMTA3ZjRhMWJhMWMiLCJpYXQiOjE2MjI0Nzc1ODZ9.WDot97qMTcvjhK_PuDMguxyHGDJrRm4bBWFRZM_I6Ac",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"60b4ea167b6f84319c7e1e0b\",\r\n    \"department\": \"Tolima\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/departments/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"departments",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editDepartment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MGFmZTg3ZmJmMTA3ZjRhMWJhMWMiLCJpYXQiOjE2MjI0Nzc1ODZ9.WDot97qMTcvjhK_PuDMguxyHGDJrRm4bBWFRZM_I6Ac",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"60b15705474e98470879324b\",\r\n    \"department\": \"Amazonas\",\r\n    \"status\": false\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/departments/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"departments",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cities",
+			"item": [
+				{
+					"name": "createCity",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MGFmZTg3ZmJmMTA3ZjRhMWJhMWMiLCJpYXQiOjE2MjI0Nzc1ODZ9.WDot97qMTcvjhK_PuDMguxyHGDJrRm4bBWFRZM_I6Ac",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"department_id\": \"60ba48f86ca6e73588b8111a\",\r\n    \"city\": \"Soacha\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/cities/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"cities",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCities",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MGFmZTg3ZmJmMTA3ZjRhMWJhMWMiLCJpYXQiOjE2MjI0Nzc1ODZ9.WDot97qMTcvjhK_PuDMguxyHGDJrRm4bBWFRZM_I6Ac",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/cities/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"cities",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCities/a",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MGFmZTg3ZmJmMTA3ZjRhMWJhMWMiLCJpYXQiOjE2MjI0Nzc1ODZ9.WDot97qMTcvjhK_PuDMguxyHGDJrRm4bBWFRZM_I6Ac",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/cities/getAll/a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"cities",
+								"getAll",
+								"a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCities/Bogota",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MGFmZTg3ZmJmMTA3ZjRhMWJhMWMiLCJpYXQiOjE2MjI0Nzc1ODZ9.WDot97qMTcvjhK_PuDMguxyHGDJrRm4bBWFRZM_I6Ac",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/cities/getAll/Bogota",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"cities",
+								"getAll",
+								"Bogota"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDeptCities",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MGFmZTg3ZmJmMTA3ZjRhMWJhMWMiLCJpYXQiOjE2MjI0Nzc1ODZ9.WDot97qMTcvjhK_PuDMguxyHGDJrRm4bBWFRZM_I6Ac",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"department_id\": \"60ba48f86ca6e73588b8111a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/cities/getByDept",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"cities",
+								"getByDept"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editCity",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MGFmZTg3ZmJmMTA3ZjRhMWJhMWMiLCJpYXQiOjE2MjI0Nzc1ODZ9.WDot97qMTcvjhK_PuDMguxyHGDJrRm4bBWFRZM_I6Ac",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": true,\r\n    \"_id\": \"60ba4d11b356ea3e28bf547b\",\r\n    \"department_id\": \"60ba48f86ca6e73588b8111a\",\r\n    \"city\": \"Bogota\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/cities/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"cities",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCity",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MGFmZTg3ZmJmMTA3ZjRhMWJhMWMiLCJpYXQiOjE2MjI0Nzc1ODZ9.WDot97qMTcvjhK_PuDMguxyHGDJrRm4bBWFRZM_I6Ac",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"60b65a841d5b3826286421c8\",\r\n    \"department_id\": \"60b15705474e98470879324b\",\r\n    \"city\": \"Leticia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/cities/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"cities",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Locations",
+			"item": [
+				{
+					"name": "createLocation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MGFmZTg3ZmJmMTA3ZjRhMWJhMWMiLCJpYXQiOjE2MjI0Nzc1ODZ9.WDot97qMTcvjhK_PuDMguxyHGDJrRm4bBWFRZM_I6Ac",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"city_id\": \"60ba4d11b356ea3e28bf547b\",\r\n    \"location\": \"Oriente\",\r\n    \"address\": \"Calle 1 # 1 - 1\",\r\n    \"phone\": \"300 123 4567\",\r\n    \"manager_id\": \"60b4ea1a7b6f84319c7e1f0c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/locations/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"locations",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getLocations",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MGFmZTg3ZmJmMTA3ZjRhMWJhMWMiLCJpYXQiOjE2MjI0Nzc1ODZ9.WDot97qMTcvjhK_PuDMguxyHGDJrRm4bBWFRZM_I6Ac",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/locations/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"locations",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCityLocations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MGFmZTg3ZmJmMTA3ZjRhMWJhMWMiLCJpYXQiOjE2MjI0Nzc1ODZ9.WDot97qMTcvjhK_PuDMguxyHGDJrRm4bBWFRZM_I6Ac",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"city_id\": \"60ba4d11b356ea3e28bf547b\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/locations/getByCity",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"locations",
+								"getByCity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editLocation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MGFmZTg3ZmJmMTA3ZjRhMWJhMWMiLCJpYXQiOjE2MjI0Nzc1ODZ9.WDot97qMTcvjhK_PuDMguxyHGDJrRm4bBWFRZM_I6Ac",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": true,\r\n    \"_id\": \"60b501529c1ea50790aed38b\",\r\n    \"city_id\": \"60b4ea1a7b6f84319c7e1e0c\",\r\n    \"location\": \"Norte\",\r\n    \"address\": \"Calle 2 # 1 - 1\",\r\n    \"phone\": \"300 123 4567\",\r\n    \"manager_id\": \"60b4ea1a7b6f84319c7e1f0c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/locations/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"locations",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteLocation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MGFmZTg3ZmJmMTA3ZjRhMWJhMWMiLCJpYXQiOjE2MjI0Nzc1ODZ9.WDot97qMTcvjhK_PuDMguxyHGDJrRm4bBWFRZM_I6Ac",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"60b501529c1ea50790aed38b\",\r\n    \"city_id\": \"60b4ea1a7b6f84319c7e1e0c\",\r\n    \"location\": \"Norte\",\r\n    \"address\": \"Calle 2 # 1 - 1\",\r\n    \"phone\": \"300 123 4567\",\r\n    \"manager_id\": \"60b4ea1a7b6f84319c7e1f0c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/locations/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"locations",
 								"delete"
 							]
 						}
