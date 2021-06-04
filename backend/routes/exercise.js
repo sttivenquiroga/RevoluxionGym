@@ -28,12 +28,17 @@ router.post("/create", mult, Upload, Auth, UserAuth, async (req, res) => {
   if (req.files !== undefined && req.files.image.type) {
     const url = req.protocol + "://" + req.get("host") + "/";
     let serverImg =
-      "./uploads/exercise/" + moment().unix() + path.extname(req.files.image.path);
+      "./uploads/exercise/" +
+      moment().unix() +
+      path.extname(req.files.image.path);
     fs.createReadStream(req.files.image.path).pipe(
       fs.createWriteStream(serverImg)
     );
     imageUrl =
-      url + "uploads/exercise/" + moment().unix() + path.extname(req.files.image.path);
+      url +
+      "uploads/exercise/" +
+      moment().unix() +
+      path.extname(req.files.image.path);
   }
 
   const exercise = new Exercise({
@@ -50,14 +55,19 @@ router.post("/create", mult, Upload, Auth, UserAuth, async (req, res) => {
 });
 
 // list exercises
-router.get("/getAll", Auth, UserAuth, AdminAuth, async (req, res) => {
-  const exercise = await Exercise.find();
+router.get("/getAll/:name?", async (req, res) => {
+
+  const exercise = await Exercise.find({
+    exercise: new RegExp(req.params["name"], "i")})
+    .populate("typeExerciseId", "typeExercise")
+    .populate("typeMuscleId", "typeMuscle")
+    .exec();
   if (!exercise) return res.status(401).send("Error fetching exercises");
   return res.status(200).send({ exercise });
 });
 
 // Edit exercises
-router.put("/edit", Auth, UserAuth, AdminAuth,async (req, res) => {
+router.put("/edit", Auth, UserAuth, AdminAuth, async (req, res) => {
   if (
     !req.body._id ||
     !req.body.typeExerciseId ||
@@ -105,6 +115,5 @@ router.put("/delete", Auth, UserAuth, AdminAuth, async (req, res) => {
   if (!exercise) return res.status(401).send("Error deleting exercise");
   return res.status(200).send("Deleted exercise");
 });
-
 
 module.exports = router;
