@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "329d3caf-ce75-41b6-9830-13bbcee99185",
+		"_postman_id": "c564d923-e676-4062-bb66-b50d20d54902",
 		"name": "RevoluxionGym",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -597,6 +597,545 @@
 							"path": [
 								"api",
 								"typeMuscle",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "WeekRoutines",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MzAwNWUyNmRjOTBhMWNlYzJlNGEiLCJpYXQiOjE2MjI4MTgyNjJ9.5qd6OKl82tvBQLWHjfY-n5ow4_2zmPp8sbS4pX6P28g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"60b53005e26dc90a1cec2e4a\",\r\n    \"exerciseId\": \"60b5373ce26dc90a1cec2e56\",\r\n    \"note\": \"hacer 40 repeticiones\",\r\n    \"calendar\": \"2021-06-24\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/weekRoutines/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"weekRoutines",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhNTE4MGZjMjczMjEyN2NmN2E5NjciLCJyb2wiOiI2MGI1MzhlNGUyNmRjOTBhMWNlYzJlNTgiLCJpYXQiOjE2MjI4MjQxODd9.dAoo4wGEwin_o6bGtH7L8QhrK81Z8bUIPCYLcUQNKeU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/weekRoutines/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"weekRoutines",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRoutinesUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MzAwNWUyNmRjOTBhMWNlYzJlNGEiLCJyb2wiOiI2MGJhNTIwMGZjMjczMjEyN2NmN2E5NmEiLCJpYXQiOjE2MjI4MjQwMzl9.zymtCoXPGaFC0YyQ674hkJXT5AJOhT95yTH20odwuq8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/weekRoutines/getRoutinesUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"weekRoutines",
+								"getRoutinesUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhNTE5ZGZjMjczMjEyN2NmN2E5NjgiLCJyb2wiOiI2MGJhNTIwMGZjMjczMjEyN2NmN2E5NmEiLCJpYXQiOjE2MjI4MjUxNjZ9.MNl5t75FknjJ7l8HCxsZFVM6T5ZaKrm5IZz81gxR428",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \r\n    \"_id\": \"60ba418868a4612e98c1703b\",\r\n    \"userId\": \"60b53005e26dc90a1cec2e4a\",\r\n    \"exerciseId\": \"60b5373ce26dc90a1cec2e56\",\r\n    \"calendar\": \"2021-06-30\",\r\n    \"note\": \"algo cambio\"   \r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/weekRoutines/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"weekRoutines",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MzAwNWUyNmRjOTBhMWNlYzJlNGEiLCJpYXQiOjE2MjI4MTgyNjJ9.5qd6OKl82tvBQLWHjfY-n5ow4_2zmPp8sbS4pX6P28g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \r\n    \"_id\": \"60ba418868a4612e98c1703b\",\r\n    \"userId\": \"60b53005e26dc90a1cec2e4a\",\r\n    \"exerciseId\": \"60b5373ce26dc90a1cec2e56\",\r\n    \"calendar\": \"2021-06-29\",\r\n    \"note\": \"algo cambio\"   \r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/weekRoutines/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"weekRoutines",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UserLocations",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MzAwNWUyNmRjOTBhMWNlYzJlNGEiLCJpYXQiOjE2MjI1NjYzNzF9.vVjH_c_lZPESwelUSpGlE87XX5McfQUTFBiXlXfUFTQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"60b53005e26dc90a1cec2e4a\",\r\n    \"locationId\": \"60b5369be26dc90a1cec2e52\"   \r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/userLocations/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"userLocations",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhNTE5ZGZjMjczMjEyN2NmN2E5NjgiLCJyb2wiOiI2MGJhNTFmN2ZjMjczMjEyN2NmN2E5NjkiLCJpYXQiOjE2MjI4MjQzNDN9.BcmaFfPXe4QOHS-J950IXj96SCzS_Yqb1s2anUh4e1E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/userLocations/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"userLocations",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUsersLocation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MzAwNWUyNmRjOTBhMWNlYzJlNGEiLCJpYXQiOjE2MjI1NjYzNzF9.vVjH_c_lZPESwelUSpGlE87XX5McfQUTFBiXlXfUFTQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"locationId\": \"60b5369be26dc90a1cec2e52\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/userLocations/getUsersLocation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"userLocations",
+								"getUsersLocation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MzAwNWUyNmRjOTBhMWNlYzJlNGEiLCJpYXQiOjE2MjI1NjYzNzF9.vVjH_c_lZPESwelUSpGlE87XX5McfQUTFBiXlXfUFTQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"60b532a2e26dc90a1cec2e4d\",\r\n    \"userId\": \"60b53005e26dc90a1cec2e4a\",\r\n    \"locationId\": \"60b5369be26dc90a1cec2e52\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/userLocations/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"userLocations",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MzAwNWUyNmRjOTBhMWNlYzJlNGEiLCJpYXQiOjE2MjI1NjYzNzF9.vVjH_c_lZPESwelUSpGlE87XX5McfQUTFBiXlXfUFTQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"60b532a2e26dc90a1cec2e4d\",\r\n    \"userId\": \"60b53005e26dc90a1cec2e4a\",\r\n    \"locationId\": \"60b5369be26dc90a1cec2e52\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/userLocations/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"userLocations",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DocumentType",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MzAwNWUyNmRjOTBhMWNlYzJlNGEiLCJpYXQiOjE2MjI1NjYzNzF9.vVjH_c_lZPESwelUSpGlE87XX5McfQUTFBiXlXfUFTQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"documentType\": \"Tarjeta de identidad\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/documentType/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"documentType",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MzAwNWUyNmRjOTBhMWNlYzJlNGEiLCJyb2wiOiI2MGJhNTIwMGZjMjczMjEyN2NmN2E5NmEiLCJpYXQiOjE2MjI4MjQwMzl9.zymtCoXPGaFC0YyQ674hkJXT5AJOhT95yTH20odwuq8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/documentType/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"documentType",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MzAwNWUyNmRjOTBhMWNlYzJlNGEiLCJpYXQiOjE2MjI1NjYzNzF9.vVjH_c_lZPESwelUSpGlE87XX5McfQUTFBiXlXfUFTQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n      \"_id\":\"60b6665485ddcc2438984517\",\r\n      \"documentType\": \"T.I\"\r\n  }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/documentType/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"documentType",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MzAwNWUyNmRjOTBhMWNlYzJlNGEiLCJpYXQiOjE2MjI1NjYzNzF9.vVjH_c_lZPESwelUSpGlE87XX5McfQUTFBiXlXfUFTQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"_id\":\"60b6665485ddcc2438984517\",\r\n      \"documentType\": \"T.I\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/documentType/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"documentType",
 								"delete"
 							]
 						}
