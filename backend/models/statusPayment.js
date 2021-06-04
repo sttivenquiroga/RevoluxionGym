@@ -7,11 +7,11 @@
  const mongoose = require("mongoose");
 
  const Schema = new mongoose.Schema({
-    userId: String,
-    planId: String,
+    userId: { type: mongoose.Schema.ObjectId, ref: "user" },
+    planId: { type: mongoose.Schema.ObjectId, ref: "plan" },
     payDate: Date,
     statusPayment: { type: Boolean, default: true },
-    createdAt: { type: Date, default: Date.now() },
+    date: { type: Date, default: Date.now() },
     status: { type: Boolean, default: true }
  });
  

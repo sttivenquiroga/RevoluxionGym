@@ -8,6 +8,8 @@
 
  const Schema = new mongoose.Schema({
      rol: String,
+     description: String,
+     date: { type: Date, default: Date.now() },
      status: { type: Boolean, default: true }
  });
  
