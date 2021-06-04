@@ -123,6 +123,7 @@ router.put("/updateProfile", Auth, UserAuth, async (req, res) => {
   )
     return res.status(401).send("Process failed: Incomplete data");
   let user = await User.findById(req.user._id);
+  if (!user) return res.status(401).send("Process invalid: User not found");
   let userVer = await User.findById(req.user._id);
   let verUser = await User.findOne({ user: req.body.user });
   if (verUser && verUser.user != user.user)
@@ -170,7 +171,10 @@ router.put("/updateAdmin", Auth, UserAuth, Admin, async (req, res) => {
     !req.body.status
   )
     return res.status(401).send("Process failed: Incomplete data");
-  let user = await User.findById(req.body._id);
+  let user = mongoose.Types.ObjectId.isValid(req.body._id);
+  if (!user) return res.status(401).send("Process failed: Invalid user Id")
+  user = await User.findById(req.body._id);
+  if (!user) return res.status(401).send("Process invalid: User not found");
   let verUser = await User.findOne({ user: req.body.user });
   if (verUser && verUser.user !== user.user)
     return res.status(401).send("Process failed: Username is not avaible");
@@ -208,7 +212,7 @@ router.put("/deleteUser", Auth, UserAuth, Admin, async (req, res) => {
   if (
     !req.body._id ||
     !req.body.rolId ||
-    !req.body.documentType_id ||
+    !req.body.documentTypeId ||
     !req.body.numberDocument ||
     !req.body.firstName ||
     !req.body.lastName ||
@@ -217,7 +221,10 @@ router.put("/deleteUser", Auth, UserAuth, Admin, async (req, res) => {
     !req.body.phone
   )
     return res.status(401).send("Process failed: Incomplete data");
-  let user = await User.findById(req.body._id);
+  let user = mongoose.Types.ObjectId.isValid(req.body._id);
+  if (!user) return res.status(401).send("Process failed: Invalid user Id")
+  user = await User.findById(req.body._id);
+  if (!user) return res.status(401).send("Process invalid: User not found");
   let verUser = await User.findOne({ user: req.body.user });
   if (verUser && verUser.user != user.user)
     return res.status(401).send("Process failed: Username is not avaible");

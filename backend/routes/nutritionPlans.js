@@ -58,6 +58,11 @@ router.put("/updateNutritionPlan", Auth, UserAuth, Admin, async (req, res) => {
     !req.body.status
   )
     return res.status(401).send("Incomplete Data");
+  const validateId = mongoose.Types.ObjectId.isValid(req.body._id);
+  if (!validateId)
+    return res.status(401).send("Process failed: Invalid Nutrition plan Id");
+  const user = mongoose.Types.ObjectId.isValid(req.body.userId);
+  if (!user) return res.status(401).send("Process failed: Invalid user Id");
   const nutritionPlan = await NutritionPlan.findByIdAndUpdate(req.body._id, {
     userId: req.body.userId,
     nutritionPlan: req.body.nutritionPlan,
