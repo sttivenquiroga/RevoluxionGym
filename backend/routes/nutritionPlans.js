@@ -2,9 +2,10 @@ const express = require("express");
 const router = express.Router();
 const NutritionPlan = require("../models/nutritionPlans");
 const Auth = require("../middleware/auth");
+const Admin = require("../middleware/admin");
 const UserAuth = require("../middleware/user");
 
-router.post("/registerNutritionPlan", Auth, UserAuth, async (req, res) => {
+router.post("/registerNutritionPlan", Auth, UserAuth, Admin, async (req, res) => {
   if (!req.body.nutritionPlan || !req.body.description)
     return res.status(401).send("Incomplete Data");
   const nutritionPlan = new NutritionPlan({
@@ -19,7 +20,7 @@ router.post("/registerNutritionPlan", Auth, UserAuth, async (req, res) => {
   return res.status(200).send({ result });
 });
 
-router.get("/listNutritionPlan", Auth, UserAuth, async (req, res) => {
+router.get("/listNutritionPlan", Auth, UserAuth, Admin, async (req, res) => {
   const nutritionPlan = await NutritionPlan.find({ user_id: req.user._id });
   if (!nutritionPlan)
     return res
@@ -28,7 +29,7 @@ router.get("/listNutritionPlan", Auth, UserAuth, async (req, res) => {
   return res.status(200).send({ nutritionPlan });
 });
 
-router.put("/updateNutritionPlan", Auth, UserAuth, async (req, res) => {
+router.put("/updateNutritionPlan", Auth, UserAuth, Admin, async (req, res) => {
   if (!req.body.nutritionPlan || !req.body.description || !req.body.status)
     return res.status(401).send("Incomplete Data");
   const nutritionPlan = await NutritionPlan.findByIdAndUpdate(req.body._id, {
@@ -42,7 +43,7 @@ router.put("/updateNutritionPlan", Auth, UserAuth, async (req, res) => {
   return res.status(200).send({ nutritionPlan });
 });
 
-router.put("/deleteNutritionPlan", Auth, UserAuth, async (req, res) => {
+router.put("/deleteNutritionPlan", Auth, UserAuth, Admin, async (req, res) => {
   if (!req.body.nutritionPlan || !req.body.description || !req.body.status)
     return res.status(401).send("Incomplete Data");
   const nutritionPlan = await NutritionPlan.findByIdAndUpdate(req.body._id, {
