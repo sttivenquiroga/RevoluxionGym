@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "4d82dad7-a4c7-49eb-a2d9-f3e2514cf8d2",
+		"_postman_id": "9b641dbf-1a58-4887-a667-7583eafa5f48",
 		"name": "RevoluxionGym",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -1827,7 +1827,7 @@
 					"response": []
 				},
 				{
-					"name": "getDeptCities",
+					"name": "getByDept",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
