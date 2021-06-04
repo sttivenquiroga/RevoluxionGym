@@ -10,6 +10,7 @@ const Schema = new mongoose.Schema({
     plan: String,
     description: String,
     price: Number,
+    date: { type: Date, default: Date.now() },
     status: { type: Boolean, default: true }
 });
 
