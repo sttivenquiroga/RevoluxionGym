@@ -12,10 +12,10 @@ router.post(
   UserAuth,
   Admin,
   async (req, res) => {
-    if (!req.body.user_id || !req.body.nutritionPlan || !req.body.description)
+    if (!req.body.userId || !req.body.nutritionPlan || !req.body.description)
       return res.status(401).send("Incomplete Data");
     const nutritionPlan = new NutritionPlan({
-      user_id: req.body.user_id,
+      userId: req.body.userId,
       nutritionPlan: req.body.nutritionPlan,
       description: req.body.description,
       status: true,
@@ -28,7 +28,7 @@ router.post(
 );
 
 router.get("/listNutritionPlanUser", Auth, UserAuth, async (req, res) => {
-  const nutritionPlan = await NutritionPlan.find({ user_id: req.user._id });
+  const nutritionPlan = await NutritionPlan.find({ userId: req.user._id });
   if (!nutritionPlan)
     return res.status(401).send("Error fetching nutrition plan information");
   return res.status(200).send({ nutritionPlan });
@@ -52,14 +52,14 @@ router.get(
 router.put("/updateNutritionPlan", Auth, UserAuth, Admin, async (req, res) => {
   if (
     !req.body._id ||
-    !req.body.user_id ||
+    !req.body.userId ||
     !req.body.nutritionPlan ||
     !req.body.description ||
     !req.body.status
   )
     return res.status(401).send("Incomplete Data");
   const nutritionPlan = await NutritionPlan.findByIdAndUpdate(req.body._id, {
-    user_id: req.body.user_id,
+    userId: req.body.userId,
     nutritionPlan: req.body.nutritionPlan,
     description: req.body.description,
     status: req.body.status,
@@ -77,13 +77,13 @@ router.put(
   async (req, res) => {
     if (
       !req.body._id ||
-      !req.body.user_id ||
+      !req.body.userId ||
       !req.body.nutritionPlan ||
       !req.body.description
     )
       return res.status(401).send("Incomplete Data");
     const nutritionPlan = await NutritionPlan.findByIdAndUpdate(req.body._id, {
-      user_id: req.body.user_id,
+      userId: req.body.userId,
       nutritionPlan: req.body.nutritionPlan,
       description: req.body.description,
       status: false,

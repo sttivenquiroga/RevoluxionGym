@@ -4,15 +4,14 @@ const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
 const User = require("../models/user");
 const Rol = require("../models/rol");
-const DocumentType = require("../models/documentType");
 const Auth = require("../middleware/auth");
 const UserAuth = require("../middleware/user");
 const Admin = require("../middleware/admin");
 
 router.post("/registerUser", async (req, res) => {
   if (
-    !req.body.rol_id ||
-    !req.body.documentType_id ||
+    !req.body.rolId ||
+    !req.body.documentTypeId ||
     !req.body.numberDocument ||
     !req.body.firstName ||
     !req.body.lastName ||
@@ -30,12 +29,12 @@ router.post("/registerUser", async (req, res) => {
   const hash = await bcrypt.hash(req.body.password, 10);
   const rol = await Rol.findOne({ rol: "user" });
   if (!rol) return res.status(401).send("Process failed: No role was assigned");
-  let docType = mongoose.Types.ObjectId.isValid(req.body.documentType_id);
+  let docType = mongoose.Types.ObjectId.isValid(req.body.documentTypeId);
   if (!docType)
     return res.status(401).send("Process invalid: Invalid id document type");
   const data = new User({
-    rol_id: rol._id,
-    documentType_id: req.body.documentType_id,
+    rolId: rol._id,
+    documentTypeId: req.body.documentTypeId,
     numberDocument: req.body.numberDocument,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
@@ -57,8 +56,8 @@ router.post("/registerUser", async (req, res) => {
 
 router.post("/registerAdmin", Auth, UserAuth, Admin, async (req, res) => {
   if (
-    !req.body.rol_id ||
-    !req.body.documentType_id ||
+    !req.body.rolId ||
+    !req.body.documentTypeId ||
     !req.body.numberDocument ||
     !req.body.firstName ||
     !req.body.lastName ||
@@ -74,14 +73,14 @@ router.post("/registerAdmin", Auth, UserAuth, Admin, async (req, res) => {
   if (user)
     return res.status(401).send("Process failed: Email is already registered");
   const hash = await bcrypt.hash(req.body.password, 10);
-  const rol = mongoose.Types.ObjectId.isValid(req.body.rol_id);
+  const rol = mongoose.Types.ObjectId.isValid(req.body.rolId);
   if (!rol) return res.status(401).send("Process failed: Invalid id rol");
-  let docType = mongoose.Types.ObjectId.isValid(req.body.documentType_id);
+  let docType = mongoose.Types.ObjectId.isValid(req.body.documentTypeId);
   if (!docType)
     return res.status(401).send("Process failed: Invalid id document type");
   const data = new User({
-    rol_id: req.body.rol_id,
-    documentType_id: req.body.documentType_id,
+    rolId: req.body.rolId,
+    documentTypeId: req.body.documentTypeId,
     numberDocument: req.body.numberDocument,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
@@ -113,7 +112,7 @@ router.get("/findUser/:firstName?", Auth, UserAuth, Admin, async (req, res) => {
 });
 router.put("/updateProfile", Auth, UserAuth, async (req, res) => {
   if (
-    !req.body.documentType_id ||
+    !req.body.documentTypeId ||
     !req.body.numberDocument ||
     !req.body.firstName ||
     !req.body.lastName ||
@@ -137,12 +136,12 @@ router.put("/updateProfile", Auth, UserAuth, async (req, res) => {
   } else {
     hash = await bcrypt.hash(req.body.password, 10);
   }
-  let docType = mongoose.Types.ObjectId.isValid(req.body.documentType_id);
+  let docType = mongoose.Types.ObjectId.isValid(req.body.documentTypeId);
   if (!docType)
     return res.status(401).send("Process failed: Invalid id document type");
   user = await User.findByIdAndUpdate(req.user._id, {
-    rol_id: req.user.rol_id,
-    documentType_id: req.body.documentType_id,
+    rolId: req.user.rolId,
+    documentTypeId: req.body.documentTypeId,
     numberDocument: req.body.numberDocument,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
@@ -159,8 +158,8 @@ router.put("/updateProfile", Auth, UserAuth, async (req, res) => {
 router.put("/updateAdmin", Auth, UserAuth, Admin, async (req, res) => {
   if (
     !req.body._id ||
-    !req.body.rol_id ||
-    !req.body.documentType_id ||
+    !req.body.rolId ||
+    !req.body.documentTypeId ||
     !req.body.numberDocument ||
     !req.body.firstName ||
     !req.body.lastName ||
@@ -184,14 +183,14 @@ router.put("/updateAdmin", Auth, UserAuth, Admin, async (req, res) => {
   } else {
     hash = await bcrypt.hash(req.body.password, 10);
   }
-  const rol = mongoose.Types.ObjectId.isValid(req.body.rol_id);
+  const rol = mongoose.Types.ObjectId.isValid(req.body.rolId);
   if (!rol) return res.status(401).send("Process failed: Invalid id rol");
-  let docType = mongoose.Types.ObjectId.isValid(req.body.documentType_id);
+  let docType = mongoose.Types.ObjectId.isValid(req.body.documentTypeId);
   if (!docType)
     return res.status(401).send("Process failed: Invalid id document type");
   user = await User.findByIdAndUpdate(req.body._id, {
-    rol_id: req.body.rol_id,
-    documentType_id: req.body.documentType_id,
+    rolId: req.body.rolId,
+    documentTypeId: req.body.documentTypeId,
     numberDocument: req.body.numberDocument,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
@@ -208,7 +207,7 @@ router.put("/updateAdmin", Auth, UserAuth, Admin, async (req, res) => {
 router.put("/deleteUser", Auth, UserAuth, Admin, async (req, res) => {
   if (
     !req.body._id ||
-    !req.body.rol_id ||
+    !req.body.rolId ||
     !req.body.documentType_id ||
     !req.body.numberDocument ||
     !req.body.firstName ||
@@ -232,8 +231,8 @@ router.put("/deleteUser", Auth, UserAuth, Admin, async (req, res) => {
     hash = await bcrypt.hash(req.body.password, 10);
   }
   user = await User.findByIdAndUpdate(req.body._id, {
-    rol: req.body.rol,
-    documentType_id: req.body.documentType_id,
+    rolId: req.body.rolId,
+    documentTypeId: req.body.documentTypeId,
     numberDocument: req.body.numberDocument,
     firstName: req.body.firstName,
     lastName: req.body.lastName,

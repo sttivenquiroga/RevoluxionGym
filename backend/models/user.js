@@ -3,8 +3,8 @@ const jwt = require("jsonwebtoken");
 const moment = require("moment");
 
 const userSchema = new mongoose.Schema({
-  rol_id: { type: mongoose.Schema.ObjectId, ref: "rol" },
-  documentType_id: { type: mongoose.Schema.ObjectId, ref: "documentType" },
+  rolId: { type: mongoose.Schema.ObjectId, ref: "rol" },
+  documentTypeId: { type: mongoose.Schema.ObjectId, ref: "documentType" },
   numberDocument: String,
   firstName: String,
   lastName: String,
@@ -21,7 +21,7 @@ userSchema.methods.generateJWT = function () {
     {
       _id: this._id,
       name: this.name,
-      rol_id: this.rol_id,
+      rol_id: this.rolId,
       iat: moment().unix(),
     },
     process.env.SECRET_kEY_JWT

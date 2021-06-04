@@ -3,6 +3,7 @@ const router = express.Router();
 const Departments = require("../models/departments");
 const Auth = require("../middleware/auth");
 const UserAuth = require("../middleware/user");
+const AdminAuth = require("../middleware/admin");
 
 router.post("/create", Auth, UserAuth, AdminAuth, async(req, res) => {
     if (!req.body.department)
