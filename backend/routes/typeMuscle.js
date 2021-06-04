@@ -1,11 +1,14 @@
 const express = require("express");
 const router = express.Router();
 const TypeMuscle = require("../models/typeMuscle");
+
 const Auth = require("../middleware/auth");
 const UserAuth = require("../middleware/user");
+const AdminAuth = require("../middleware/admin");
+
 
 // Save  type muscle
-router.post("/create", Auth, UserAuth, async (req, res) => {
+router.post("/create", Auth, UserAuth, AdminAuth, async (req, res) => {
   if (!req.body.typeMuscle)
     return res.status(401).send("Incomplete data");
 
@@ -19,14 +22,14 @@ router.post("/create", Auth, UserAuth, async (req, res) => {
 });
 
 // list type muscle
-router.get("/getAll", Auth, UserAuth, async (req, res) => {
+router.get("/getAll", Auth, UserAuth, AdminAuth, async (req, res) => {
   const typeMuscle = await TypeMuscle.find();
   if (!typeMuscle) return res.status(401).send("Error fetching type muscles");
   return res.status(200).send({ typeMuscle });
 });
 
 // Edit type muscle
-router.put("/edit", Auth, UserAuth, async (req, res) => {
+router.put("/edit", Auth, UserAuth, AdminAuth, async (req, res) => {
   if (!req.body._id || !req.body.typeMuscle)
     return res.status(401).send("Incomplete data");
 
@@ -39,7 +42,7 @@ router.put("/edit", Auth, UserAuth, async (req, res) => {
 });
 
 // delete type muscle
-router.put("/delete", Auth, UserAuth, async (req, res) => {
+router.put("/delete", Auth, UserAuth, AdminAuth, async (req, res) => {
   if (!req.body._id || !req.body.typeMuscle)
     return res.status(401).send("Incomplete data");
 
