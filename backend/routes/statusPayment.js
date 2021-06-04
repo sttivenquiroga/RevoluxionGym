@@ -21,13 +21,13 @@ router.post("/add", Auth, UserAuth, async (req, res) => {
   const validId = mongoose.Types.ObjectId.isValid(req.body.userId);
   if (!validId) return res.status(401).send("Process failed: Invalid id");
 
-  const validId = mongoose.Types.ObjectId.isValid(req.body.planId);
+  validId = mongoose.Types.ObjectId.isValid(req.body.planId);
   if (!validId) return res.status(401).send("Process failed: Invalid id");
 
   const exist = await User.findById(req.body.userId);
   if (!exist) return res.status(401).send("Process failed: user doesn't exist");
 
-  const exist = await User.findById(req.body.planId);
+  exist = await User.findById(req.body.planId);
   if (!exist) return res.status(401).send("Process failed: plan doesn't exist");
 
   const statusPayment = new StatusPayment({
@@ -56,16 +56,16 @@ router.put("/update", Auth, UserAuth, async (req, res) => {
   const validId = mongoose.Types.ObjectId.isValid(req.body._id);
   if (!validId) return res.status(401).send("Process failed: Invalid id");
 
-  const validId = mongoose.Types.ObjectId.isValid(req.body.userId);
+  validId = mongoose.Types.ObjectId.isValid(req.body.userId);
   if (!validId) return res.status(401).send("Process failed: Invalid id");
 
-  const validId = mongoose.Types.ObjectId.isValid(req.body.planId);
+  validId = mongoose.Types.ObjectId.isValid(req.body.planId);
   if (!validId) return res.status(401).send("Process failed: Invalid id");
 
   const exist = await User.findById(req.body.userId);
   if (!exist) return res.status(401).send("Process failed: user doesn't exist");
 
-  const exist = await User.findById(req.body.planId);
+  exist = await User.findById(req.body.planId);
   if (!exist) return res.status(401).send("Process failed: plan doesn't exist");
 
   const result = await StatusPayment.findById(req.body._id);
@@ -100,16 +100,16 @@ router.put("/delete", Auth, UserAuth, Admin, async (req, res) => {
   const validId = mongoose.Types.ObjectId.isValid(req.body._id);
   if (!validId) return res.status(401).send("Process failed: Invalid id");
 
-  const validId = mongoose.Types.ObjectId.isValid(req.body.userId);
+  validId = mongoose.Types.ObjectId.isValid(req.body.userId);
   if (!validId) return res.status(401).send("Process failed: Invalid id");
 
-  const validId = mongoose.Types.ObjectId.isValid(req.body.planId);
+  validId = mongoose.Types.ObjectId.isValid(req.body.planId);
   if (!validId) return res.status(401).send("Process failed: Invalid id");
 
   const exist = await User.findById(req.body.userId);
   if (!exist) return res.status(401).send("Process failed: user doesn't exist");
 
-  const exist = await User.findById(req.body.planId);
+  exist = await User.findById(req.body.planId);
   if (!exist) return res.status(401).send("Process failed: plan doesn't exist");
 
   const statusPayments = await StatusPayment.findByIdAndUpdate(req.body._id, {
