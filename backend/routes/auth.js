@@ -10,7 +10,7 @@ router.post("/login", async (req, res)=> {
     const user = await User.findOne({user: req.body.user});
     if (!user) return res.status(401).send("Usuario o contraseña incorrecto");
     const hash = await bcrypt.compare(req.body.password, user.password);
-    if (!hash) return res.status(400).send("Usuario o contraseña incorrecto");
+    if (!hash || !user.status) return res.status(400).send("Usuario o contraseña incorrecto");
     const jwtToken = user.generateJWT();
     return res.status(200).send({ jwtToken });
 });
