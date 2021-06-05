@@ -31,8 +31,8 @@ router.post("/add", Auth, UserAuth, Admin, async (req, res) => {
 });
 
 // Get all rols
-router.get("/getAll", Auth, UserAuth, Admin, async (req, res) => {
-  const rol = await Rol.find();
+router.get("/getAll/:name?", Auth, UserAuth, Admin, async (req, res) => {
+  const rol = await Rol.find({ rol: new RegExp(req.params["name"], "i") });
   if (!rol) return res.status(401).send("Error fetching role");
   res.status(200).send({ rol });
 });
@@ -68,8 +68,8 @@ router.put("/delete", Auth, UserAuth, Admin, async (req, res) => {
     status: false,
   });
 
-  if (!rol) return res.status(401).send("Error deleting rol");
-  res.status(200).send({ rol });
+  if (!rol) return res.status(401).send("Error deleting role");
+  res.status(200).send("Deleted role");
 });
 
 module.exports = router;

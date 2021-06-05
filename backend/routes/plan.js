@@ -32,8 +32,8 @@ router.post("/add", Auth, UserAuth, Admin, async (req, res) => {
 });
 
 // Get all plans
-router.get("/getAll", Auth, UserAuth, Admin, async (req, res) => {
-  const plan = await Plan.find();
+router.get("/getAll/:name?", Auth, UserAuth, Admin, async (req, res) => {
+  const plan = await Plan.find({ plan: new RegExp(req.params["name"], "i") });
   if (!plan) return res.status(401).send("Error fetching plan");
   res.status(200).send({ plan });
 });
@@ -83,7 +83,7 @@ router.put("/delete", Auth, UserAuth, async (req, res) => {
   });
 
   if (!plan) return res.status(401).send("Error deleting plan");
-  res.status(200).send({ plan });
+  res.status(200).send("Deleted plan");
 });
 
 module.exports = router;

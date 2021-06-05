@@ -9,6 +9,7 @@ const router = express.Router();
 const mongoose = require("mongoose");
 const StatusPayment = require("../models/statusPayment");
 const User = require("../models/user");
+const Plan = require("../models/plan");
 const Auth = require("../middleware/auth");
 const UserAuth = require("../middleware/user");
 const Admin = require("../middleware/admin");
@@ -18,16 +19,16 @@ router.post("/add", Auth, UserAuth, async (req, res) => {
   if (!req.body.userId || !req.body.planId)
     return res.status(401).send("Incomplete data");
 
-  const validId = mongoose.Types.ObjectId.isValid(req.body.userId);
+  let validId = mongoose.Types.ObjectId.isValid(req.body.userId);
   if (!validId) return res.status(401).send("Process failed: Invalid id");
 
   validId = mongoose.Types.ObjectId.isValid(req.body.planId);
   if (!validId) return res.status(401).send("Process failed: Invalid id");
 
-  const exist = await User.findById(req.body.userId);
+  let exist = await User.findById(req.body.userId);
   if (!exist) return res.status(401).send("Process failed: user doesn't exist");
 
-  exist = await User.findById(req.body.planId);
+  exist = await Plan.findById(req.body.planId);
   if (!exist) return res.status(401).send("Process failed: plan doesn't exist");
 
   const statusPayment = new StatusPayment({
@@ -42,7 +43,10 @@ router.post("/add", Auth, UserAuth, async (req, res) => {
 
 // Get all statusPayments
 router.get("/getAll", Auth, UserAuth, Admin, async (req, res) => {
-  const statusPayment = await StatusPayment.find();
+  const statusPayment = await StatusPayment.find()
+    .populate("userId")
+    .populate("planId", "plan")
+    .exec();
   if (!statusPayment)
     return res.status(401).send("Error fetching status payment");
   res.status(200).send({ statusPayment });
@@ -53,7 +57,7 @@ router.put("/update", Auth, UserAuth, async (req, res) => {
   if (!req.body._id || !req.body.userId || !req.body.planId)
     return res.status(401).send("Incomplete data");
 
-  const validId = mongoose.Types.ObjectId.isValid(req.body._id);
+  let validId = mongoose.Types.ObjectId.isValid(req.body._id);
   if (!validId) return res.status(401).send("Process failed: Invalid id");
 
   validId = mongoose.Types.ObjectId.isValid(req.body.userId);
@@ -62,14 +66,14 @@ router.put("/update", Auth, UserAuth, async (req, res) => {
   validId = mongoose.Types.ObjectId.isValid(req.body.planId);
   if (!validId) return res.status(401).send("Process failed: Invalid id");
 
-  const exist = await User.findById(req.body.userId);
+  let exist = await User.findById(req.body.userId);
   if (!exist) return res.status(401).send("Process failed: user doesn't exist");
 
-  exist = await User.findById(req.body.planId);
+  exist = await Plan.findById(req.body.planId);
   if (!exist) return res.status(401).send("Process failed: plan doesn't exist");
 
   const result = await StatusPayment.findById(req.body._id);
-  if (!result && result.statusPayment) {
+  if (result && result.statusPayment) {
     const statusPayment = await StatusPayment.findByIdAndUpdate(req.body._id, {
       userId: req.body.userId,
       planId: req.body.planId,
@@ -97,7 +101,7 @@ router.put("/delete", Auth, UserAuth, Admin, async (req, res) => {
   )
     return res.status(401).send("Incomplete data");
 
-  const validId = mongoose.Types.ObjectId.isValid(req.body._id);
+  let validId = mongoose.Types.ObjectId.isValid(req.body._id);
   if (!validId) return res.status(401).send("Process failed: Invalid id");
 
   validId = mongoose.Types.ObjectId.isValid(req.body.userId);
@@ -106,10 +110,10 @@ router.put("/delete", Auth, UserAuth, Admin, async (req, res) => {
   validId = mongoose.Types.ObjectId.isValid(req.body.planId);
   if (!validId) return res.status(401).send("Process failed: Invalid id");
 
-  const exist = await User.findById(req.body.userId);
+  let exist = await User.findById(req.body.userId);
   if (!exist) return res.status(401).send("Process failed: user doesn't exist");
 
-  exist = await User.findById(req.body.planId);
+  exist = await Plan.findById(req.body.planId);
   if (!exist) return res.status(401).send("Process failed: plan doesn't exist");
 
   const statusPayments = await StatusPayment.findByIdAndUpdate(req.body._id, {

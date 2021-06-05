@@ -1,322 +1,10 @@
 {
 	"info": {
-		"_postman_id": "4d43988a-c477-4baf-be19-bc7129b1bd3f",
+		"_postman_id": "b588963c-95bb-4116-9266-7797ee265d34",
 		"name": "RevoluxionGym",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
-		{
-			"name": "Rols",
-			"item": [
-				{
-					"name": "create",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MTIzM2QzZDgyZjNiMDBjNzU1NzQiLCJpYXQiOjE2MjI0Nzk1NDl9.LlNfv4ixU2FS1hASJchiKg-AS5mBTRL5yf9mOTuVAqI",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"rol\": \"administrador\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/api/rol/add",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"api",
-								"rol",
-								"add"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "update",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MTIzM2QzZDgyZjNiMDBjNzU1NzQiLCJpYXQiOjE2MjI0Nzk1NDl9.LlNfv4ixU2FS1hASJchiKg-AS5mBTRL5yf9mOTuVAqI",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"_id\": \"60b665cf1f55a629e445486a\",\r\n    \"rol\": \"admin\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/api/rol/update",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"api",
-								"rol",
-								"update"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "delete",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MTIzM2QzZDgyZjNiMDBjNzU1NzQiLCJpYXQiOjE2MjI0Nzk1NDl9.LlNfv4ixU2FS1hASJchiKg-AS5mBTRL5yf9mOTuVAqI",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"_id\": \"60b665cf1f55a629e445486a\",\r\n    \"rol\": \"admin\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/api/rol/delete",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"api",
-								"rol",
-								"delete"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "getAll",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MTIzM2QzZDgyZjNiMDBjNzU1NzQiLCJpYXQiOjE2MjI0Nzk1NDl9.LlNfv4ixU2FS1hASJchiKg-AS5mBTRL5yf9mOTuVAqI",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3001/api/rol/getAll",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"api",
-								"rol",
-								"getAll"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Plans",
-			"item": [
-				{
-					"name": "create",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MTIzM2QzZDgyZjNiMDBjNzU1NzQiLCJpYXQiOjE2MjI1NjU4OTN9.bz6PHVYDFtbd083hCoJGg8rpd1NYnslbprk37sOvzis",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"plan\": \"Plan bronce\",\r\n    \"description\": \"Acceso al 30% del GYM\",\r\n    \"price\": 25000\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/api/plan/add",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"api",
-								"plan",
-								"add"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "delete",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MTIzM2QzZDgyZjNiMDBjNzU1NzQiLCJpYXQiOjE2MjI0Nzk1NDl9.LlNfv4ixU2FS1hASJchiKg-AS5mBTRL5yf9mOTuVAqI",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"_id\": \"60b664301f55a629e4454869\",\r\n    \"plan\": \"Plan A1\",\r\n    \"description\": \"Acceso al 50% del GYM\",\r\n    \"price\": 35000\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/api/plan/delete",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"api",
-								"plan",
-								"delete"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "update",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MTIzM2QzZDgyZjNiMDBjNzU1NzQiLCJpYXQiOjE2MjI1NjU4OTN9.bz6PHVYDFtbd083hCoJGg8rpd1NYnslbprk37sOvzis",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"_id\": \"60b664301f55a629e4454869\",\r\n    \"plan\": \"Plan A1\",\r\n    \"description\": \"Acceso al 50% del GYM\",\r\n    \"price\": 35000\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/api/plan/update",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"api",
-								"plan",
-								"update"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "getAll",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MTIzM2QzZDgyZjNiMDBjNzU1NzQiLCJpYXQiOjE2MjI1NjU4OTN9.bz6PHVYDFtbd083hCoJGg8rpd1NYnslbprk37sOvzis",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3001/api/plan/getAll",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"api",
-								"plan",
-								"getAll"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
 		{
 			"name": "Exercise",
 			"item": [
@@ -2151,162 +1839,6 @@
 			]
 		},
 		{
-			"name": "StatusPayments",
-			"item": [
-				{
-					"name": "create",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MTIzM2QzZDgyZjNiMDBjNzU1NzQiLCJpYXQiOjE2MjI0Nzk1NDl9.LlNfv4ixU2FS1hASJchiKg-AS5mBTRL5yf9mOTuVAqI",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"userId\": \"123456789\",\r\n    \"planId\": \"987456123\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/api/statusPayment/add",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"api",
-								"statusPayment",
-								"add"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "update",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MTIzM2QzZDgyZjNiMDBjNzU1NzQiLCJpYXQiOjE2MjI0Nzk1NDl9.LlNfv4ixU2FS1hASJchiKg-AS5mBTRL5yf9mOTuVAqI",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"_id\": \"60b666431f55a629e445486b\",\r\n    \"userId\": \"123456789\",\r\n    \"planId\": \"987456123\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/api/statusPayment/update",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"api",
-								"statusPayment",
-								"update"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "delete",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MTIzM2QzZDgyZjNiMDBjNzU1NzQiLCJpYXQiOjE2MjI0Nzk1NDl9.LlNfv4ixU2FS1hASJchiKg-AS5mBTRL5yf9mOTuVAqI",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"_id\": \"60b666431f55a629e445486b\",\r\n    \"userId\": \"123456789\",\r\n    \"planId\": \"987456123\",\r\n    \"payDate\": \"2021-06-01T16:54:54.004Z\",\r\n    \"statusPayment\": false,\r\n    \"createdAt\": \"2021-06-01T16:39:30.948Z\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/api/statusPayment/delete",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"api",
-								"statusPayment",
-								"delete"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "getAll",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1MTIzM2QzZDgyZjNiMDBjNzU1NzQiLCJpYXQiOjE2MjI0Nzk1NDl9.LlNfv4ixU2FS1hASJchiKg-AS5mBTRL5yf9mOTuVAqI",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3001/api/statusPayment/getAll",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"api",
-								"statusPayment",
-								"getAll"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
 			"name": "User",
 			"item": [
 				{
@@ -2806,6 +2338,476 @@
 								"nutritionPlan",
 								"deleteNutritionPlan",
 								"60ba935f552d39413053e567"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rols",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhOGIyYmVmZDdhZjMzNWMyMGYxNjkiLCJyb2xfaWQiOiI2MGJhODk5NDcxZGM0YjIzYTg4ZWFjYjIiLCJpYXQiOjE2MjI4MzgxMDl9.PEjIUOrtMj2Kbw8BamuC9tq_auF43h-Ugd2F0RSeZZE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rol\": \"prueba\",\r\n    \"description\": \"Rol de prueba\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/rol/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"rol",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhOGIyYmVmZDdhZjMzNWMyMGYxNjkiLCJyb2xfaWQiOiI2MGJhODk5NDcxZGM0YjIzYTg4ZWFjYjIiLCJpYXQiOjE2MjI4MzgxMDl9.PEjIUOrtMj2Kbw8BamuC9tq_auF43h-Ugd2F0RSeZZE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"60ba90480ce83835b8f31a6d\",\r\n    \"rol\": \"prueba 2\",\r\n    \"description\": \"Rol de las pruebas\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/rol/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"rol",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhOGIyYmVmZDdhZjMzNWMyMGYxNjkiLCJyb2xfaWQiOiI2MGJhODk5NDcxZGM0YjIzYTg4ZWFjYjIiLCJpYXQiOjE2MjI4MzgxMDl9.PEjIUOrtMj2Kbw8BamuC9tq_auF43h-Ugd2F0RSeZZE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"60ba90480ce83835b8f31a6d\",\r\n    \"rol\": \"prueba 2\",\r\n    \"description\": \"Rol de las pruebas\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/rol/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"rol",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhOGIyYmVmZDdhZjMzNWMyMGYxNjkiLCJyb2xfaWQiOiI2MGJhODk5NDcxZGM0YjIzYTg4ZWFjYjIiLCJpYXQiOjE2MjI4MzgxMDl9.PEjIUOrtMj2Kbw8BamuC9tq_auF43h-Ugd2F0RSeZZE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/rol/getAll/ad",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"rol",
+								"getAll",
+								"ad"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Plans",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhOGIyYmVmZDdhZjMzNWMyMGYxNjkiLCJyb2xfaWQiOiI2MGJhODk5NDcxZGM0YjIzYTg4ZWFjYjIiLCJpYXQiOjE2MjI4MzgxMDl9.PEjIUOrtMj2Kbw8BamuC9tq_auF43h-Ugd2F0RSeZZE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"plan\": \"Plan oro\",\r\n    \"description\": \"Acceso al 100% del GYM\",\r\n    \"price\": 45000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/plan/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"plan",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhOGIyYmVmZDdhZjMzNWMyMGYxNjkiLCJyb2xfaWQiOiI2MGJhODk5NDcxZGM0YjIzYTg4ZWFjYjIiLCJpYXQiOjE2MjI4MzgxMDl9.PEjIUOrtMj2Kbw8BamuC9tq_auF43h-Ugd2F0RSeZZE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"60ba8e2befd7af335c20f16c\",\r\n    \"plan\": \"Plan oro\",\r\n    \"description\": \"Acceso al 100% del GYM\",\r\n    \"price\": 45000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/plan/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"plan",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhOGIyYmVmZDdhZjMzNWMyMGYxNjkiLCJyb2xfaWQiOiI2MGJhODk5NDcxZGM0YjIzYTg4ZWFjYjIiLCJpYXQiOjE2MjI4MzgxMDl9.PEjIUOrtMj2Kbw8BamuC9tq_auF43h-Ugd2F0RSeZZE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"60ba8e2befd7af335c20f16c\",\r\n    \"plan\": \"Plan oro\",\r\n    \"description\": \"Acceso al 100% del GYM\",\r\n    \"price\": 45000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/plan/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"plan",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhOGIyYmVmZDdhZjMzNWMyMGYxNjkiLCJyb2xfaWQiOiI2MGJhODk5NDcxZGM0YjIzYTg4ZWFjYjIiLCJpYXQiOjE2MjI4MzgxMDl9.PEjIUOrtMj2Kbw8BamuC9tq_auF43h-Ugd2F0RSeZZE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/plan/getAll/plan bronce",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"plan",
+								"getAll",
+								"plan bronce"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "StatusPayments",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhOGIyYmVmZDdhZjMzNWMyMGYxNjkiLCJyb2xfaWQiOiI2MGJhODk5NDcxZGM0YjIzYTg4ZWFjYjIiLCJpYXQiOjE2MjI4MzgxMDl9.PEjIUOrtMj2Kbw8BamuC9tq_auF43h-Ugd2F0RSeZZE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"60ba8b2befd7af335c20f169\",\r\n    \"planId\": \"60ba8e07efd7af335c20f16a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/statusPayment/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"statusPayment",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhOGIyYmVmZDdhZjMzNWMyMGYxNjkiLCJyb2xfaWQiOiI2MGJhODk5NDcxZGM0YjIzYTg4ZWFjYjIiLCJpYXQiOjE2MjI4MzgxMDl9.PEjIUOrtMj2Kbw8BamuC9tq_auF43h-Ugd2F0RSeZZE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"60ba91a9c9ca3202406b59d3\",\r\n    \"userId\": \"60ba8b2befd7af335c20f169\",\r\n    \"planId\": \"60ba8e07efd7af335c20f16a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/statusPayment/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"statusPayment",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhOGIyYmVmZDdhZjMzNWMyMGYxNjkiLCJyb2xfaWQiOiI2MGJhODk5NDcxZGM0YjIzYTg4ZWFjYjIiLCJpYXQiOjE2MjI4MzgxMDl9.PEjIUOrtMj2Kbw8BamuC9tq_auF43h-Ugd2F0RSeZZE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"60ba91a9c9ca3202406b59d3\",\r\n    \"userId\": \"60ba8b2befd7af335c20f169\",\r\n    \"planId\": \"60ba8e07efd7af335c20f16a\",\r\n    \"payDate\": \"2021-06-04T21:05:13.821+00:00\",\r\n    \"statusPayment\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/statusPayment/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"statusPayment",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhOGIyYmVmZDdhZjMzNWMyMGYxNjkiLCJyb2xfaWQiOiI2MGJhODk5NDcxZGM0YjIzYTg4ZWFjYjIiLCJpYXQiOjE2MjI4MzgxMDl9.PEjIUOrtMj2Kbw8BamuC9tq_auF43h-Ugd2F0RSeZZE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/statusPayment/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"statusPayment",
+								"getAll"
 							]
 						}
 					},
