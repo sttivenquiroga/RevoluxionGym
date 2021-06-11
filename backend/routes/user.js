@@ -7,6 +7,7 @@ const Rol = require("../models/rol");
 const Auth = require("../middleware/auth");
 const UserAuth = require("../middleware/user");
 const Admin = require("../middleware/admin");
+const DocumentType = require("../models/documentType");
 
 router.post("/registerUser", async (req, res) => {
   if (
@@ -29,13 +30,16 @@ router.post("/registerUser", async (req, res) => {
   const hash = await bcrypt.hash(req.body.password, 10);
   const rol = await Rol.findOne({ rol: "user" });
   if (!rol) return res.status(401).send("Process failed: No role was assigned");
-  // let docType = "60ba5f96d4c93d2920e28a22";
-  // docType = mongoose.Types.ObjectId.isValid(req.body.documentTypeId);
-  // if (!docType)
-  //   return res.status(401).send("Process invalid: Invalid id document type");  
+
+  const typeDocu = await DocumentType.findOne({documentType: req.body.documentTypeId})
+  if(!typeDocu) res.status(401).send("Process invalid: document type doesn't exist");    
+
+  const docType = mongoose.Types.ObjectId.isValid(typeDocu._id);
+  if (!docType) return res.status(401).send("Process invalid: Invalid id document type");  
+
   const data = new User({
     rolId: rol._id,
-    documentTypeId: "60ba5f96d4c93d2920e28a22",
+    documentTypeId: typeDocu._id,
     numberDocument: req.body.numberDocument,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
@@ -45,6 +49,7 @@ router.post("/registerUser", async (req, res) => {
     phone: req.body.phone,
     status: true,
   });
+
   try {
     const result = await data.save();
     if (!result) return res.status(401).send("Error creating new user");

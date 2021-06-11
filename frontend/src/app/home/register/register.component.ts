@@ -38,11 +38,13 @@ export class RegisterComponent implements OnInit {
           console.log(res);          
           this.successMessage = 'Register User: Sucessful';
           this.clearAlert();
+          this.registerData = {};
         },
         (err) => {
           console.log(err);
           this.errorMessage = err.error;
           this.clearAlert();
+          this.registerData = {};
         }
       );
     }
