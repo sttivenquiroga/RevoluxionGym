@@ -12,6 +12,9 @@ import { ListNutritionPlanUserComponent } from './user/list-nutrition-plan-user/
 import { AuthService } from "./services/auth.service";
 import { TokenInterceptorService } from "./services/token-interceptor.service";
 import { AuthGuard } from "./guard/auth.guard";
+import { DocumentTypeService } from "./services/document-type.service";
+import { UserLocationService } from "./services/user-location.service";
+import { WeekRoutinesService } from "./services/week-routines.service";
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -25,6 +28,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home/home.component';
 import { FooterComponent } from './home/footer/footer.component';
+import { RegisterDocumentTypeComponent } from './admin/register-document-type/register-document-type.component';
+import { ListDocumentTypeComponent } from './admin/list-document-type/list-document-type.component';
+import { ListUserLocationComponent } from './admin/list-user-location/list-user-location.component';
+import { RegisterWeekRoutinesComponent } from './trainer/register-week-routines/register-week-routines.component';
+import { ListWeekRoutinesComponent } from './trainer/list-week-routines/list-week-routines.component';
+import { RegisterUserLocationComponent } from './user/register-user-location/register-user-location.component';
 
 
 @NgModule({
@@ -36,7 +45,13 @@ import { FooterComponent } from './home/footer/footer.component';
     RegisterAdminComponent,
     ListNutritionPlanUserComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    RegisterDocumentTypeComponent,
+    ListDocumentTypeComponent,
+    ListUserLocationComponent,
+    RegisterWeekRoutinesComponent,
+    ListWeekRoutinesComponent,
+    RegisterUserLocationComponent    
   ],
   imports: [
     BrowserModule,
@@ -53,7 +68,7 @@ import { FooterComponent } from './home/footer/footer.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [AuthService, AuthGuard,TokenInterceptorService],
+  providers: [AuthService, DocumentTypeService, UserLocationService, WeekRoutinesService, AuthGuard, TokenInterceptorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
