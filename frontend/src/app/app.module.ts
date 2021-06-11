@@ -25,6 +25,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home/home.component';
 import { FooterComponent } from './home/footer/footer.component';
+import { CreateExerciseComponent } from './trainer/create-exercise/create-exercise.component';
+import { GetAllExerciseComponent } from './trainer/get-all-exercise/get-all-exercise.component';
+import { CreateTypeExerciseComponent } from './trainer/create-type-exercise/create-type-exercise.component';
+import { CreateTypeMuscleComponent } from './trainer/create-type-muscle/create-type-muscle.component';
+import { GetAllTypeMuscleComponent } from './trainer/get-all-type-muscle/get-all-type-muscle.component';
+import { GetAllTypeExerciseComponent } from './trainer/get-all-type-exercise/get-all-type-exercise.component';
 
 
 @NgModule({
@@ -36,7 +42,13 @@ import { FooterComponent } from './home/footer/footer.component';
     RegisterAdminComponent,
     ListNutritionPlanUserComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    CreateExerciseComponent,
+    GetAllExerciseComponent,
+    CreateTypeExerciseComponent,
+    CreateTypeMuscleComponent,
+    GetAllTypeMuscleComponent,
+    GetAllTypeExerciseComponent
   ],
   imports: [
     BrowserModule,
