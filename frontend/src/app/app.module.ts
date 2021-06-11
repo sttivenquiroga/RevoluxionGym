@@ -43,18 +43,25 @@ import { UpdateCityComponent } from './admin/update-city/update-city.component';
 import { ListLocationsComponent } from './admin/list-locations/list-locations.component';
 import { RegisterLocationComponent } from './admin/register-location/register-location.component';
 import { UpdateLocationComponent } from './admin/update-location/update-location.component';
-import { CreateExerciseComponent } from './trainer/create-exercise/create-exercise.component';
-import { GetAllExerciseComponent } from './trainer/get-all-exercise/get-all-exercise.component';
-import { CreateTypeExerciseComponent } from './trainer/create-type-exercise/create-type-exercise.component';
-import { CreateTypeMuscleComponent } from './trainer/create-type-muscle/create-type-muscle.component';
-import { GetAllTypeMuscleComponent } from './trainer/get-all-type-muscle/get-all-type-muscle.component';
-import { GetAllTypeExerciseComponent } from './trainer/get-all-type-exercise/get-all-type-exercise.component';
-import { CreatePlanComponent } from './admin/create-plan/create-plan.component';
-import { GetAllPlanComponent } from './admin/get-all-plan/get-all-plan.component';
-import { CreateStatusPaymentComponent } from './admin/create-status-payment/create-status-payment.component';
-import { GetAllStatusPaymentComponent } from './admin/get-all-status-payment/get-all-status-payment.component';
-import { GetAllRolComponent } from './admin/get-all-rol/get-all-rol.component';
-import { CreateRolComponent } from './admin/create-rol/create-rol.component';
+import { RegisterExeciseComponent } from './trainer/register-execise/register-execise.component';
+import { RegisterTypeExeciseComponent } from './trainer/register-type-execise/register-type-execise.component';
+import { RegisterTypeMuscleComponent } from './trainer/register-type-muscle/register-type-muscle.component';
+import { ListExeciseComponent } from './trainer/list-execise/list-execise.component';
+import { ListTypeExeciseComponent } from './trainer/list-type-execise/list-type-execise.component';
+import { ListTypeMuscleComponent } from './trainer/list-type-muscle/list-type-muscle.component';
+import { UpdateExeciseComponent } from './trainer/update-execise/update-execise.component';
+import { UpdateTypeExeciseComponent } from './trainer/update-type-execise/update-type-execise.component';
+import { UpdateTypeMuscleComponent } from './trainer/update-type-muscle/update-type-muscle.component';
+import { RegisterPlanComponent } from './admin/register-plan/register-plan.component';
+import { RegisterRolComponent } from './admin/register-rol/register-rol.component';
+import { RegisterStatusPaymentComponent } from './admin/register-status-payment/register-status-payment.component';
+import { ListPlanComponent } from './admin/list-plan/list-plan.component';
+import { ListRolComponent } from './admin/list-rol/list-rol.component';
+import { ListStatusPaymentComponent } from './admin/list-status-payment/list-status-payment.component';
+import { UpdatePlanComponent } from './admin/update-plan/update-plan.component';
+import { UpdateRolComponent } from './admin/update-rol/update-rol.component';
+import { UpdateStatusPaymentComponent } from './admin/update-status-payment/update-status-payment.component';
+
 
 
 @NgModule({
@@ -82,18 +89,25 @@ import { CreateRolComponent } from './admin/create-rol/create-rol.component';
     ListLocationsComponent,
     RegisterLocationComponent,
     UpdateLocationComponent,
-    CreateExerciseComponent,
-    GetAllExerciseComponent,
-    CreateTypeExerciseComponent,
-    CreateTypeMuscleComponent,
-    GetAllTypeMuscleComponent,
-    GetAllTypeExerciseComponent,
-    CreatePlanComponent,
-    GetAllPlanComponent,
-    CreateStatusPaymentComponent,
-    GetAllStatusPaymentComponent,
-    GetAllRolComponent,
-    CreateRolComponent
+    RegisterExeciseComponent,
+    RegisterTypeExeciseComponent,
+    RegisterTypeMuscleComponent,
+    ListExeciseComponent,
+    ListTypeExeciseComponent,
+    ListTypeMuscleComponent,
+    UpdateExeciseComponent,
+    UpdateTypeExeciseComponent,
+    UpdateTypeMuscleComponent,
+    RegisterPlanComponent,
+    RegisterRolComponent,
+    RegisterStatusPaymentComponent,
+    ListPlanComponent,
+    ListRolComponent,
+    ListStatusPaymentComponent,
+    UpdatePlanComponent,
+    UpdateRolComponent,
+    UpdateStatusPaymentComponent,
+
   ],
   imports: [
     BrowserModule,
