@@ -1,1 +1,115 @@
-<p>register works!</p>
+<div class="form">
+  <mat-card class="card">
+    <mat-card-title>Register User</mat-card-title>
+    <div class="col-12 col-lg-12" *ngIf="successMessage">
+      <div class="alert alert-success alert-dismissible" role="alert">
+        <div class="alert-message">
+          {{ successMessage }}
+        </div>
+        <button
+          type="button"
+          class="close"
+          (click)="clearAlert()"
+          data-dismiss="alert"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">X</span>
+        </button>
+      </div>
+    </div>
+    <div class="col-12 col-lg-12" *ngIf="errorMessage">
+      <div class="alert alert-danger alert-dismissible" role="alert">
+        <div class="alert-message">
+          {{ errorMessage }}
+        </div>
+        <button
+          type="button"
+          class="close"
+          (click)="clearAlert()"
+          data-dismiss="alert"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">X</span>
+        </button>
+      </div>
+    </div>
+    <mat-card-content>
+      <div class="container">
+        <mat-form-field>
+          <input
+            [(ngModel)]="registerData.firstName"
+            matInput
+            placeholder="First Name"
+            required
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            [(ngModel)]="registerData.lastName"
+            matInput
+            placeholder="Last Name"
+            required
+          />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Document Type</mat-label>
+          <mat-select [(ngModel)]="registerData.documentTypeId">
+            <mat-option value="CC">CC</mat-option>
+            <mat-option value="TI">TI</mat-option>
+            <mat-option value="PE">PE</mat-option>
+            <mat-option value="PS">PS</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            [(ngModel)]="registerData.numberDocument"
+            matInput
+            placeholder="Document Number"
+            required
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            [(ngModel)]="registerData.phone"
+            placeholder="Phone Number"
+            matInput
+            required
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            [(ngModel)]="registerData.email"
+            matInput
+            placeholder="Email"
+            required
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            [(ngModel)]="registerData.user"
+            matInput
+            placeholder="User"
+            required
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            [(ngModel)]="registerData.password"
+            matInput
+            placeholder="Password"
+            required
+          />
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        (click)="registerUser()"
+        class="button colorButton"
+        mat-raided-button
+      >
+        Register
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

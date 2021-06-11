@@ -14,6 +14,14 @@ import { RegisterLocationComponent } from "./admin/register-location/register-lo
 import { UpdateCityComponent } from "./admin/update-city/update-city.component";
 import { UpdateDepartmentComponent } from "./admin/update-department/update-department.component";
 import { UpdateLocationComponent } from "./admin/update-location/update-location.component";
+import { RegisterAdminComponent } from './admin/register-admin/register-admin.component';
+import { ListUserComponent } from './admin/list-user/list-user.component';
+import { UpdateProfileComponent } from './user/update-profile/update-profile.component';
+import { UpdateAdminComponent } from './admin/update-admin/update-admin.component';
+import { RegisterNutritionPlanComponent } from './trainer/register-nutrition-plan/register-nutrition-plan.component';
+import { ListNutritionPlanUserComponent } from './user/list-nutrition-plan-user/list-nutrition-plan-user.component';
+import { ListNutritionPlanComponent } from './trainer/list-nutrition-plan/list-nutrition-plan.component';
+import { UpdateNutritionPlanComponent } from './trainer/update-nutrition-plan/update-nutrition-plan.component';
 
 const routes: Routes = [
   {
@@ -65,6 +73,38 @@ const routes: Routes = [
     path: 'updateLocation',
     component: UpdateLocationComponent,
   },
+  {
+    path: 'registerAdmin',
+    component: RegisterAdminComponent,
+  },
+  {
+    path: 'listUser',
+    component: ListUserComponent,
+  },
+  {
+    path: 'updateProfile',
+    component: UpdateProfileComponent,
+  },
+  {
+    path: 'updateAdmin',
+    component: UpdateAdminComponent,
+  },
+  {
+    path: 'registerNutritionPlan',
+    component: RegisterNutritionPlanComponent,
+  },
+  {
+    path: 'listNutritionPlanUser',
+    component: ListNutritionPlanUserComponent,
+  },
+  {
+    path: 'listNutritionPlan',
+    component: ListNutritionPlanComponent,
+  },
+  {
+    path: 'updateNutritionPlan',
+    component: UpdateNutritionPlanComponent,
+  }
 
 
 ];

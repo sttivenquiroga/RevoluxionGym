@@ -10,12 +10,12 @@ const Admin = require("../middleware/admin");
 
 router.post("/registerUser", async (req, res) => {
   if (
-    !req.body.rolId ||
     !req.body.documentTypeId ||
     !req.body.numberDocument ||
     !req.body.firstName ||
     !req.body.lastName ||
     !req.body.email ||
+    !req.body.user ||
     !req.body.password ||
     !req.body.phone
   )
@@ -29,12 +29,13 @@ router.post("/registerUser", async (req, res) => {
   const hash = await bcrypt.hash(req.body.password, 10);
   const rol = await Rol.findOne({ rol: "user" });
   if (!rol) return res.status(401).send("Process failed: No role was assigned");
-  let docType = mongoose.Types.ObjectId.isValid(req.body.documentTypeId);
-  if (!docType)
-    return res.status(401).send("Process invalid: Invalid id document type");
+  // let docType = "60ba5f96d4c93d2920e28a22";
+  // docType = mongoose.Types.ObjectId.isValid(req.body.documentTypeId);
+  // if (!docType)
+  //   return res.status(401).send("Process invalid: Invalid id document type");  
   const data = new User({
     rolId: rol._id,
-    documentTypeId: req.body.documentTypeId,
+    documentTypeId: "60ba5f96d4c93d2920e28a22",
     numberDocument: req.body.numberDocument,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
@@ -100,7 +101,7 @@ router.post("/registerAdmin", Auth, UserAuth, Admin, async (req, res) => {
   }
 });
 
-router.get("/findUser/:firstName?", Auth, UserAuth, Admin, async (req, res) => {
+router.get("/listUser/:firstName?", Auth, UserAuth, Admin, async (req, res) => {
   const user = await User.find({
     firstName: new RegExp(req.params["firstName"], "i"),
   })

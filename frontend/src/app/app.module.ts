@@ -46,6 +46,13 @@ import { CreateStatusPaymentComponent } from './admin/create-status-payment/crea
 import { GetAllStatusPaymentComponent } from './admin/get-all-status-payment/get-all-status-payment.component';
 import { GetAllRolComponent } from './admin/get-all-rol/get-all-rol.component';
 import { CreateRolComponent } from './admin/create-rol/create-rol.component';
+import { UpdateProfileComponent } from './user/update-profile/update-profile.component';
+import { UpdateAdminComponent } from './admin/update-admin/update-admin.component';
+import { ListUserComponent } from './admin/list-user/list-user.component';
+import { RegisterNutritionPlanComponent } from './trainer/register-nutrition-plan/register-nutrition-plan.component';
+import { ListNutritionPlanComponent } from './trainer/list-nutrition-plan/list-nutrition-plan.component';
+import { UpdateNutritionPlanComponent } from './trainer/update-nutrition-plan/update-nutrition-plan.component';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -78,7 +85,13 @@ import { CreateRolComponent } from './admin/create-rol/create-rol.component';
     CreateStatusPaymentComponent,
     GetAllStatusPaymentComponent,
     GetAllRolComponent,
-    CreateRolComponent
+    CreateRolComponent,
+    UpdateProfileComponent,
+    UpdateAdminComponent,
+    ListUserComponent,
+    RegisterNutritionPlanComponent,
+    ListNutritionPlanComponent,
+    UpdateNutritionPlanComponent,
   ],
   imports: [
     BrowserModule,
@@ -93,7 +106,8 @@ import { CreateRolComponent } from './admin/create-rol/create-rol.component';
     MatExpansionModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   providers: [AuthService, AuthGuard,TokenInterceptorService],
   bootstrap: [AppComponent]
