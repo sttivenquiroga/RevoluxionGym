@@ -1,0 +1,14 @@
+
+.header{
+    background-color: #2d132c;
+    color: white;
+}
+.navbar-collapse {
+    justify-content: flex-end;
+}
+.contLogo{
+    margin: 0px 80px;
+}
+.contLogo img{
+    width: 80px;
+}
