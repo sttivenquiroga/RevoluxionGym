@@ -34,6 +34,27 @@ import { ListUserLocationComponent } from './admin/list-user-location/list-user-
 import { RegisterWeekRoutinesComponent } from './trainer/register-week-routines/register-week-routines.component';
 import { ListWeekRoutinesComponent } from './trainer/list-week-routines/list-week-routines.component';
 import { RegisterUserLocationComponent } from './user/register-user-location/register-user-location.component';
+import { ListDepartmentsComponent } from './admin/list-departments/list-departments.component';
+import { RegisterDepartmentComponent } from './admin/register-department/register-department.component';
+import { UpdateDepartmentComponent } from './admin/update-department/update-department.component';
+import { ListCitiesComponent } from './admin/list-cities/list-cities.component';
+import { RegisterCityComponent } from './admin/register-city/register-city.component';
+import { UpdateCityComponent } from './admin/update-city/update-city.component';
+import { ListLocationsComponent } from './admin/list-locations/list-locations.component';
+import { RegisterLocationComponent } from './admin/register-location/register-location.component';
+import { UpdateLocationComponent } from './admin/update-location/update-location.component';
+import { CreateExerciseComponent } from './trainer/create-exercise/create-exercise.component';
+import { GetAllExerciseComponent } from './trainer/get-all-exercise/get-all-exercise.component';
+import { CreateTypeExerciseComponent } from './trainer/create-type-exercise/create-type-exercise.component';
+import { CreateTypeMuscleComponent } from './trainer/create-type-muscle/create-type-muscle.component';
+import { GetAllTypeMuscleComponent } from './trainer/get-all-type-muscle/get-all-type-muscle.component';
+import { GetAllTypeExerciseComponent } from './trainer/get-all-type-exercise/get-all-type-exercise.component';
+import { CreatePlanComponent } from './admin/create-plan/create-plan.component';
+import { GetAllPlanComponent } from './admin/get-all-plan/get-all-plan.component';
+import { CreateStatusPaymentComponent } from './admin/create-status-payment/create-status-payment.component';
+import { GetAllStatusPaymentComponent } from './admin/get-all-status-payment/get-all-status-payment.component';
+import { GetAllRolComponent } from './admin/get-all-rol/get-all-rol.component';
+import { CreateRolComponent } from './admin/create-rol/create-rol.component';
 
 
 @NgModule({
@@ -51,7 +72,28 @@ import { RegisterUserLocationComponent } from './user/register-user-location/reg
     ListUserLocationComponent,
     RegisterWeekRoutinesComponent,
     ListWeekRoutinesComponent,
-    RegisterUserLocationComponent    
+    RegisterUserLocationComponent,    
+    ListDepartmentsComponent,
+    RegisterDepartmentComponent,
+    UpdateDepartmentComponent,
+    ListCitiesComponent,
+    RegisterCityComponent,
+    UpdateCityComponent,
+    ListLocationsComponent,
+    RegisterLocationComponent,
+    UpdateLocationComponent,
+    CreateExerciseComponent,
+    GetAllExerciseComponent,
+    CreateTypeExerciseComponent,
+    CreateTypeMuscleComponent,
+    GetAllTypeMuscleComponent,
+    GetAllTypeExerciseComponent,
+    CreatePlanComponent,
+    GetAllPlanComponent,
+    CreateStatusPaymentComponent,
+    GetAllStatusPaymentComponent,
+    GetAllRolComponent,
+    CreateRolComponent
   ],
   imports: [
     BrowserModule,
