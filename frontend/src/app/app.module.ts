@@ -31,6 +31,12 @@ import { CreateTypeExerciseComponent } from './trainer/create-type-exercise/crea
 import { CreateTypeMuscleComponent } from './trainer/create-type-muscle/create-type-muscle.component';
 import { GetAllTypeMuscleComponent } from './trainer/get-all-type-muscle/get-all-type-muscle.component';
 import { GetAllTypeExerciseComponent } from './trainer/get-all-type-exercise/get-all-type-exercise.component';
+import { CreatePlanComponent } from './admin/create-plan/create-plan.component';
+import { GetAllPlanComponent } from './admin/get-all-plan/get-all-plan.component';
+import { CreateStatusPaymentComponent } from './admin/create-status-payment/create-status-payment.component';
+import { GetAllStatusPaymentComponent } from './admin/get-all-status-payment/get-all-status-payment.component';
+import { GetAllRolComponent } from './admin/get-all-rol/get-all-rol.component';
+import { CreateRolComponent } from './admin/create-rol/create-rol.component';
 
 
 @NgModule({
@@ -48,7 +54,13 @@ import { GetAllTypeExerciseComponent } from './trainer/get-all-type-exercise/get
     CreateTypeExerciseComponent,
     CreateTypeMuscleComponent,
     GetAllTypeMuscleComponent,
-    GetAllTypeExerciseComponent
+    GetAllTypeExerciseComponent,
+    CreatePlanComponent,
+    GetAllPlanComponent,
+    CreateStatusPaymentComponent,
+    GetAllStatusPaymentComponent,
+    GetAllRolComponent,
+    CreateRolComponent
   ],
   imports: [
     BrowserModule,
