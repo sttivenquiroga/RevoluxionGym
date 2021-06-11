@@ -12,6 +12,9 @@ import { ListNutritionPlanUserComponent } from './user/list-nutrition-plan-user/
 import { AuthService } from "./services/auth.service";
 import { TokenInterceptorService } from "./services/token-interceptor.service";
 import { AuthGuard } from "./guard/auth.guard";
+import { DocumentTypeService } from "./services/document-type.service";
+import { UserLocationService } from "./services/user-location.service";
+import { WeekRoutinesService } from "./services/week-routines.service";
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -25,6 +28,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home/home.component';
 import { FooterComponent } from './home/footer/footer.component';
+import { RegisterDocumentTypeComponent } from './admin/register-document-type/register-document-type.component';
+import { ListDocumentTypeComponent } from './admin/list-document-type/list-document-type.component';
+import { ListUserLocationComponent } from './admin/list-user-location/list-user-location.component';
+import { RegisterWeekRoutinesComponent } from './trainer/register-week-routines/register-week-routines.component';
+import { ListWeekRoutinesComponent } from './trainer/list-week-routines/list-week-routines.component';
+import { RegisterUserLocationComponent } from './user/register-user-location/register-user-location.component';
 import { ListDepartmentsComponent } from './admin/list-departments/list-departments.component';
 import { RegisterDepartmentComponent } from './admin/register-department/register-department.component';
 import { UpdateDepartmentComponent } from './admin/update-department/update-department.component';
@@ -34,18 +43,6 @@ import { UpdateCityComponent } from './admin/update-city/update-city.component';
 import { ListLocationsComponent } from './admin/list-locations/list-locations.component';
 import { RegisterLocationComponent } from './admin/register-location/register-location.component';
 import { UpdateLocationComponent } from './admin/update-location/update-location.component';
-import { CreateExerciseComponent } from './trainer/create-exercise/create-exercise.component';
-import { GetAllExerciseComponent } from './trainer/get-all-exercise/get-all-exercise.component';
-import { CreateTypeExerciseComponent } from './trainer/create-type-exercise/create-type-exercise.component';
-import { CreateTypeMuscleComponent } from './trainer/create-type-muscle/create-type-muscle.component';
-import { GetAllTypeMuscleComponent } from './trainer/get-all-type-muscle/get-all-type-muscle.component';
-import { GetAllTypeExerciseComponent } from './trainer/get-all-type-exercise/get-all-type-exercise.component';
-import { CreatePlanComponent } from './admin/create-plan/create-plan.component';
-import { GetAllPlanComponent } from './admin/get-all-plan/get-all-plan.component';
-import { CreateStatusPaymentComponent } from './admin/create-status-payment/create-status-payment.component';
-import { GetAllStatusPaymentComponent } from './admin/get-all-status-payment/get-all-status-payment.component';
-import { GetAllRolComponent } from './admin/get-all-rol/get-all-rol.component';
-import { CreateRolComponent } from './admin/create-rol/create-rol.component';
 import { UpdateProfileComponent } from './user/update-profile/update-profile.component';
 import { UpdateAdminComponent } from './admin/update-admin/update-admin.component';
 import { ListUserComponent } from './admin/list-user/list-user.component';
@@ -53,6 +50,25 @@ import { RegisterNutritionPlanComponent } from './trainer/register-nutrition-pla
 import { ListNutritionPlanComponent } from './trainer/list-nutrition-plan/list-nutrition-plan.component';
 import { UpdateNutritionPlanComponent } from './trainer/update-nutrition-plan/update-nutrition-plan.component';
 import {MatSelectModule} from '@angular/material/select';
+import { RegisterExeciseComponent } from './trainer/register-execise/register-execise.component';
+import { RegisterTypeExeciseComponent } from './trainer/register-type-execise/register-type-execise.component';
+import { RegisterTypeMuscleComponent } from './trainer/register-type-muscle/register-type-muscle.component';
+import { ListExeciseComponent } from './trainer/list-execise/list-execise.component';
+import { ListTypeExeciseComponent } from './trainer/list-type-execise/list-type-execise.component';
+import { ListTypeMuscleComponent } from './trainer/list-type-muscle/list-type-muscle.component';
+import { UpdateExeciseComponent } from './trainer/update-execise/update-execise.component';
+import { UpdateTypeExeciseComponent } from './trainer/update-type-execise/update-type-execise.component';
+import { UpdateTypeMuscleComponent } from './trainer/update-type-muscle/update-type-muscle.component';
+import { RegisterPlanComponent } from './admin/register-plan/register-plan.component';
+import { RegisterRolComponent } from './admin/register-rol/register-rol.component';
+import { RegisterStatusPaymentComponent } from './admin/register-status-payment/register-status-payment.component';
+import { ListPlanComponent } from './admin/list-plan/list-plan.component';
+import { ListRolComponent } from './admin/list-rol/list-rol.component';
+import { ListStatusPaymentComponent } from './admin/list-status-payment/list-status-payment.component';
+import { UpdatePlanComponent } from './admin/update-plan/update-plan.component';
+import { UpdateRolComponent } from './admin/update-rol/update-rol.component';
+import { UpdateStatusPaymentComponent } from './admin/update-status-payment/update-status-payment.component';
+
 
 
 @NgModule({
@@ -65,6 +81,12 @@ import {MatSelectModule} from '@angular/material/select';
     ListNutritionPlanUserComponent,
     HomeComponent,
     FooterComponent,
+    RegisterDocumentTypeComponent,
+    ListDocumentTypeComponent,
+    ListUserLocationComponent,
+    RegisterWeekRoutinesComponent,
+    ListWeekRoutinesComponent,
+    RegisterUserLocationComponent,    
     ListDepartmentsComponent,
     RegisterDepartmentComponent,
     UpdateDepartmentComponent,
@@ -74,24 +96,31 @@ import {MatSelectModule} from '@angular/material/select';
     ListLocationsComponent,
     RegisterLocationComponent,
     UpdateLocationComponent,
-    CreateExerciseComponent,
-    GetAllExerciseComponent,
-    CreateTypeExerciseComponent,
-    CreateTypeMuscleComponent,
-    GetAllTypeMuscleComponent,
-    GetAllTypeExerciseComponent,
-    CreatePlanComponent,
-    GetAllPlanComponent,
-    CreateStatusPaymentComponent,
-    GetAllStatusPaymentComponent,
-    GetAllRolComponent,
-    CreateRolComponent,
     UpdateProfileComponent,
     UpdateAdminComponent,
     ListUserComponent,
     RegisterNutritionPlanComponent,
     ListNutritionPlanComponent,
     UpdateNutritionPlanComponent,
+    RegisterExeciseComponent,
+    RegisterTypeExeciseComponent,
+    RegisterTypeMuscleComponent,
+    ListExeciseComponent,
+    ListTypeExeciseComponent,
+    ListTypeMuscleComponent,
+    UpdateExeciseComponent,
+    UpdateTypeExeciseComponent,
+    UpdateTypeMuscleComponent,
+    RegisterPlanComponent,
+    RegisterRolComponent,
+    RegisterStatusPaymentComponent,
+    ListPlanComponent,
+    ListRolComponent,
+    ListStatusPaymentComponent,
+    UpdatePlanComponent,
+    UpdateRolComponent,
+    UpdateStatusPaymentComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -109,7 +138,7 @@ import {MatSelectModule} from '@angular/material/select';
     ReactiveFormsModule,
     MatSelectModule
   ],
-  providers: [AuthService, AuthGuard,TokenInterceptorService],
+  providers: [AuthService, DocumentTypeService, UserLocationService, WeekRoutinesService, AuthGuard, TokenInterceptorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
