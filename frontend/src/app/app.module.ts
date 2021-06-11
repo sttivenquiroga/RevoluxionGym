@@ -66,7 +66,7 @@ import { CreateRolComponent } from './admin/create-rol/create-rol.component';
     UpdateCityComponent,
     ListLocationsComponent,
     RegisterLocationComponent,
-    UpdateLocationComponent
+    UpdateLocationComponent,
     CreateExerciseComponent,
     GetAllExerciseComponent,
     CreateTypeExerciseComponent,
