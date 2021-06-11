@@ -12,3 +12,16 @@
 .contLogo img{
     width: 80px;
 }
+.btn-primary {
+    background-color: #801336;
+    border-color: #801336;
+    margin: 0 10px;
+}
+.btn-primary:hover {
+    background-color: #ee4540;
+    border-color: #ee4540;
+}
+.btn-primary:active, .btn-primary:focus {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}

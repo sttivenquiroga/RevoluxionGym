@@ -25,6 +25,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home/home.component';
 import { FooterComponent } from './home/footer/footer.component';
+import { ListDepartmentsComponent } from './admin/list-departments/list-departments.component';
+import { RegisterDepartmentComponent } from './admin/register-department/register-department.component';
+import { UpdateDepartmentComponent } from './admin/update-department/update-department.component';
+import { ListCitiesComponent } from './admin/list-cities/list-cities.component';
+import { RegisterCityComponent } from './admin/register-city/register-city.component';
+import { UpdateCityComponent } from './admin/update-city/update-city.component';
+import { ListLocationsComponent } from './admin/list-locations/list-locations.component';
+import { RegisterLocationComponent } from './admin/register-location/register-location.component';
+import { UpdateLocationComponent } from './admin/update-location/update-location.component';
 
 
 @NgModule({
@@ -36,7 +45,16 @@ import { FooterComponent } from './home/footer/footer.component';
     RegisterAdminComponent,
     ListNutritionPlanUserComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    ListDepartmentsComponent,
+    RegisterDepartmentComponent,
+    UpdateDepartmentComponent,
+    ListCitiesComponent,
+    RegisterCityComponent,
+    UpdateCityComponent,
+    ListLocationsComponent,
+    RegisterLocationComponent,
+    UpdateLocationComponent
   ],
   imports: [
     BrowserModule,

@@ -8,7 +8,7 @@
     height: 600px;
     width: 100%;
     background-size: cover;
-    font-family: 'Monoton', cursive;
+    /* font-family: 'Monoton', cursive !important; */
     color: #c72c41;
     align-items: center;
     justify-content: center;
